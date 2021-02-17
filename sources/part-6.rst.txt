@@ -628,10 +628,3 @@ Alice-Bob-Charles: a solution
 
 To be integrated after !
 
-
-
-
-Next Session
-===================================
-
-[dire une ou deux phrase sur le TP qui suit]

@@ -1,5 +1,5 @@
-1.2. What Is an Agent
-=====================
+1.2. What Is an Agent?
+=======================
 
 The core element in a multiagent system is the agent. An agent is always situated in a *environment*. The environment can be understood as "everything outside the agent", although this definition is largely inaccurate. People say that the agent *interacts* with the environment, which also can have many different meanings. Let us try to clarify all this.
 

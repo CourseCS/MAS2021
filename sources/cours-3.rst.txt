@@ -14,7 +14,7 @@ Agenda -- Recall
 
 
 Session 3. 
-~~~~~~~~~~~~~~~~~~~~~~~
+-------------------
 
 Multiagent systems is not just about having different processes (or piece of code) that run in parallel, as we did in the previous sessions. Indeed, agents need to share some information to work together.
 

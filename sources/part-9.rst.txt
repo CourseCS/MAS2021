@@ -6,11 +6,11 @@
 
    </strike> 
 
-6.1 Arguments in dialogue
+6.1. Arguments in dialogue
 ===============================
 
 In the previous session, we have seen what is an argumentation system without any reference to interaction. However, arguments can be seen as 
-embedded in a procedural context, in that they having been put forward on one side or the other of an issue during a dialogue between human and/or artificial
+embedded in a procedural context, in that they are put forward on one side or the other of an issue during a dialogue between human and/or artificial
 agents. In other terms, one way to define argumentation logics is in the dialectical form of dialogue games (or dialogue systems). Such games model interaction between two or more players,
 where arguments in favour and against a proposition are exchanged according to certain rules and conditions [Carlson, 1983]. 
 
@@ -19,11 +19,7 @@ According to [Gordon et al., 2007]
 "The information provided by a dialogue for constructing and evaluating argument is richer that just a set of sentences. Indeed, the context can tell us whether some party has
 questioned or conceded a statements, or whether a decision has been taken to accept or reject a claim."
 
-
-
-
-
-6.2 Dialogue system
+6.2. Dialogue system
 =============================
 
 Dialogue systems essentially define the principle of coherent dialogue and the condition under
@@ -31,45 +27,66 @@ which a statement made by an individual is appropriate. Different formal dialogu
 into account various information, such as: participants, communication language, roles of
 participants, the dialogue goal, etc.
 
-In what follows we present only the necessary elements for the presentation of our proposal
-in this course. For more details on dialogue systems, we refer the reader to [Prakken, 2005a;
-McBurney and Parsons, 2003; Amgoud et al., 2000a; McBurney and Parsons, 2009].
+In what follows we present the main rules to take into account when designing a dialogue system. Of course, we can have other rules depending of 
+the situation and the nature of the problem. For more details on dialogue systems, we refer the reader to, for instance, (`Prakken, 2005 <https://watermark.silverchair.com/exi046.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAqYwggKiBgkqhkiG9w0BBwagggKTMIICjwIBADCCAogGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMw32rIyc6elyFNTxTAgEQgIICWUp1JZR8BrK8RwgqaiXWG57-wmulLLoWvRpZXr19ncbFBk7au6qyuoGOv85euZBOyWsryBdgFI0xzMMqBKj7dFPsrQ2RvLoBhvImbZmzcTb3H9ievEE75MGc8ze07GEYBa_5NJW0b27y6ZKjF745GHpwELDFqZ27SX0ESCKqaY4z3m-a-QIW6QAfTYjKzJwK1ilLC3PJBbsNQciNTZvcvxxPla9_4lmv5VOKC-U7EDs5vOWkyKnaNsJS14qWpvTZvSdRTU8WRuVBLV3R9EMIWac_ctBcXs5xAcrP7P1lHtJghBgxCrU8woan5lae8uoLZmk7fzx7C9khsNDoOmkTw8z6xcTrn3sUsSCFHatb-FtAjKyV5rq_fyizVKyZQ7dNwOX7Yqg9EeYCeFQTGnuVLlAFSCCtq_s4engjLKgN7oCNvYBJyAQiGIW6-ttvqxXLRt6aqjsahaXA7XepFfmb-aB7jbvVPqHuH2i2tY2ixkXSzxpwx3OejNm6F1_T4xl-EcRVhe34dk7h931XSdmpAv7_XqgpHH9q61lcMVTDTZgHZVS90SDpZp5OxuaPlkEC7qXBl82rD0_siZ3stMftIbiwYVmACoUaXGWusld4wVNIh2rzH4xRO4S4mqYou7yAVAUjLvYH4JHtcRf4adsw_OQkDFs2jC02zuuHYl3ojjg_4P2J0aeQ0GluSEu2z7Ak3dGEaUBNyOqHcvxSnt2b3P4sXamdv01PiEwQMxOLnfVfCWAISoH9zO0ZNhELzkcwYVcFMHNwWRcNsgoSHhzxYwru0YrKwRVnwzc>`_ ; `McBurney and Parsons, 2009 <https://link.springer.com/chapter/10.1007%2F978-0-387-98197-0_13>`_).
 
+- **Admission rules**,  which specify when an agent can participate in a dialogue and under what conditions;
 
 - **Locutions rules (speech acts, moves)**. Rules which indicate what utterances are permitted. Typically, legal locutions permit participants to assert propositions, permit others to question or contest prior assertions, and permit those asserting propositions which are subsequently questioned or contested to justify their assertions. Justifications may involve the presentation of a proof of the proposition or an argument for it. 
 
 - **Commitments rules**. Rules defining the effect of the moves in the “commitment stores”. Indeed, associated with each player is a commitment store, which holds the statements players have made and the challenges they have issued. There are then rules which define how the commitment stores are updated. For example, a question posed by one agent to another may impose a commitment on the second to provide a response; until provided, this commitment remains undischarged.
 
-- **Dialogue rules (protocol)**. Rules for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [Prakken, 2001] and negotiation [Parsons et al., 1998; Amgoud et al., 2000b]
-
-- **Termination rules**. Rules that define the circumstances under which the dialogue ends.
-
-Now, it is clear that different “types of dialogue” involve different set of rules. For example,
+- **Dialogue rules (protocol)**,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [Prakken, 2001] and negotiation [Parsons et al., 1998; Amgoud et al., 2000b]. For example,
 the set of rules given in the following table correspond to a persuasion dialogue.
 
 
 .. image:: img/persuasion.png
-  :width: 470
-  :align: center
+   :width: 470
+   :align: center
+
+- **Rules for proposal validity**, which specify when a proposal is compliant with some conditions (e.g., an agent may not be allowed to make a proposal that has already been rejected);
+
+- **Outcome determination rules**, which specify the outcome of the interaction; in argumentation-based frameworks, these rules might enforce some outcome based on the underlying theory of argumentation (e.g., if an agent cannot construct an argument against a request, it accepts it [Parsons et al., 1998]);
+
+- **Termination rules**,  that define the circumstances under which the dialogue ends.
 
 
-6.3 Negotiation protocols 
-=============================
 
-The set of rules which govern the interaction. This covers the permissible types of participants (e.g. the negotiators and any relevant third parties), the negotiation states (e.g. accepting bids, negotiation closed), the events which cause negotiation states to change (e.g. no more bidders, bid accepted), and the valid actions of the participants in particular states (e.g. which messages can be sent by whom, to whom, at what stage).
+Finaly, mainly two different ways to specify the dialogue (interaction) protocol:  
 
-More precisely, the rules that form the negotiation protocol may address the following issues: 
+1- *Finite state machines*: it represent an explicit specification of interaction. It is useful when the interaction involves a limited number of  locutions. 
 
-- rules for admission, which specify when an agent can participate in a negotiation dialogue and under what conditions;
+  **Example**
+    
+  .. image:: img/state.png
+     :width: 670
+     :align: center
 
-- termination rules, which specify when an encounter must end (e.g., if one agent utters an acceptance locution);
 
-- rules for proposal validity, which specify when a proposal is compliant with some conditions (e.g., an agent may not be allowed to make a proposal that has already been rejected);
+2- *Dialogue games*: by stating clearly the pre
+and post conditions of each locution as well as its eects on agent's
+commitment. Its advantage is that it provids a clear and precise semantics of the dialogue
 
-- rules for outcome determination, which specify the outcome of the interaction; in argumentation-based frameworks, these rules might enforce some outcome based on the underlying theory of argumentation (e.g., if an agent cannot construct an argument against a request, it accepts it [Parsons et al., 1998]);
+  **Example [McBurney et al. ,2003]**
+    
 
-6.4 An example of an argumentation-based negotiation protocol
+  This locution allows a seller (or advisor) agent to announce that it (or another seller) is willing to sell a particular option . 
+
+  - *Locution*: :math:`\texttt{willing_to_sell} (P_1, T, P_2, V)` , where :math:`P_1` is either an advisor or a seller, :math:`T` is the set of participants, :math:`P_2` is a seller and :math:`V` is a set of sales options.
+     
+  - *Preconditions*: some participant :math:`P_3` must have previously uttered a locution :math:`\texttt{seek_info}(P_3, S, p)`  where :math:`P \in S` (the set of sellers), and the options in :math:`V` satisfy constraint :math:`p`.
+     
+  - *Meaning*: the speaker :math:`P_1` indicates to audience :math:`T` that agent :math:`P_2` is willing to supply the finite set :math:`V=\{a, b, \dots \}` of purchase options to any buyer in set :math:`T`. Each of these options satisfy constraint :math:`p` uttered as part of the prior math:`\texttt{seek(.)}` locution.
+     
+  - *Response*: none required.
+
+  - *Information store updates*: for each :math:`\neg a \in V`, the 3-tuple :math:`(T, P_2, \neg a)` is inserted into :math:`IS(P_1)`, the information store for agent :math:`P_1`. 
+  
+  - *Commitment store updates*: no effects.
+
+6.3. Our argumentation-based negotiation protocol ! 
 ================================================================
+
 
 We are at the end of this practical work.  The diffrent questions and functions implemented till now will help you to run (very soon :-) )  a negotiation between at least two agents. 
 Before to push the run button, you need to check that you have implemented all the necessary components. 
@@ -77,18 +94,16 @@ Before to push the run button, you need to check that you have implemented all t
 For this, the following algorithm synthetises the conditions and the rules for the different moves during and interaction.  
 
 
-
 .. image:: img/algo.png
   :width: 550
   :align: center
 
 
-This algorithm is represented by the following transition state diagram and a possible output (interaction) is depicted in the figure.
+This algorithm is represented by the following transition state diagram and a possible output (interaction) is depicted in the figure below.
 
 .. image:: img/nego.png
   :width: 300
   :align: center
-
 
 
 
@@ -98,11 +113,7 @@ This algorithm is represented by the following transition state diagram and a po
   :align: center
 
 
-The different perfomatives used in the algorithm are described in the previous session. 
-
-
-
-
+We recall that the different perfomatives used in the algorithm were described in the previous sessions. 
 
 Questions
 -------------------------
@@ -114,23 +125,23 @@ Questions
 
 3- At the end of each negotiation: 
 
-- récupérer l'agent gagnant, c'est celui qui a parlé en dernier avant un ACCEPT ou le récupérer dans les arguments qui ont zéro contre-arguments dans la structure de données. 
+- retrieve the winning agent, the one who spoke last before an ACCEPT or use the data structure storing the arguments to find this wining agent. 
 
-- récupérer du coup l'item (ou les items) défendu par ces arguments
+- retrieve the item(s) defended by this agent and the supporting  arguments
 
-- Faire une petie analyse pour chaque agent combien de negotiation il a gagné, quel item est le plus défendu, quel est le critère le plus mis en avant, et. 
+- Make a small analysis for each wining agent:  how much negotiation he has won, which item is the most defended, which criterion is the most put forward, and so on (you may choose your own statistics). 
 
 
 6.5 To go further...
 ==========================================
 
+This section is for those everything runs well and the previsous algorithm is completely implemented. It is based on the last section of the previous session, namely "Status of arguments". 
 
-à partir de :math:`n>4` construire le graphe d'arguments  (issus des différentes négotiations) et calculer l'ensemble des **arguments acceptables** selon une semantique de votre choix (cours: Semantic de Dung). Quelle conclusion peut on déduire
+1- From :math:`n>4` (the number of agents),  build the argument graphs such that:  (from the different negotiations) 
+
+2- calculate all the **acceptable arguments** according to a semantic of your choice. What conclusion can be deduced? 
 
 
-.. note::
-
-   this last question is to be done only if you have managed to complete all the requested questions. 
 
 
 

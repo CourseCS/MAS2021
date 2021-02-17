@@ -4,15 +4,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.1 Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <title>4.1. Argumentation-Based Negootiation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -41,12 +41,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="introduction">
-<h1>4.1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="argumentation-based-negootiation-introduction">
+<h1>4.1. Argumentation-Based Negootiation: Introduction<a class="headerlink" href="#argumentation-based-negootiation-introduction" title="Permalink to this headline">¶</a></h1>
 <p>As it was discussed in the previsous sessions, Multi-Agent Systems (MAS) are systems composed of software agents that interact to solve problems that are beyond the individual capabilities of each agent. Software agents are elements situated in some environment and capable of flexible autonomous action in order to meet their design objectives.
 In almost cases, such agents need to interact to fulfill their objctives or improve their performance. Diffent types of interactions/dialogues exit (as it is illustrated in the following table), it depends on the application. In this course, we are interested by negotiation in multi-agent systems.</p>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="_images/dialogue2.png"><img alt="_images/dialogue2.png" src="_images/dialogue2.png" style="width: 550px;" /></a>
+<a class="reference internal image-reference" href="images/dialogue2.png"><img alt="images/dialogue2.png" src="images/dialogue2.png" style="width: 550px;" /></a>
 <p class="caption"><span class="caption-text">Types of dialogue (<a class="reference external" href="https://link.springer.com/chapter/10.1007/978-94-017-0431-1_2">Norman et al., 2003</a>)</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>Negotiation is a common, everyday activity that most people use to resolve opposing interests.
@@ -85,7 +85,7 @@ whether calculations are done using a centralised algorithm or in a distributed 
 <p>information, during the negotiation process.</p>
 </div>
 <div class="section" id="automated-negotiation-mechanisms">
-<h1>4.2 Automated Negotiation Mechanisms<a class="headerlink" href="#automated-negotiation-mechanisms" title="Permalink to this headline">¶</a></h1>
+<h1>4.2. Automated Negotiation Mechanisms<a class="headerlink" href="#automated-negotiation-mechanisms" title="Permalink to this headline">¶</a></h1>
 <p>A variety of automated negotiation mechanisms have been studied in the literature. Different mechanisms have different advantages and disadvantages.
 These approaches are divedeed maintly into three groups. The more traditional ones, such as:</p>
 <ul class="simple">
@@ -103,7 +103,7 @@ stating why an agent made such a proposal or why the counterpart should accept i
 <p>In this course, we are interested by the arguementation-based approaches.</p>
 </div>
 <div class="section" id="argumentation-based-negotiation-abn">
-<h1>4.3 Argumentation-Based Negotiation (ABN)<a class="headerlink" href="#argumentation-based-negotiation-abn" title="Permalink to this headline">¶</a></h1>
+<h1>4.3. Argumentation-Based Negotiation (ABN)<a class="headerlink" href="#argumentation-based-negotiation-abn" title="Permalink to this headline">¶</a></h1>
 <p>A negotiation framework can be viewed in terms of its <strong>negotiating agents</strong> (with their internal motivations, decision mechanisms, knowledge bases, etc. ) and the <strong>environment</strong> in which these agents interact. Thus, we can distinguish:</p>
 <p>1- External elements of an ABN framewoks: they represent the environment in which the agents evolve. It includes:</p>
 <ul class="simple">
@@ -112,7 +112,7 @@ stating why an agent made such a proposal or why the counterpart should accept i
 </ul>
 <p>2-  Internal elements of an ABN frameworks. If we take a look to a basic, non-ABN negotiating agent (see figure-left), a first component is <em>a locution interpretation</em>, which parses incoming messages. These locutions (see Course 3) usually contain a proposal, or an acceptance or rejection message of a previous proposal. Other information can be added such as
 the identity of the sender. The proposal is then stored in a <em>proposal database</em> for future reference. Then, proposals feed into a <em>proposal evaluation and generation</em> component, which makes a decision about whether to accept, reject or generate a counter-proposal. This finally feeds into the <em>locution generation</em> component which sends the response.</p>
-<a class="reference internal image-reference" href="_images/ABN.png"><img alt="_images/ABN.png" class="align-center" src="_images/ABN.png" style="width: 850px;" /></a>
+<a class="reference internal image-reference" href="images/ABN.png"><img alt="images/ABN.png" class="align-center" src="images/ABN.png" style="width: 850px;" /></a>
 <p>In contrast with this classical negotiating agent, more sophisticated meta-level information can be exchanged between ABN agents (see Figure-right). Indeed, in addition to evaluating and generating proposals, an agent capable of particiapting in ABN must be equipped with mechanisms for <em>evaluating</em> arguments and for <em>generating</em> and <em>selecting</em> arguments.
 The argument <em>generation</em> is responsible for deciding what response to actually send to the counterpart and what (if any) arguments should accompagny the response. Deciding on which argument to actually send is the responsability of the <em>selection</em> mechanism.</p>
 <p>More precisely, to design and build an agent capable of effective argumentation-based negotiation, it requires the following:</p>
@@ -128,7 +128,7 @@ The argument <em>generation</em> is responsible for deciding what response to ac
 <p>This session is dedicated for implementing the first components of an ABN agents (generating and evaluating proposals) and its decision environment. We will tackle the negotiation rules and protocol during the two next sessions.</p>
 </div>
 <div class="section" id="practical-work-the-story">
-<h1>4.4 Practical work: The story…<a class="headerlink" href="#practical-work-the-story" title="Permalink to this headline">¶</a></h1>
+<h1>4.4. Practical work: The story…<a class="headerlink" href="#practical-work-the-story" title="Permalink to this headline">¶</a></h1>
 <p>Imagine that a car manufacturer wants to launch on the market a new car. For this, a crucial choice is
 the one of the engine that should meet some technical requirements but at the same time be attractive
 for the customers (economic, robust, ecological, etc.). Several types of engines exist and thus provide
@@ -211,7 +211,7 @@ different order of preferences among the criteria themselves (total order in our
 In this practical work we will use this layer and add argumentation and negotiation features.
 To do so, you can either download the following zip including the preference package or start from the following zip in which the preference package is already integrated in mesa.</p>
 <p>Thus, you should have the following:</p>
-<a class="reference internal image-reference" href="_images/code.png"><img alt="_images/code.png" class="align-center" src="_images/code.png" style="width: 200px;" /></a>
+<a class="reference internal image-reference" href="images/code.png"><img alt="images/code.png" class="align-center" src="images/code.png" style="width: 200px;" /></a>
 <p>For reminder,</p>
 <ul class="simple">
 <li><p><strong>communication</strong>: the root folder of the communication layer;</p></li>
@@ -222,7 +222,8 @@ To do so, you can either download the following zip including the preference pac
 </div>
 <div class="section" id="what-is-our-goal">
 <h2>4. What is our goal?<a class="headerlink" href="#what-is-our-goal" title="Permalink to this headline">¶</a></h2>
-<a class="reference internal image-reference" href="_images/algo.png"><img alt="_images/algo.png" class="align-center" src="_images/algo.png" style="width: 550px;" /></a>
+<p>To give an idea of what is the target of this practical work, in what follows is the algoriothm of the argumentation-based negotiation that we will try to implement. you can examine the algorithm to get a first idea of the structure and content. A complete understanding of the algorithm is not necessary at the moment, as the different steps in the next sessions will allow you to build it.</p>
+<a class="reference internal image-reference" href="images/algo.png"><img alt="images/algo.png" class="align-center" src="images/algo.png" style="width: 550px;" /></a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>From now do not forgot to make unit tests for each function implemented to check the behavior of your code.</p>
@@ -231,7 +232,7 @@ To do so, you can either download the following zip including the preference pac
 </div>
 </div>
 <div class="section" id="agents-preferences">
-<h1>4.5 Agents’ Preferences<a class="headerlink" href="#agents-preferences" title="Permalink to this headline">¶</a></h1>
+<h1>4.5. Agents’ Preferences<a class="headerlink" href="#agents-preferences" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="the-preference-package">
 <h2>1. The preference package<a class="headerlink" href="#the-preference-package" title="Permalink to this headline">¶</a></h2>
 <p>Thus, the the preferences package includes:</p>
@@ -266,7 +267,7 @@ equality, select one randomly.</p>
 </pre></div>
 </div>
 <p>3- Run the unit tests at the end of the <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class (Prefereces.py) to check wether you code is correct or not. You should get the following:</p>
-<a class="reference internal image-reference" href="_images/sortie.png"><img alt="_images/sortie.png" class="align-center" src="_images/sortie.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="images/sortie.png"><img alt="images/sortie.png" class="align-center" src="images/sortie.png" style="width: 350px;" /></a>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -274,7 +275,7 @@ equality, select one randomly.</p>
 </div>
 </div>
 <div class="section" id="agents-and-messages">
-<h1>4.6 Agents and Messages<a class="headerlink" href="#agents-and-messages" title="Permalink to this headline">¶</a></h1>
+<h1>4.6. Agents and Messages<a class="headerlink" href="#agents-and-messages" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="performatives-and-messages-content">
 <h2>1. Performatives and Messages content<a class="headerlink" href="#performatives-and-messages-content" title="Permalink to this headline">¶</a></h2>
 <p>During the dialogue (negiotiation), we will need some locutions/performatives. we will mainly consider the following:</p>
@@ -289,7 +290,7 @@ equality, select one randomly.</p>
 <div class="section" id="agents-and-communication">
 <h2>2. Agents and communication<a class="headerlink" href="#agents-and-communication" title="Permalink to this headline">¶</a></h2>
 <p>1- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder. This file  will contain our class of agents and our model for the argumentation simulation.</p>
-<a class="reference internal image-reference" href="_images/capture.png"><img alt="_images/capture.png" class="align-center" src="_images/capture.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="images/capture.png"><img alt="images/capture.png" class="align-center" src="images/capture.png" style="width: 350px;" /></a>
 <p>2-  As it was done in the course communication, create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
 <p>3- Write a method that allows to generate a performance table (see the example for Agent1)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">():</span>
@@ -341,22 +342,22 @@ have the three following information:</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">4.1 Introduction</a></li>
-<li><a class="reference internal" href="#automated-negotiation-mechanisms">4.2 Automated Negotiation Mechanisms</a></li>
-<li><a class="reference internal" href="#argumentation-based-negotiation-abn">4.3 Argumentation-Based Negotiation (ABN)</a></li>
-<li><a class="reference internal" href="#practical-work-the-story">4.4 Practical work: The story…</a><ul>
+<li><a class="reference internal" href="#">4.1. Argumentation-Based Negootiation: Introduction</a></li>
+<li><a class="reference internal" href="#automated-negotiation-mechanisms">4.2. Automated Negotiation Mechanisms</a></li>
+<li><a class="reference internal" href="#argumentation-based-negotiation-abn">4.3. Argumentation-Based Negotiation (ABN)</a></li>
+<li><a class="reference internal" href="#practical-work-the-story">4.4. Practical work: The story…</a><ul>
 <li><a class="reference internal" href="#some-assumptions-only-to-ease-the-programming">1. Some assumptions–only to ease the programming</a></li>
 <li><a class="reference internal" href="#an-illustrative-example">2. An illustrative example</a></li>
 <li><a class="reference internal" href="#the-python-project">3. The Python project</a></li>
 <li><a class="reference internal" href="#what-is-our-goal">4. What is our goal?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#agents-preferences">4.5 Agents’ Preferences</a><ul>
+<li><a class="reference internal" href="#agents-preferences">4.5. Agents’ Preferences</a><ul>
 <li><a class="reference internal" href="#the-preference-package">1. The preference package</a></li>
 <li><a class="reference internal" href="#testing-your-texttt-preferences-class">2. Testing your <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#agents-and-messages">4.6 Agents and Messages</a><ul>
+<li><a class="reference internal" href="#agents-and-messages">4.6. Agents and Messages</a><ul>
 <li><a class="reference internal" href="#performatives-and-messages-content">1. Performatives and Messages content</a></li>
 <li><a class="reference internal" href="#agents-and-communication">2. Agents and communication</a></li>
 </ul>
@@ -372,7 +373,7 @@ have the three following information:</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/part-7.rst.txt"
+      <li><a href="sources/part-7.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

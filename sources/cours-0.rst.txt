@@ -1,10 +1,9 @@
-Multiagent Systems: architercture and reasoning
+General presentation of the course
 ================================================================
 
-General presentation of the course (Agenda)
+Agenda
 -------------------------------------------
 
-This course aims at presenting basic notions and concepts of multi-agent systems. It is organised as follows:
 
 1. Friday, March the 5th, 2021 : Introduction to MAS : definitions and implementation of a platform
 2. Friday, March the 12th, 2021 : Multiagent simulation : preys and predators
@@ -18,14 +17,15 @@ This course aims at presenting basic notions and concepts of multi-agent systems
 Contents
 -------------
 
-The first three sessions will give you the basics of MAS architectures and platforms. Based on this knowledge, you will implement a simple multi-agent based simulation (session 2) that will be evaluated by the teachers. This evaluation will be based on your source code and a very short report of your work. Its aim is to assess that you have acquired the basics of MAS.
+The first three sessions will give you the basics of MAS architectures and platforms. Based on this knowledge, you will implement a simple multi-agent based simulation (session 2) that will be evaluated by the teachers. This evaluation will be based on your source code and a very short report of your work. 
+Its aim is to assess that you have acquired the basics of MAS.
 
-Sessions 3 to 7 will be dedicated to a more complex project that combines argumentation and negotiation models with the MAS architecture. This will give rise to a second multi-agent based model.
+Sessions 4 to 7 will be dedicated to a more complex project that combines 
+argumentation and negotiation models with the MAS architecture. This will give rise to a second multi-agent based model.
 
 
-
-References
-~~~~~~~~~~
+Some References
+--------------------
 
 - Ferber, J. (1995), *Les Systèmes Multi-Agents*, InterEditions. **(French version)**
 - Ferber, J. (1999), *Multi-agent systems: An introduction to distributed artificial intelligence*, Addison Wesley. **(English version)**

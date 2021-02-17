@@ -3,12 +3,23 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Multiagent Systems: architercture and reasoning
-===================================================
+Welcome to the course "Multiagent Systems: architecture and reasoning"
+=======================================================================
+
+Multi-agent systems (MAS) are currently widely used, especially for complex applications requiring interaction between several entities. More specifically, they are used in applications where it is necessary to solve problems in a distributed manner (data processing) or in the design of distributed systems in which each component has some degree of autonomy (control of processes). Some examples of applications are trading agents, drones, smart grids. 
+
+
+.. figure:: img/welcome.png
+  :width: 250
+  :align: center
+
+This course will begin with an introduction to the notion of agent and multi-agent systems. It will present the concepts that will lead to an understanding of what an agent is and how it can be built. Then, we will address a classical problem of MAS, namely how to model and simulate a situation through the concept of agents. 
+The idea is to give a basis for understanding how agent-based simulations can be used as a tool for understanding human societies or complex problems and situations. Besides, we will discuss how agents can communicate and interact to solve problems, and more specifically, to make non-centralized decisions. For this, we will rely on negotiation protocols based on argumentation theory, a process of constructing and evaluating arguments (positive and negative reasons/evidence) to resolve conflicts.
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Contents
 
    cours-0
    cours-1

@@ -6,7 +6,7 @@
 
    </strike> 
 
-5.1. Remember
+5.1. Previously...
 ====================
 
 In the last session, we started the discussion about an argumentation-based negotiation  agent (see figure below). 
@@ -571,7 +571,7 @@ Agent 2 may reply by:
 4. Status of arguments? 
 ------------------------
 
-. Indeed, an argumentation frameworks encodes, through the attack relations, 
+Indeed, an argumentation frameworks encodes, through the attack relations, 
 the existing conflicts within a set of arguments.
 A formal method to identify conflicts outcomes (i.e. determine which arguments should be accepted) for any argumentation framework is called *argumentation semantics*.
 Two mains approaches to the definition of argumentation semantics: 
@@ -580,9 +580,13 @@ Two mains approaches to the definition of argumentation semantics:
 
 - **The extension-based approach**
 
+5. How to conclude? 
+------------------------
+
+
 
 *Notes*
-----------------------------
+^^^^^^^^^^
 
 .. [#n1] In this course we are mainly interessted by decision making. Thus, we will discuss the structure of arguments withing this setting. 
 
