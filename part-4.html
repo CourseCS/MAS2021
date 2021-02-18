@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>2.1. Multi-Agent Based Simulation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -70,7 +70,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Running the model on a computer.</p></li>
 <li><p>Analysis the execution of the model and the obtained results.</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/simu_def_fish.png"><img alt="_images/simu_def_fish.png" class="align-center" src="_images/simu_def_fish.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/simu_def_fish.png"><img alt="images/simu_def_fish.png" class="align-center" src="images/simu_def_fish.png" style="width: 450px;" /></a>
 <p>This definition clearly shows the importance of the model and its development for the design of a simulation.</p>
 </div>
 <div class="section" id="simulation-as-an-experimental-process">
@@ -87,7 +87,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Experimentation: run the actual simulation to recover desired results and perform a sensitivity analysis of the model taccording to the initial parameters.</p></li>
 <li><p>Interpretation of the results: conclude on the model from the results obtained.</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/simu_det_fish.png"><img alt="_images/simu_det_fish.png" class="align-center" src="_images/simu_det_fish.png" style="width: 650px;" /></a>
+<a class="reference internal image-reference" href="images/simu_det_fish.png"><img alt="images/simu_det_fish.png" class="align-center" src="images/simu_det_fish.png" style="width: 650px;" /></a>
 <p>This more complete description provides a better idea of what a computer simulation is and the different challenges to be overcome. It also introduces the validation and verification steps in a simulation: these two steps are fundamental and cannot be dissociated from the experimental process (even more in the context of a computer simulation).</p>
 </div>
 <div class="section" id="dynamic-systems">
@@ -103,7 +103,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>The <em>internal structure</em> of the system: its internal state and its intrinsic functioning (its dynamics).</p></li>
 </ul>
 <p>Thus, at the highest level of abstraction, a dynamic system is seen as a black box which has an input, an output and an internal structure as shown in the following figure:</p>
-<a class="reference internal image-reference" href="_images/dyn_sys.png"><img alt="_images/dyn_sys.png" class="align-center" src="_images/dyn_sys.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/dyn_sys.png"><img alt="images/dyn_sys.png" class="align-center" src="images/dyn_sys.png" style="width: 450px;" /></a>
 <p>The external behavior of the system is defined by the relationship between the history of inputs and the history of observed output results. In other words, it characterizes how the system reacts from the observer’s point of view at the input / output level (I/O).</p>
 <p>The internal structure of the system is defined according to three parameters:</p>
 <ul class="simple">
@@ -120,7 +120,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <p>There are three types of time representations:</p>
 <ul>
 <li><p><em>Continuous</em> time models: in a finite time interval, the system state variables change in value infinitely often, ie continuously.</p>
-<a class="reference internal image-reference" href="_images/continuous.png"><img alt="_images/continuous.png" class="align-center" src="_images/continuous.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/continuous.png"><img alt="images/continuous.png" class="align-center" src="images/continuous.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <div class="admonition warning">
@@ -129,23 +129,23 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <ul>
 <li><p><em>Discrete</em> time models: the time axis is discretized according to a constant period of time called time step (dt). The evolution of the system state variables is done in a discrete way, ie instantaneous, from t to t + dt.</p>
-<a class="reference internal image-reference" href="_images/discrete.png"><img alt="_images/discrete.png" class="align-center" src="_images/discrete.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/discrete.png"><img alt="images/discrete.png" class="align-center" src="images/discrete.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The simulation of discrete models is easy. When the functions which implement the dynamics of the system are clearly defined, it is only necessary to set up an algorithm that applies these functions and then increments time.</p>
-<a class="reference internal image-reference" href="_images/time_discrete.png"><img alt="_images/time_discrete.png" class="align-center" src="_images/time_discrete.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/time_discrete.png"><img alt="images/time_discrete.png" class="align-center" src="images/time_discrete.png" style="width: 450px;" /></a>
 </div>
 <ul>
 <li><p><em>Discrete event</em> time models: the time axis is generally continuous, ie represented by a real number. However, unlike continuous models, system state variables change discretely to specific times that are called <em>events</em>.</p>
-<a class="reference internal image-reference" href="_images/events.png"><img alt="_images/events.png" class="align-center" src="_images/events.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/events.png"><img alt="images/events.png" class="align-center" src="images/events.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There are three ways to simulate discrete event time models: (1) activity scanning, (2) interaction process and (3) event sceduling. The last one is the most common way and is described by the figure below.</p>
-<a class="reference internal image-reference" href="_images/time_event.png"><img alt="_images/time_event.png" class="align-center" src="_images/time_event.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/time_event.png"><img alt="images/time_event.png" class="align-center" src="images/time_event.png" style="width: 450px;" /></a>
 </div>
 </div>
 <div class="section" id="modeling-simulation-theory">
@@ -160,7 +160,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>The <em>simulator</em>. It refers to any computing system capable of executing the model and generate its behavior. By separating a model from its simulator, a model can be run by different simulators which increases its portability.</p></li>
 <li><p>The <em>simulation relationship</em>. It defines the notion of validity of the model. <em>Does the modeling which is made of the system is an acceptable simplification of this one according to the qualitative criteria chosen and the objectives of the experimentation ?</em></p></li>
 <li><p>The <em>modeling relationship</em>. It defines the notion of validity of the simulator. <em>Does the simulator correctly generates the behavior of the model ? Does the simulator reproduces the mechanisms defined in the model (without introducing errors) ?</em></p>
-<a class="reference internal image-reference" href="_images/resume.png"><img alt="_images/resume.png" class="align-center" src="_images/resume.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/resume.png"><img alt="images/resume.png" class="align-center" src="images/resume.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <p>The Modeling and Simulation theory makes it possible to highlight, through the modeling and simulation relationships, important issues related to simulation such as the simplicity of the model, the behavior of the simulated model, the validation of the simulation, the reproducibility of the simulation, etc. We will discuss some of these issues in more detail later.</p>
@@ -174,9 +174,9 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Take the example of the prey / predatory model: it is used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.</p>
-<a class="reference internal image-reference" href="_images/preypredatorebm.png"><img alt="_images/preypredatorebm.png" class="align-center" src="_images/preypredatorebm.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="images/preypredatorebm.png"><img alt="images/preypredatorebm.png" class="align-center" src="images/preypredatorebm.png" style="width: 250px;" /></a>
 <p>It focus on the global variation of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:</p>
-<a class="reference internal image-reference" href="_images/preypredatorebmout.png"><img alt="_images/preypredatorebmout.png" class="align-center" src="_images/preypredatorebmout.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/preypredatorebmout.png"><img alt="images/preypredatorebmout.png" class="align-center" src="images/preypredatorebmout.png" style="width: 450px;" /></a>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -194,13 +194,13 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <div class="section" id="an-agent-is-a-dynamic-system">
 <h2>2. An agent is a dynamic system<a class="headerlink" href="#an-agent-is-a-dynamic-system" title="Permalink to this headline">¶</a></h2>
 <p>Modeling a dynamic system using agents is simple because it is obvious that an agent can be considered as a dynamic system within the meaning of systems theory. Indeed, an agent has an internal state that changes according to his perceptions (inputs) and it has behaviors to react in its environment.</p>
-<img alt="_images/dyn_sys_agent.png" class="align-center" src="_images/dyn_sys_agent.png" />
+<img alt="images/dyn_sys_agent.png" class="align-center" src="images/dyn_sys_agent.png" />
 <p>As shown in the figure above, an agent is defined by a set of perceptions (inputs), a set of actions (outputs) and we speak of the internal architecture of the agent to denote the mechanisms that define its intrinsic dynamics.</p>
 </div>
 <div class="section" id="multi-agent-modeling">
 <h2>3. Multi-agent modeling<a class="headerlink" href="#multi-agent-modeling" title="Permalink to this headline">¶</a></h2>
 <p>The multi-agent approach is based on an individual-centered approach: it considers that it is possible to model not only individuals and their behaviors, but also the interactions that take place between these individuals. It considers that the overall dynamics of a system, at the macroscopic level, result directly from the interactions between the individuals who compose this system at the microscopic level. Thus, while EBM model the relationships that exist between the different identified entities of a system using mathematical equations, the multi-agent approach directly models the interactions generated by individual behaviors.</p>
-<a class="reference internal image-reference" href="_images/mabs.png"><img alt="_images/mabs.png" class="align-center" src="_images/mabs.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/mabs.png"><img alt="images/mabs.png" class="align-center" src="images/mabs.png" style="width: 450px;" /></a>
 <p>To create a multi-agent simulation, you must follow the principles of the agent paradigm presented in the previous course:</p>
 <ul class="simple">
 <li><p>Creating an artificial world made up of interacting agents (Agent-Based Models) living in an environment.</p></li>
@@ -216,31 +216,31 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Predator: move, eat, reproduce, hunt and die.</p></li>
 </ul>
 <p>Each agent activate one of its behavior according to its perception of the environment. This simulation focus on the local behaviors of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:</p>
-<a class="reference internal image-reference" href="_images/prey_predator.jpg"><img alt="_images/prey_predator.jpg" class="align-center" src="_images/prey_predator.jpg" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="images/prey_predator.jpg"><img alt="images/prey_predator.jpg" class="align-center" src="images/prey_predator.jpg" style="width: 350px;" /></a>
 </div>
 <p>Due to its ability to model the interactions between entities and the variations of a system at the micro level, Multi-Agent Based Simulation is used in many fields of application.</p>
 <ul>
 <li><p>Special effects in movies:</p>
 <div class="figure align-center" id="id1">
-<a class="reference internal image-reference" href="_images/massive.png"><img alt="_images/massive.png" src="_images/massive.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/massive.png"><img alt="images/massive.png" src="images/massive.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Massive software for crowd simulation</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Video games:</p>
 <div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="_images/glassbox.png"><img alt="_images/glassbox.png" src="_images/glassbox.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/glassbox.png"><img alt="images/glassbox.png" src="images/glassbox.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Glassbox engine for SimCity</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Simulation of complex systems:</p>
 <div class="figure align-center" id="id3">
-<a class="reference internal image-reference" href="_images/flocking.png"><img alt="_images/flocking.png" src="_images/flocking.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/flocking.png"><img alt="images/flocking.png" src="images/flocking.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Flock of birds simulation</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Collective robotics:</p>
 <div class="figure align-center" id="id4">
-<a class="reference internal image-reference" href="_images/col_rob.png"><img alt="_images/col_rob.png" src="_images/col_rob.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/col_rob.png"><img alt="images/col_rob.png" src="images/col_rob.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Collective behaviors for cooperative actions</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -370,7 +370,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <p>Now run this file; this should launch the interactive visualization server and open your web browser automatically. (If the browser doesn’t open automatically, try pointing it at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8521</span></code> manually. If this doesn’t show you the visualization, something may have gone wrong with the server launch.)</p>
 <p>You should see something like the figure below: the model title, a grid filled with red circles representing agents, and a set of buttons to the right for running and resetting the model.</p>
-<a class="reference internal image-reference" href="_images/viz_redcircles.png"><img alt="_images/viz_redcircles.png" class="align-center" src="_images/viz_redcircles.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/viz_redcircles.png"><img alt="images/viz_redcircles.png" class="align-center" src="images/viz_redcircles.png" style="width: 450px;" /></a>
 <ul class="simple">
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">step</span></code> to advance the model by one step, and the agents will move around.</p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">run</span></code> and the agents will keep moving around, at the rate set by the <code class="docutils literal notranslate"><span class="pre">fps</span></code> (frames per second) slider at the top. Try moving it around and see how the speed of the model changes.</p></li>
@@ -399,7 +399,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </pre></div>
 </div>
 <p>Now launch the server again - this will open a new browser window pointed at the updated visualization. Initially it looks the same, but advance the model and smaller grey circles start to appear. Note that since the zero-wealth agents have a higher layer number, they are drawn on top of the red agents.</p>
-<a class="reference internal image-reference" href="_images/viz_greycircles.png"><img alt="_images/viz_greycircles.png" class="align-center" src="_images/viz_greycircles.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/viz_greycircles.png"><img alt="images/viz_greycircles.png" class="align-center" src="images/viz_greycircles.png" style="width: 450px;" /></a>
 </div>
 <div class="section" id="adding-a-chart">
 <h3>Adding a chart<a class="headerlink" href="#adding-a-chart" title="Permalink to this headline">¶</a></h3>
@@ -420,7 +420,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </pre></div>
 </div>
 <p>Launch the visualization and start a model run, and you’ll see a line chart underneath the grid. Every step of the model, the line chart updates along with the grid. Reset the model, and the chart resets too.</p>
-<a class="reference internal image-reference" href="_images/viz_chart.png"><img alt="_images/viz_chart.png" class="align-center" src="_images/viz_chart.png" style="width: 350px;" /></a>
+<a class="reference internal image-reference" href="images/viz_chart.png"><img alt="images/viz_chart.png" class="align-center" src="images/viz_chart.png" style="width: 350px;" /></a>
 </div>
 <div class="section" id="user-settable-parameter">
 <h3>User settable parameter<a class="headerlink" href="#user-settable-parameter" title="Permalink to this headline">¶</a></h3>
@@ -495,7 +495,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <ol class="arabic simple" start="4">
 <li><p>Tune the initial parameters to find a balanced state in the model: none of the species disappears during the simulation. The output graph should be like that:</p></li>
 </ol>
-<a class="reference internal image-reference" href="_images/preypredatorebmout.png"><img alt="_images/preypredatorebmout.png" class="align-center" src="_images/preypredatorebmout.png" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/preypredatorebmout.png"><img alt="images/preypredatorebmout.png" class="align-center" src="images/preypredatorebmout.png" style="width: 450px;" /></a>
 </div>
 </div>
 </div>
@@ -557,7 +557,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/part-4.rst.txt"
+      <li><a href="sources/part-4.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

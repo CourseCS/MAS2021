@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>5.1. Previsously !! &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -45,7 +45,7 @@
 <h1>5.1. Previsously !!<a class="headerlink" href="#previsously" title="Permalink to this headline">¶</a></h1>
 <p>In the last session, we started the discussion about an argumentation-based negotiation agent (see figure below for recall).</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/negotiatingagent2.jpeg"><img alt="_images/negotiatingagent2.jpeg" src="_images/negotiatingagent2.jpeg" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/negotiatingagent2.jpeg"><img alt="images/negotiatingagent2.jpeg" src="images/negotiatingagent2.jpeg" style="width: 450px;" /></a>
 </div>
 <p>In this session we will pursue the discussion and address more precisely what do we mean by arguing and argumentation.</p>
 </div>
@@ -85,7 +85,7 @@ knowledge base. Which conclusion are justified depends on the attack and the def
 among the arguments which can be constructed from the knowledge base.</p>
 <p>The classical steps in an argumentation process are depticted in the following figure.</p>
 <div class="figure align-center" id="id5">
-<a class="reference internal image-reference" href="_images/arguprocess.jpg"><img alt="_images/arguprocess.jpg" src="_images/arguprocess.jpg" style="width: 450px;" /></a>
+<a class="reference internal image-reference" href="images/arguprocess.jpg"><img alt="images/arguprocess.jpg" src="images/arguprocess.jpg" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text">Generic Steps of an Argumentation Process</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>It includes:</p>
@@ -225,7 +225,7 @@ different order of preferences among the criteria themselves (total order in our
 <div class="section" id="questions">
 <h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
 <p>1- In your folder you should have the package <em>arguments</em> as it is depicted in the following picture. This package contains three classes. If this is not the case, you can download it here.</p>
-<a class="reference internal image-reference" href="_images/arguments_package.jpg"><img alt="_images/arguments_package.jpg" class="align-center" src="_images/arguments_package.jpg" style="width: 170px;" /></a>
+<a class="reference internal image-reference" href="images/arguments_package.jpg"><img alt="images/arguments_package.jpg" class="align-center" src="images/arguments_package.jpg" style="width: 170px;" /></a>
 <p>2-  In the class  <span class="math notranslate nohighlight">\(\texttt{Comparison}\)</span>  implement the  comparison object used in an argument object (<span class="math notranslate nohighlight">\(C_i \succ C_j\)</span> ).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
 
@@ -395,7 +395,7 @@ and only if <span class="math notranslate nohighlight">\(\exists \alpha \in \phi
 </dd>
 </dl>
 <p><strong>Example 4</strong></p>
-<a class="reference internal image-reference" href="_images/attack_ex.png"><img alt="_images/attack_ex.png" class="align-center" src="_images/attack_ex.png" style="width: 770px;" /></a>
+<a class="reference internal image-reference" href="images/attack_ex.png"><img alt="images/attack_ex.png" class="align-center" src="images/attack_ex.png" style="width: 770px;" /></a>
 <p>Moreover, let us remark that both types of defeaters, discussed above, represent negative relations
 between arguments. However, recent studies have proposed another kind of relation between
 argument, namely a <em>positive relation</em>, called <em>support</em> relation [Verheij, 2002; Amgoud et al.,
@@ -427,13 +427,13 @@ Moreover, at the end, given the set of arguments and their attack relations, we 
 <p>The following figure represents a graph where we have 5 arguments (each color represent an argument) and 4 attack relations (represented bu the red dashed lines). Note that the black lines inside a
 color represent the logical inference of an argument from the premises to the conclusion.</p>
 <div class="figure align-center" id="id6">
-<a class="reference internal image-reference" href="_images/attack_prakken.jpeg"><img alt="_images/attack_prakken.jpeg" src="_images/attack_prakken.jpeg" style="width: 870px;" /></a>
+<a class="reference internal image-reference" href="images/attack_prakken.jpeg"><img alt="images/attack_prakken.jpeg" src="images/attack_prakken.jpeg" style="width: 870px;" /></a>
 <p class="caption"><span class="caption-text">Example of an argument graph (Prakken, 2014)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>More generally, the arguments and their relation can be represented by what we call “abstract argumentation system”. For our previsous example we may have the following:</p>
 <p><strong>Example 7</strong></p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="_images/abstract.png"><img alt="_images/abstract.png" src="_images/abstract.png" style="width: 270px;" /></a>
+<a class="reference internal image-reference" href="images/abstract.png"><img alt="images/abstract.png" src="images/abstract.png" style="width: 270px;" /></a>
 </div>
 <p>More formally, we define an argumentation framework or system as follows:</p>
 <p><strong>Definition 4 (Argumentation System)</strong></p>
@@ -553,7 +553,7 @@ arguments.</p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/part-8.rst.txt"
+      <li><a href="sources/part-8.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

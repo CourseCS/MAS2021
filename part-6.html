@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>3.4. Interactions in the Mesa library &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script type="text/javascript" src="static/jquery.js"></script>
+    <script type="text/javascript" src="static/underscore.js"></script>
+    <script type="text/javascript" src="static/doctools.js"></script>
+    <script type="text/javascript" src="static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -48,10 +48,10 @@
 <h2>1. Implementing messaging communication in Mesa<a class="headerlink" href="#implementing-messaging-communication-in-mesa" title="Permalink to this headline">¶</a></h2>
 <p>With the <strong>Mesa</strong> library, it is possible to set up indirect interaction mechanisms through the environment (like a <em>blackboard</em> or <em>stigmergy</em> mechanism, see today’s session, section 1). However, it does not handle direct interactions such as message communication. So, first, we will implement our own communication layer in <strong>Mesa</strong>. This communication layer will be necessary for the realization of the final project.</p>
 <p>As seen previously, the messaging communication in MAS is a four step mechanism.</p>
-<img alt="_images/messages.png" class="align-center" src="_images/messages.png" />
+<img alt="images/messages.png" class="align-center" src="images/messages.png" />
 <p>Before implementing the communicating agents and according to the picture, we must create: (1) a <code class="docutils literal notranslate"><span class="pre">Message</span></code> object, (2) a <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> object and (3) a list of allowed performative for messages.</p>
 <p>To do so, create a new folder hierarchy as shown in the following picture:</p>
-<img alt="_images/part5_folders.png" class="align-center" src="_images/part5_folders.png" />
+<img alt="images/part5_folders.png" class="align-center" src="images/part5_folders.png" />
 <p>Here is the description of what each folder will contains:</p>
 <ul class="simple">
 <li><p><strong>mesa</strong>: root folder which will contain your python codes using the communication layer;</p></li>
@@ -163,7 +163,7 @@
                 <span class="k">return</span> <span class="s1">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
-<img alt="_images/part5_folders_message.png" class="align-center" src="_images/part5_folders_message.png" />
+<img alt="images/part5_folders_message.png" class="align-center" src="images/part5_folders_message.png" />
 </div>
 <div class="section" id="mailbox">
 <h3>Mailbox<a class="headerlink" href="#mailbox" title="Permalink to this headline">¶</a></h3>
@@ -244,7 +244,7 @@
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Message</span></code> and <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> classes being created, we will test them. Go to the <strong>communication</strong> folder and create a new <em>runtests.py</em> file. In this file, we will incrementally add tests to verify that our implementations are working well.</p>
-<img alt="_images/part5_folders_mailbox.png" class="align-center" src="_images/part5_folders_mailbox.png" />
+<img alt="images/part5_folders_mailbox.png" class="align-center" src="images/part5_folders_mailbox.png" />
 <p><strong>Practice yourself!</strong></p>
 <p>Let’s start testing the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class: using the <code class="docutils literal notranslate"><span class="pre">assert()</span></code> function. Create three messages with various performatives, one mailbox and test the different methods of the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class (<code class="docutils literal notranslate"><span class="pre">receive_messages(message)</span></code>, <code class="docutils literal notranslate"><span class="pre">get_new_messages()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_messages()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_messages_from_exp()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_messages_from_performative()</span></code>). Before looking at the solution, try to implement the tests by your own.</p>
 <p>Below, a possible implementation of the <em>runtests.py</em> file:</p>
@@ -287,7 +287,7 @@
 </pre></div>
 </div>
 <p>If you see all the <em>OK</em> messages appear, it means that your classes are well implemented and will behave correctly. This is called doing unit tests. It is very important in making sure your code is robust and bugs free.</p>
-<img alt="_images/part5_folders_tests.png" class="align-center" src="_images/part5_folders_tests.png" />
+<img alt="images/part5_folders_tests.png" class="align-center" src="images/part5_folders_tests.png" />
 </div>
 <div class="section" id="message-service">
 <h3>Message Service<a class="headerlink" href="#message-service" title="Permalink to this headline">¶</a></h3>
@@ -651,7 +651,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/part-6.rst.txt"
+      <li><a href="sources/part-6.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
