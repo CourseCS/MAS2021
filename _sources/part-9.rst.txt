@@ -108,12 +108,13 @@ This algorithm is represented by the following transition state diagram and a po
 
 
 
+
 .. image:: img/ex_nego.png
   :width: 350
   :align: center
 
 
-We recall that the different perfomatives used in the algorithm were described in the previous sessions. 
+The different perfomatives used in the algorithm are described in the previous sessions. 
 
 Questions
 -------------------------
@@ -132,14 +133,15 @@ Questions
 - Make a small analysis for each wining agent:  how much negotiation he has won, which item is the most defended, which criterion is the most put forward, and so on (you may choose your own statistics). 
 
 
-6.5 To go further...
+6.4. To go further...
 ==========================================
 
-This section is for those everything runs well and the previsous algorithm is completely implemented. It is based on the last section of the previous session, namely "Status of arguments". 
+This section is for those everything runs well and the previous algorithm is completely implemented. It is based on the last section of the previous session, namely "Status of arguments". 
 
-1- From :math:`n>4` (the number of agents),  build the argument graphs such that:  (from the different negotiations) 
+1- From :math:`n>4` (the number of agents),  build the argument graphs such that:  the nodes correspond to the winning argument(s) at the end of each negotiation and the edges are the attack relations between these arguments. 
 
-2- calculate all the **acceptable arguments** according to a semantic of your choice. What conclusion can be deduced? 
+2- Calculate the set of **acceptable arguments** according to a given semantic of your choice. What conclusion can be deduced? 
+
 
 
 

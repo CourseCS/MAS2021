@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>2.1. Multi-Agent Based Simulation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -44,10 +44,11 @@
   <div class="section" id="multi-agent-based-simulation-introduction">
 <h1>2.1. Multi-Agent Based Simulation: Introduction<a class="headerlink" href="#multi-agent-based-simulation-introduction" title="Permalink to this headline">¶</a></h1>
 <p>INTRODUCTION TO BE DONE HERE</p>
-<div class="section" id="simulation">
-<h2>1. Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="a-simulation-definition">
-<h3>a) Simulation definition<a class="headerlink" href="#a-simulation-definition" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="simulation-in-general">
+<h1>2.2. Simulation in general<a class="headerlink" href="#simulation-in-general" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="simulation-definition">
+<h2>1. Simulation definition<a class="headerlink" href="#simulation-definition" title="Permalink to this headline">¶</a></h2>
 <p>Simulation is one of the most effective decision support tools available to scientists, designers and managers of complex systems. It consists in building a model of a real system and conducting experiments on this model in order to understand the behavior of this system and improve its performance. Here is one of the definitions of a simulation:</p>
 <blockquote>
 <div><p>“The process of designing a model of a real system and conducting experiments with this model for the purpose either of understanding the behaviour of the system or of evaluating various strategies (within the limits imposed by a criterion or a set of criteria) for the operation of the system.” Shannon, 1998.</p>
@@ -57,8 +58,8 @@
 denomination is in fact used to clearly distinguish the phenomenon to be studied from its model which is also considered as a system.</p>
 <p>Shannon adds that a simulation process is constituted by the construction of the model and by the analytical use which is made of the model to study the system.</p>
 </div>
-<div class="section" id="b-computeur-simulation-definition">
-<h3>b) Computeur simulation definition<a class="headerlink" href="#b-computeur-simulation-definition" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="computeur-simulation-definition">
+<h2>2. Computeur simulation definition<a class="headerlink" href="#computeur-simulation-definition" title="Permalink to this headline">¶</a></h2>
 <p>Computer simulation is in fact inseparable from the <em>experimental process</em> which is linked to its objective.</p>
 <blockquote>
 <div><p>“Computer simulation is the discipline of designing a model of an actual or theoretical physical system, executing the model on a digital computer, and analyzing the execution output.” Fishwick, 1997.</p>
@@ -69,11 +70,11 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Running the model on a computer.</p></li>
 <li><p>Analysis the execution of the model and the obtained results.</p></li>
 </ol>
-<img alt="images/simu_def_fish.png" class="align-center" src="images/simu_def_fish.png" />
+<a class="reference internal image-reference" href="_images/simu_def_fish.png"><img alt="_images/simu_def_fish.png" class="align-center" src="_images/simu_def_fish.png" style="width: 450px;" /></a>
 <p>This definition clearly shows the importance of the model and its development for the design of a simulation.</p>
 </div>
-<div class="section" id="c-simulation-as-an-experimental-process">
-<h3>c) Simulation as an experimental process<a class="headerlink" href="#c-simulation-as-an-experimental-process" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="simulation-as-an-experimental-process">
+<h2>3. Simulation as an experimental process<a class="headerlink" href="#simulation-as-an-experimental-process" title="Permalink to this headline">¶</a></h2>
 <p>Most of the time, Fishwick’s definition is sufficient to illustrate clearly and simply the different stages that constitute the development of a computer simulation. However, it may be interesting to detail these steps:</p>
 <ol class="arabic simple">
 <li><p>Definition of the problem: clearly define the objectives of the study. What are the questions we want to answer?</p></li>
@@ -86,11 +87,11 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Experimentation: run the actual simulation to recover desired results and perform a sensitivity analysis of the model taccording to the initial parameters.</p></li>
 <li><p>Interpretation of the results: conclude on the model from the results obtained.</p></li>
 </ol>
-<img alt="images/simu_det_fish.png" class="align-center" src="images/simu_det_fish.png" />
+<a class="reference internal image-reference" href="_images/simu_det_fish.png"><img alt="_images/simu_det_fish.png" class="align-center" src="_images/simu_det_fish.png" style="width: 650px;" /></a>
 <p>This more complete description provides a better idea of what a computer simulation is and the different challenges to be overcome. It also introduces the validation and verification steps in a simulation: these two steps are fundamental and cannot be dissociated from the experimental process (even more in the context of a computer simulation).</p>
 </div>
-<div class="section" id="d-dynamic-systems">
-<h3>d) Dynamic systems<a class="headerlink" href="#d-dynamic-systems" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dynamic-systems">
+<h2>4. Dynamic systems<a class="headerlink" href="#dynamic-systems" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have an idea of what a computer simulation is, it is worth presenting the different concepts that are manipulated to model real systems. In this context, the notion of <em>dynamic system</em> is essential. By <em>dynamic system</em> we mean:</p>
 <blockquote>
 <div><p>“Any formal construct which provides general modeling concepts for various kind of disciplines.” Rozenblit &amp; Zeigler, 1993.</p>
@@ -102,7 +103,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>The <em>internal structure</em> of the system: its internal state and its intrinsic functioning (its dynamics).</p></li>
 </ul>
 <p>Thus, at the highest level of abstraction, a dynamic system is seen as a black box which has an input, an output and an internal structure as shown in the following figure:</p>
-<img alt="images/dyn_sys.png" class="align-center" src="images/dyn_sys.png" />
+<a class="reference internal image-reference" href="_images/dyn_sys.png"><img alt="_images/dyn_sys.png" class="align-center" src="_images/dyn_sys.png" style="width: 450px;" /></a>
 <p>The external behavior of the system is defined by the relationship between the history of inputs and the history of observed output results. In other words, it characterizes how the system reacts from the observer’s point of view at the input / output level (I/O).</p>
 <p>The internal structure of the system is defined according to three parameters:</p>
 <ul class="simple">
@@ -113,13 +114,13 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <p>Generally, the last two points are implicitly grouped together when talking about the dynamics of the system which concerns the mechanisms of evolution of the system over time, as opposed to the state of the system which refers to the situation in which the system is at a specific time step.</p>
 <p>The important point to remember here is the distinction that systems theory makes between the different aspects of a <em>dynamic system</em>: behavior and internal structure.</p>
 </div>
-<div class="section" id="e-the-different-temporal-models-used-for-the-representation-of-dynamic-systems">
-<h3>e) The different temporal models used for the representation of dynamic systems<a class="headerlink" href="#e-the-different-temporal-models-used-for-the-representation-of-dynamic-systems" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="the-different-temporal-models-used-for-the-representation-of-dynamic-systems">
+<h2>5. The different temporal models used for the representation of dynamic systems<a class="headerlink" href="#the-different-temporal-models-used-for-the-representation-of-dynamic-systems" title="Permalink to this headline">¶</a></h2>
 <p>A dynamic system is defined by how it evolves over time. So, one of the most important features of a model which represent a dynamic system is how time is represented.</p>
 <p>There are three types of time representations:</p>
 <ul>
 <li><p><em>Continuous</em> time models: in a finite time interval, the system state variables change in value infinitely often, ie continuously.</p>
-<img alt="images/continuous.png" class="align-center" src="images/continuous.png" />
+<a class="reference internal image-reference" href="_images/continuous.png"><img alt="_images/continuous.png" class="align-center" src="_images/continuous.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <div class="admonition warning">
@@ -128,27 +129,27 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <ul>
 <li><p><em>Discrete</em> time models: the time axis is discretized according to a constant period of time called time step (dt). The evolution of the system state variables is done in a discrete way, ie instantaneous, from t to t + dt.</p>
-<img alt="images/discrete.png" class="align-center" src="images/discrete.png" />
+<a class="reference internal image-reference" href="_images/discrete.png"><img alt="_images/discrete.png" class="align-center" src="_images/discrete.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The simulation of discrete models is easy. When the functions which implement the dynamics of the system are clearly defined, it is only necessary to set up an algorithm that applies these functions and then increments time.</p>
-<img alt="images/time_discrete.png" class="align-center" src="images/time_discrete.png" />
+<a class="reference internal image-reference" href="_images/time_discrete.png"><img alt="_images/time_discrete.png" class="align-center" src="_images/time_discrete.png" style="width: 450px;" /></a>
 </div>
 <ul>
 <li><p><em>Discrete event</em> time models: the time axis is generally continuous, ie represented by a real number. However, unlike continuous models, system state variables change discretely to specific times that are called <em>events</em>.</p>
-<img alt="images/events.png" class="align-center" src="images/events.png" />
+<a class="reference internal image-reference" href="_images/events.png"><img alt="_images/events.png" class="align-center" src="_images/events.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>There are three ways to simulate discrete event time models: (1) activity scanning, (2) interaction process and (3) event sceduling. The last one is the most common way and is described by the figure below.</p>
-<img alt="images/time_event.png" class="align-center" src="images/time_event.png" />
+<a class="reference internal image-reference" href="_images/time_event.png"><img alt="_images/time_event.png" class="align-center" src="_images/time_event.png" style="width: 450px;" /></a>
 </div>
 </div>
-<div class="section" id="f-modeling-simulation-theory">
-<h3>f) Modeling &amp; Simulation theory<a class="headerlink" href="#f-modeling-simulation-theory" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="modeling-simulation-theory">
+<h2>6. Modeling &amp; Simulation theory<a class="headerlink" href="#modeling-simulation-theory" title="Permalink to this headline">¶</a></h2>
 <p>Because to what it allows, computer simulation should not be only considered as a tool but as a discipline and should therefore be theorized. This is the goal of Zeigler’s <em>Modeling and Simulation theory</em>.</p>
 <p>Thereby, the Modeling and Simulation theory helps to identify the different entities that constitute a simulation and study the relations that exist between these different entities. This is to give precise definitions to the different concepts that are manipulated in the field of computer simulation.</p>
 <p>There are 6 entities clearly defined in the Modeling and Simulation theory:</p>
@@ -159,23 +160,23 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>The <em>simulator</em>. It refers to any computing system capable of executing the model and generate its behavior. By separating a model from its simulator, a model can be run by different simulators which increases its portability.</p></li>
 <li><p>The <em>simulation relationship</em>. It defines the notion of validity of the model. <em>Does the modeling which is made of the system is an acceptable simplification of this one according to the qualitative criteria chosen and the objectives of the experimentation ?</em></p></li>
 <li><p>The <em>modeling relationship</em>. It defines the notion of validity of the simulator. <em>Does the simulator correctly generates the behavior of the model ? Does the simulator reproduces the mechanisms defined in the model (without introducing errors) ?</em></p>
-<img alt="images/resume.png" class="align-center" src="images/resume.png" />
+<a class="reference internal image-reference" href="_images/resume.png"><img alt="_images/resume.png" class="align-center" src="_images/resume.png" style="width: 450px;" /></a>
 </li>
 </ul>
 <p>The Modeling and Simulation theory makes it possible to highlight, through the modeling and simulation relationships, important issues related to simulation such as the simplicity of the model, the behavior of the simulated model, the validation of the simulation, the reproducibility of the simulation, etc. We will discuss some of these issues in more detail later.</p>
 </div>
 </div>
 <div class="section" id="multi-agent-based-simulation">
-<h2>2. Multi-Agent Based Simulation<a class="headerlink" href="#multi-agent-based-simulation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="a-difficulties-of-classical-modeling">
-<h3>a) Difficulties of classical modeling<a class="headerlink" href="#a-difficulties-of-classical-modeling" title="Permalink to this headline">¶</a></h3>
+<h1>2.3. Multi-Agent Based Simulation<a class="headerlink" href="#multi-agent-based-simulation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="difficulties-of-classical-modeling">
+<h2>1. Difficulties of classical modeling<a class="headerlink" href="#difficulties-of-classical-modeling" title="Permalink to this headline">¶</a></h2>
 <p>To model dynamic systems, a mathematical approach has long been used. Called Equation Based Model (EBM), it is build on an interrelation of a set of equations that captures the variability of a system over time. EBM represents the whole system and does not support an explicit representation of components (top-down). The whole system is globally represented by equations defined at the macroscopic level which does not make it possible to take into account the individual characteristics of the entities that compose the system. Moreover, this level of representation raises the question of the realism and the complexity of the parameters used to formulate the equations which model the system. So, EBM is most naturally used to model central systems.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Take the example of the prey / predatory model: it is used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.</p>
-<img alt="images/preypredatorebm.png" class="align-center" src="images/preypredatorebm.png" />
+<a class="reference internal image-reference" href="_images/preypredatorebm.png"><img alt="_images/preypredatorebm.png" class="align-center" src="_images/preypredatorebm.png" style="width: 250px;" /></a>
 <p>It focus on the global variation of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:</p>
-<img alt="images/preypredatorebmout.png" class="align-center" src="images/preypredatorebmout.png" />
+<a class="reference internal image-reference" href="_images/preypredatorebmout.png"><img alt="_images/preypredatorebmout.png" class="align-center" src="_images/preypredatorebmout.png" style="width: 450px;" /></a>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -190,16 +191,16 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <p>To overcome EBM limitations, it is possible to use models that focus on entities and their interactions (bottom-up) and also considers that the dynamics of the system come from the interactions between the entities.</p>
 </div>
-<div class="section" id="b-an-agent-is-a-dynamic-system">
-<h3>b) An agent is a dynamic system<a class="headerlink" href="#b-an-agent-is-a-dynamic-system" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="an-agent-is-a-dynamic-system">
+<h2>2. An agent is a dynamic system<a class="headerlink" href="#an-agent-is-a-dynamic-system" title="Permalink to this headline">¶</a></h2>
 <p>Modeling a dynamic system using agents is simple because it is obvious that an agent can be considered as a dynamic system within the meaning of systems theory. Indeed, an agent has an internal state that changes according to his perceptions (inputs) and it has behaviors to react in its environment.</p>
-<img alt="images/dyn_sys_agent.png" class="align-center" src="images/dyn_sys_agent.png" />
+<img alt="_images/dyn_sys_agent.png" class="align-center" src="_images/dyn_sys_agent.png" />
 <p>As shown in the figure above, an agent is defined by a set of perceptions (inputs), a set of actions (outputs) and we speak of the internal architecture of the agent to denote the mechanisms that define its intrinsic dynamics.</p>
 </div>
-<div class="section" id="c-multi-agent-modeling">
-<h3>c) Multi-agent modeling<a class="headerlink" href="#c-multi-agent-modeling" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="multi-agent-modeling">
+<h2>3. Multi-agent modeling<a class="headerlink" href="#multi-agent-modeling" title="Permalink to this headline">¶</a></h2>
 <p>The multi-agent approach is based on an individual-centered approach: it considers that it is possible to model not only individuals and their behaviors, but also the interactions that take place between these individuals. It considers that the overall dynamics of a system, at the macroscopic level, result directly from the interactions between the individuals who compose this system at the microscopic level. Thus, while EBM model the relationships that exist between the different identified entities of a system using mathematical equations, the multi-agent approach directly models the interactions generated by individual behaviors.</p>
-<img alt="images/mabs.png" class="align-center" src="images/mabs.png" />
+<a class="reference internal image-reference" href="_images/mabs.png"><img alt="_images/mabs.png" class="align-center" src="_images/mabs.png" style="width: 450px;" /></a>
 <p>To create a multi-agent simulation, you must follow the principles of the agent paradigm presented in the previous course:</p>
 <ul class="simple">
 <li><p>Creating an artificial world made up of interacting agents (Agent-Based Models) living in an environment.</p></li>
@@ -215,31 +216,31 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Predator: move, eat, reproduce, hunt and die.</p></li>
 </ul>
 <p>Each agent activate one of its behavior according to its perception of the environment. This simulation focus on the local behaviors of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:</p>
-<img alt="images/prey_predator.jpg" class="align-center" src="images/prey_predator.jpg" />
+<a class="reference internal image-reference" href="_images/prey_predator.jpg"><img alt="_images/prey_predator.jpg" class="align-center" src="_images/prey_predator.jpg" style="width: 350px;" /></a>
 </div>
 <p>Due to its ability to model the interactions between entities and the variations of a system at the micro level, Multi-Agent Based Simulation is used in many fields of application.</p>
 <ul>
 <li><p>Special effects in movies:</p>
 <div class="figure align-center" id="id1">
-<img alt="images/massive.png" src="images/massive.png" />
+<a class="reference internal image-reference" href="_images/massive.png"><img alt="_images/massive.png" src="_images/massive.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Massive software for crowd simulation</em></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Video games:</p>
 <div class="figure align-center" id="id2">
-<img alt="images/glassbox.png" src="images/glassbox.png" />
+<a class="reference internal image-reference" href="_images/glassbox.png"><img alt="_images/glassbox.png" src="_images/glassbox.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Glassbox engine for SimCity</em></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Simulation of complex systems:</p>
 <div class="figure align-center" id="id3">
-<img alt="images/flocking.png" src="images/flocking.png" />
+<a class="reference internal image-reference" href="_images/flocking.png"><img alt="_images/flocking.png" src="_images/flocking.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Flock of birds simulation</em></span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
 </div>
 </li>
 <li><p>Collective robotics:</p>
 <div class="figure align-center" id="id4">
-<img alt="images/col_rob.png" src="images/col_rob.png" />
+<a class="reference internal image-reference" href="_images/col_rob.png"><img alt="_images/col_rob.png" src="_images/col_rob.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-text"><em>Collective behaviors for cooperative actions</em></span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 </li>
@@ -247,20 +248,20 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 </div>
 <div class="section" id="visualizing-multi-agent-based-simulation">
-<h2>3. Visualizing Multi-Agent Based Simulation<a class="headerlink" href="#visualizing-multi-agent-based-simulation" title="Permalink to this headline">¶</a></h2>
+<h1>2.4. Visualizing Multi-Agent Based Simulation<a class="headerlink" href="#visualizing-multi-agent-based-simulation" title="Permalink to this headline">¶</a></h1>
 <p>As we have seen, simulation creates a digital environment that looks like an artificial laboratory where we can test hypotheses, prospective scenarios or simply the evolution of the system in the future.</p>
 <p>As with any laboratory experiment, it is necessary to be able to follow the evolution of the experiments: with Multi-Agent based Simulation, it is necessary to visualize the evolution of the simulation and to collect data.</p>
 <p>The visualization of the simulation is very important in the context of Multi-Agent based Simulation because the simple and localized rules that allow to reproduce complex and global behaviors of the system are also responsible of the emergence of many phenomena. You can learn more about the emergence capabilities of multi-agent systems at this address: <a class="reference external" href="https://medium.com/scalian/dynamiques-locales-cons%C3%A9quences-globales-97a2ef44ba58">https://medium.com/scalian/dynamiques-locales-cons%C3%A9quences-globales-97a2ef44ba58</a></p>
 <p>In this section, we will present the two features of Mesa that make it possible to make data collection and visualization.</p>
-<div class="section" id="a-collecting-data">
-<h3>a) Collecting data<a class="headerlink" href="#a-collecting-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="collecting-data">
+<h2>1. Collecting data<a class="headerlink" href="#collecting-data" title="Permalink to this headline">¶</a></h2>
 <p>Mesa provides a class which can handle data collection and storage at runtime, which avoids to manipulates tables or dictionaries manually in the model. All this is done via the <code class="docutils literal notranslate"><span class="pre">DataCollector</span></code> class:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.datacollection</span> <span class="kn">import</span> <span class="n">DataCollector</span>
 </pre></div>
 </div>
 <p>The data collector stores three categories of data: model-level variables, agent-level variables, and tables (which are a catch-all for everything else). Let’s start from the previous example: the <em>Money Model</em>.</p>
 <div class="section" id="agent-level">
-<h4>Agent-level<a class="headerlink" href="#agent-level" title="Permalink to this headline">¶</a></h4>
+<h3>Agent-level<a class="headerlink" href="#agent-level" title="Permalink to this headline">¶</a></h3>
 <p>First, let us consider an agent-level variable. Imagine we want to store the value of each agent’s wealth at each time step. We must add in the <code class="docutils literal notranslate"><span class="pre">MoneyModel</span></code> constructor a <code class="docutils literal notranslate"><span class="pre">DataCollector</span></code> with the parameter <code class="docutils literal notranslate"><span class="pre">agent_reporters</span></code> set to a dictionary that associates the label of the data and the name of the collected variable:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="bp">self</span><span class="o">.</span><span class="n">datacollector</span> <span class="o">=</span> <span class="n">DataCollector</span><span class="p">(</span><span class="n">agent_reporters</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;Wealth&quot;</span><span class="p">:</span> <span class="s2">&quot;wealth&quot;</span><span class="p">})</span>
 </pre></div>
@@ -279,7 +280,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <p>Add this data collector to your model and visualize the health value of one or several agents.</p>
 </div>
 <div class="section" id="model-level">
-<h4>Model-level<a class="headerlink" href="#model-level" title="Permalink to this headline">¶</a></h4>
+<h3>Model-level<a class="headerlink" href="#model-level" title="Permalink to this headline">¶</a></h3>
 <p>It is also possible to use functions in the collector. For example, assume we want to collect the value of the Gini Coefficient, a measure of wealth inequality, at each time step on the model. Let’s define the <code class="docutils literal notranslate"><span class="pre">compute_gini</span></code> method:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">compute_gini</span><span class="p">(</span><span class="n">model</span><span class="p">):</span>
     <span class="n">agent_wealths</span> <span class="o">=</span> <span class="p">[</span><span class="n">agent</span><span class="o">.</span><span class="n">wealth</span> <span class="k">for</span> <span class="n">agent</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">]</span>
@@ -300,13 +301,13 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <p>Visualize the evolution of the Gini Coefficient in the simulation. What do you observe ?</p>
 </div>
 </div>
-<div class="section" id="b-dynamic-visualization">
-<h3>b) Dynamic visualization<a class="headerlink" href="#b-dynamic-visualization" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="dynamic-visualization">
+<h2>2. Dynamic visualization<a class="headerlink" href="#dynamic-visualization" title="Permalink to this headline">¶</a></h2>
 <p>So far, we’ve built a model, run it, and analyzed some output afterwards. However, one of the advantages of agent-based models is that we can often watch them run step by step, potentially spotting unexpected patterns, behaviors or bugs, or developing new intuitions, hypotheses, or insights. Other times, watching a model run can explain it to an unfamiliar audience better than static explanations. Like many ABM frameworks, Mesa allows you to create an interactive visualization of the model. In this section we’ll walk through creating a visualization using built-in components.</p>
 <p>First, a quick explanation of how Mesa’s interactive visualization works. Visualization is done in a browser window, using JavaScript to draw the different things being visualized at each step of the model. To do this, Mesa launches a small web server, which runs the model, turns each step into a JSON object (essentially, structured plain text) and sends those steps to the browser.</p>
 <p>A visualization is built up of a few different modules: for example, a module for drawing agents on a grid, and another one for drawing a chart of some variable. Each module has a Python part, which runs on the server and turns a model state into JSON data; and a JavaScript side, which takes that JSON data and draws it in the browser window. Mesa comes with a few modules built in, and let you add your own as well.</p>
 <div class="section" id="grid-visualization">
-<h4>Grid Visualization<a class="headerlink" href="#grid-visualization" title="Permalink to this headline">¶</a></h4>
+<h3>Grid Visualization<a class="headerlink" href="#grid-visualization" title="Permalink to this headline">¶</a></h3>
 <p>To start with, let’s have a visualization where we can watch the agents moving around the grid. For this, you will need to put your model code in a separate Python source file; for example, <code class="docutils literal notranslate"><span class="pre">MoneyModel.py</span></code>. Next, either in the same file or in a new one (<em>e.g.</em> <code class="docutils literal notranslate"><span class="pre">MoneyModel_Viz.py</span></code>) import the server class and the <code class="docutils literal notranslate"><span class="pre">CanvasGrid</span></code> class (so-called because it uses HTML5 canvas to draw a grid). If you’re in a new file, you’ll also need to import the actual model object.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.visualization.modules</span> <span class="kn">import</span> <span class="n">CanvasGrid</span>
 <span class="kn">from</span> <span class="nn">mesa.visualization.ModularVisualization</span> <span class="kn">import</span> <span class="n">ModularServer</span>
@@ -369,7 +370,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <p>Now run this file; this should launch the interactive visualization server and open your web browser automatically. (If the browser doesn’t open automatically, try pointing it at <code class="docutils literal notranslate"><span class="pre">http://127.0.0.1:8521</span></code> manually. If this doesn’t show you the visualization, something may have gone wrong with the server launch.)</p>
 <p>You should see something like the figure below: the model title, a grid filled with red circles representing agents, and a set of buttons to the right for running and resetting the model.</p>
-<img alt="images/viz_redcircles.png" class="align-center" src="images/viz_redcircles.png" />
+<a class="reference internal image-reference" href="_images/viz_redcircles.png"><img alt="_images/viz_redcircles.png" class="align-center" src="_images/viz_redcircles.png" style="width: 450px;" /></a>
 <ul class="simple">
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">step</span></code> to advance the model by one step, and the agents will move around.</p></li>
 <li><p>Click <code class="docutils literal notranslate"><span class="pre">run</span></code> and the agents will keep moving around, at the rate set by the <code class="docutils literal notranslate"><span class="pre">fps</span></code> (frames per second) slider at the top. Try moving it around and see how the speed of the model changes.</p></li>
@@ -379,7 +380,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <p>To stop the visualization server, go back to the terminal where you launched it, and press <code class="docutils literal notranslate"><span class="pre">Control+c</span></code>.</p>
 </div>
 <div class="section" id="changing-the-agents">
-<h4>Changing the agents<a class="headerlink" href="#changing-the-agents" title="Permalink to this headline">¶</a></h4>
+<h3>Changing the agents<a class="headerlink" href="#changing-the-agents" title="Permalink to this headline">¶</a></h3>
 <p>In the visualization above, all we could see is the agents moving around – but not how much money they had, or anything else of interest. Let’s change it so that agents who are broke (wealth 0) are drawn in grey, smaller, and above agents who still have money.</p>
 <p>To do this, we go back to our agent_portrayal code and add some code to change the portrayal based on the agent properties.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">agent_portrayal</span><span class="p">(</span><span class="n">agent</span><span class="p">):</span>
@@ -398,10 +399,10 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </pre></div>
 </div>
 <p>Now launch the server again - this will open a new browser window pointed at the updated visualization. Initially it looks the same, but advance the model and smaller grey circles start to appear. Note that since the zero-wealth agents have a higher layer number, they are drawn on top of the red agents.</p>
-<img alt="images/viz_greycircles.png" class="align-center" src="images/viz_greycircles.png" />
+<a class="reference internal image-reference" href="_images/viz_greycircles.png"><img alt="_images/viz_greycircles.png" class="align-center" src="_images/viz_greycircles.png" style="width: 450px;" /></a>
 </div>
 <div class="section" id="adding-a-chart">
-<h4>Adding a chart<a class="headerlink" href="#adding-a-chart" title="Permalink to this headline">¶</a></h4>
+<h3>Adding a chart<a class="headerlink" href="#adding-a-chart" title="Permalink to this headline">¶</a></h3>
 <p>Next, let’s add another element to the visualization: a chart, tracking the model’s Gini Coefficient. This is another built-in element that Mesa provides.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.visualization.modules</span> <span class="kn">import</span> <span class="n">ChartModule</span>
 </pre></div>
@@ -419,10 +420,10 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </pre></div>
 </div>
 <p>Launch the visualization and start a model run, and you’ll see a line chart underneath the grid. Every step of the model, the line chart updates along with the grid. Reset the model, and the chart resets too.</p>
-<img alt="images/viz_chart.png" class="align-center" src="images/viz_chart.png" />
+<a class="reference internal image-reference" href="_images/viz_chart.png"><img alt="_images/viz_chart.png" class="align-center" src="_images/viz_chart.png" style="width: 350px;" /></a>
 </div>
 <div class="section" id="user-settable-parameter">
-<h4>User settable parameter<a class="headerlink" href="#user-settable-parameter" title="Permalink to this headline">¶</a></h4>
+<h3>User settable parameter<a class="headerlink" href="#user-settable-parameter" title="Permalink to this headline">¶</a></h3>
 <p>The last part of the tutorial helps you to create a visualization interface in order to see the evolution of the ABM in the simulation. To allow faster modification of model parameters, it is possible to use <code class="docutils literal notranslate"><span class="pre">UserSettableParameter</span></code>. <code class="docutils literal notranslate"><span class="pre">UserSettableParameter</span></code> means that the user can modify this parameter in the web page. It takes 6 parameters (type, name, initial value, min value, max value, value per step).</p>
 <p>Let’s start by importing the right mesa packages:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa.visualization.modules</span> <span class="kn">import</span> <span class="n">CanvasGrid</span><span class="p">,</span> <span class="n">ChartModule</span><span class="p">,</span> <span class="n">TextElement</span>
@@ -445,9 +446,8 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 </div>
 <div class="section" id="implementing-multi-agent-based-simulation">
-<h2>4. Implementing Multi-Agent Based Simulation<a class="headerlink" href="#implementing-multi-agent-based-simulation" title="Permalink to this headline">¶</a></h2>
+<h1>2.5.  Implementing Multi-Agent Based Simulation<a class="headerlink" href="#implementing-multi-agent-based-simulation" title="Permalink to this headline">¶</a></h1>
 <p>TO BE COMPLETED</p>
-</div>
 <div class="section" id="implementing-a-prey-predator-simulation-with-mesa">
 <h2>5. Implementing  a prey / predator simulation with Mesa<a class="headerlink" href="#implementing-a-prey-predator-simulation-with-mesa" title="Permalink to this headline">¶</a></h2>
 <p>The objective of this practical work is to implement a simulation of a prey - predator model. The prey - predator model is a simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.</p>
@@ -495,7 +495,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <ol class="arabic simple" start="4">
 <li><p>Tune the initial parameters to find a balanced state in the model: none of the species disappears during the simulation. The output graph should be like that:</p></li>
 </ol>
-<img alt="images/preypredatorebmout.png" class="align-center" src="images/preypredatorebmout.png" />
+<a class="reference internal image-reference" href="_images/preypredatorebmout.png"><img alt="_images/preypredatorebmout.png" class="align-center" src="_images/preypredatorebmout.png" style="width: 450px;" /></a>
 </div>
 </div>
 </div>
@@ -508,29 +508,29 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">2.1. Multi-Agent Based Simulation: Introduction</a><ul>
-<li><a class="reference internal" href="#simulation">1. Simulation</a><ul>
-<li><a class="reference internal" href="#a-simulation-definition">a) Simulation definition</a></li>
-<li><a class="reference internal" href="#b-computeur-simulation-definition">b) Computeur simulation definition</a></li>
-<li><a class="reference internal" href="#c-simulation-as-an-experimental-process">c) Simulation as an experimental process</a></li>
-<li><a class="reference internal" href="#d-dynamic-systems">d) Dynamic systems</a></li>
-<li><a class="reference internal" href="#e-the-different-temporal-models-used-for-the-representation-of-dynamic-systems">e) The different temporal models used for the representation of dynamic systems</a></li>
-<li><a class="reference internal" href="#f-modeling-simulation-theory">f) Modeling &amp; Simulation theory</a></li>
+<li><a class="reference internal" href="#">2.1. Multi-Agent Based Simulation: Introduction</a></li>
+<li><a class="reference internal" href="#simulation-in-general">2.2. Simulation in general</a><ul>
+<li><a class="reference internal" href="#simulation-definition">1. Simulation definition</a></li>
+<li><a class="reference internal" href="#computeur-simulation-definition">2. Computeur simulation definition</a></li>
+<li><a class="reference internal" href="#simulation-as-an-experimental-process">3. Simulation as an experimental process</a></li>
+<li><a class="reference internal" href="#dynamic-systems">4. Dynamic systems</a></li>
+<li><a class="reference internal" href="#the-different-temporal-models-used-for-the-representation-of-dynamic-systems">5. The different temporal models used for the representation of dynamic systems</a></li>
+<li><a class="reference internal" href="#modeling-simulation-theory">6. Modeling &amp; Simulation theory</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#multi-agent-based-simulation">2. Multi-Agent Based Simulation</a><ul>
-<li><a class="reference internal" href="#a-difficulties-of-classical-modeling">a) Difficulties of classical modeling</a></li>
-<li><a class="reference internal" href="#b-an-agent-is-a-dynamic-system">b) An agent is a dynamic system</a></li>
-<li><a class="reference internal" href="#c-multi-agent-modeling">c) Multi-agent modeling</a></li>
+<li><a class="reference internal" href="#multi-agent-based-simulation">2.3. Multi-Agent Based Simulation</a><ul>
+<li><a class="reference internal" href="#difficulties-of-classical-modeling">1. Difficulties of classical modeling</a></li>
+<li><a class="reference internal" href="#an-agent-is-a-dynamic-system">2. An agent is a dynamic system</a></li>
+<li><a class="reference internal" href="#multi-agent-modeling">3. Multi-agent modeling</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#visualizing-multi-agent-based-simulation">3. Visualizing Multi-Agent Based Simulation</a><ul>
-<li><a class="reference internal" href="#a-collecting-data">a) Collecting data</a><ul>
+<li><a class="reference internal" href="#visualizing-multi-agent-based-simulation">2.4. Visualizing Multi-Agent Based Simulation</a><ul>
+<li><a class="reference internal" href="#collecting-data">1. Collecting data</a><ul>
 <li><a class="reference internal" href="#agent-level">Agent-level</a></li>
 <li><a class="reference internal" href="#model-level">Model-level</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#b-dynamic-visualization">b) Dynamic visualization</a><ul>
+<li><a class="reference internal" href="#dynamic-visualization">2. Dynamic visualization</a><ul>
 <li><a class="reference internal" href="#grid-visualization">Grid Visualization</a></li>
 <li><a class="reference internal" href="#changing-the-agents">Changing the agents</a></li>
 <li><a class="reference internal" href="#adding-a-chart">Adding a chart</a></li>
@@ -539,7 +539,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#implementing-multi-agent-based-simulation">4. Implementing Multi-Agent Based Simulation</a></li>
+<li><a class="reference internal" href="#implementing-multi-agent-based-simulation">2.5.  Implementing Multi-Agent Based Simulation</a><ul>
 <li><a class="reference internal" href="#implementing-a-prey-predator-simulation-with-mesa">5. Implementing  a prey / predator simulation with Mesa</a><ul>
 <li><a class="reference internal" href="#practice-yourself">Practice yourself!</a></li>
 </ul>
@@ -557,7 +557,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="sources/part-4.rst.txt"
+      <li><a href="_sources/part-4.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

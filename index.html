@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Welcome to the course “Multiagent Systems: architecture and reasoning” &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -41,7 +41,7 @@
 <h1>Welcome to the course “Multiagent Systems: architecture and reasoning”<a class="headerlink" href="#welcome-to-the-course-multiagent-systems-architecture-and-reasoning" title="Permalink to this headline">¶</a></h1>
 <p>Multi-agent systems (MAS) are currently widely used, especially for complex applications requiring interaction between several entities. More specifically, they are used in applications where it is necessary to solve problems in a distributed manner (data processing) or in the design of distributed systems in which each component has some degree of autonomy (control of processes). Some examples of applications are trading agents, drones, smart grids.</p>
 <div class="figure align-center">
-<a class="reference internal image-reference" href="images/welcome.png"><img alt="images/welcome.png" src="images/welcome.png" style="width: 250px;" /></a>
+<a class="reference internal image-reference" href="_images/welcome.png"><img alt="_images/welcome.png" src="_images/welcome.png" style="width: 250px;" /></a>
 </div>
 <p>This course will begin with an introduction to the notion of agent and multi-agent systems. It will present the concepts that will lead to an understanding of what an agent is and how it can be built. Then, we will address a classical problem of MAS, namely how to model and simulate a situation through the concept of agents.
 The idea is to give a basis for understanding how agent-based simulations can be used as a tool for understanding human societies or complex problems and situations. Besides, we will discuss how agents can communicate and interact to solve problems, and more specifically, to make non-centralized decisions. For this, we will rely on negotiation protocols based on argumentation theory, a process of constructing and evaluating arguments (positive and negative reasons/evidence) to resolve conflicts.</p>
@@ -49,8 +49,9 @@ The idea is to give a basis for understanding how agent-based simulations can be
 <p class="caption"><span class="caption-text">Contents</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="cours-0.html">General presentation of the course</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cours-0.html#the-team">The team</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cours-0.html#agenda">Agenda</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cours-0.html#contents">Contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cours-0.html#content-evaluation">Content &amp; Evaluation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cours-0.html#some-references">Some References</a></li>
 </ul>
 </li>
@@ -90,11 +91,6 @@ The idea is to give a basis for understanding how agent-based simulations can be
 <li class="toctree-l2"><a class="reference internal" href="part-3.html#concluding-remarks">Concluding Remarks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="part-3-opt.html">1.5. Optional features</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="part-3-opt.html#collecting-data">1. Collecting data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part-3-opt.html#dynamic-visualization-optional">2. Dynamic visualization (optional)</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="correction-part-2.html">I.6. Exercise Solutions</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="correction-part-2.html#two-simple-agents">1. Two simple agents</a></li>
 <li class="toctree-l2"><a class="reference internal" href="correction-part-2.html#two-simple-agents-continued">2. Two simple agents (continued)</a></li>
@@ -107,11 +103,28 @@ The idea is to give a basis for understanding how agent-based simulations can be
 <li class="toctree-l2"><a class="reference internal" href="cours-2.html#session-2">Session 2.</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="part-4.html">2.1. Multi-Agent Based Simulation: Introduction</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="part-4.html#simulation">1. Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part-4.html#multi-agent-based-simulation">2. Multi-Agent Based Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part-4.html#visualizing-multi-agent-based-simulation">3. Visualizing Multi-Agent Based Simulation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part-4.html#implementing-multi-agent-based-simulation">4. Implementing Multi-Agent Based Simulation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part-4.html">2.1. Multi-Agent Based Simulation: Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part-4.html#simulation-in-general">2.2. Simulation in general</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#simulation-definition">1. Simulation definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#computeur-simulation-definition">2. Computeur simulation definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#simulation-as-an-experimental-process">3. Simulation as an experimental process</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#dynamic-systems">4. Dynamic systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#the-different-temporal-models-used-for-the-representation-of-dynamic-systems">5. The different temporal models used for the representation of dynamic systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#modeling-simulation-theory">6. Modeling &amp; Simulation theory</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part-4.html#multi-agent-based-simulation">2.3. Multi-Agent Based Simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#difficulties-of-classical-modeling">1. Difficulties of classical modeling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#an-agent-is-a-dynamic-system">2. An agent is a dynamic system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#multi-agent-modeling">3. Multi-agent modeling</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part-4.html#visualizing-multi-agent-based-simulation">2.4. Visualizing Multi-Agent Based Simulation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#collecting-data">1. Collecting data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-4.html#dynamic-visualization">2. Dynamic visualization</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="part-4.html#implementing-multi-agent-based-simulation">2.5.  Implementing Multi-Agent Based Simulation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="part-4.html#implementing-a-prey-predator-simulation-with-mesa">5. Implementing  a prey / predator simulation with Mesa</a></li>
 </ul>
 </li>
@@ -170,15 +183,16 @@ The idea is to give a basis for understanding how agent-based simulations can be
 <li class="toctree-l1"><a class="reference internal" href="cours-5.html">5. Argumentation-based negotiation (Cont.)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="cours-5.html#agenda-recall">Agenda – Recall</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cours-5.html#session-5">Session 5.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cours-5.html#references">References</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="part-8.html">5.1. Previously…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part-8.html">5.1. Previsously !!</a></li>
 <li class="toctree-l1"><a class="reference internal" href="part-8.html#introduction-to-argumentation-theory">5.2. Introduction to Argumentation Theory</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="part-8.html#modelling-arguments">1. Modelling arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part-8.html#selecting-arguments">2. Selecting Arguments</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part-8.html#relations-among-arguments">3. Relations among arguments.</a></li>
 <li class="toctree-l2"><a class="reference internal" href="part-8.html#status-of-arguments">4. Status of arguments?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="part-8.html#how-to-conclude">5. How to conclude?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="part-8.html#notes"><em>Notes</em></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="cours-6.html">6. Argumentation-based negotiation (Cont.)</a><ul>
@@ -192,7 +206,13 @@ The idea is to give a basis for understanding how agent-based simulations can be
 <li class="toctree-l2"><a class="reference internal" href="part-9.html#questions">Questions</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="part-9.html#to-go-further">6.5 To go further…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="part-9.html#to-go-further">6.4. To go further…</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cours-7.html">7. Last miles…</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cours-7.html#agenda-recall">Agenda – Recall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cours-7.html#session-7">Session 7.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cours-7.html#for-the-evaluation">For the evaluation !</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -223,7 +243,7 @@ The idea is to give a basis for understanding how agent-based simulations can be
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="sources/index.rst.txt"
+      <li><a href="_sources/index.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>

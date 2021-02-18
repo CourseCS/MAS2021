@@ -3,11 +3,11 @@
 
 INTRODUCTION TO BE DONE HERE
 
-1. Simulation
---------------------------------------------------------------------------------
+2.2. Simulation in general
+================================================================================
 
-a) Simulation definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Simulation definition
+------------------------------
 
 Simulation is one of the most effective decision support tools available to scientists, designers and managers of complex systems. It consists in building a model of a real system and conducting experiments on this model in order to understand the behavior of this system and improve its performance. Here is one of the definitions of a simulation: 
 
@@ -20,8 +20,8 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 
 Shannon adds that a simulation process is constituted by the construction of the model and by the analytical use which is made of the model to study the system.
 
-b) Computeur simulation definition
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Computeur simulation definition
+---------------------------------------
 
 Computer simulation is in fact inseparable from the *experimental process* which is linked to its objective. 
 
@@ -35,11 +35,12 @@ This definition gives a global overview of a process of a computer simulation pr
 
 .. image:: img/simu_def_fish.png
     :align: center
+    :width: 450
 
 This definition clearly shows the importance of the model and its development for the design of a simulation. 
 
-c) Simulation as an experimental process
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Simulation as an experimental process
+-------------------------------------------
 
 Most of the time, Fishwick's definition is sufficient to illustrate clearly and simply the different stages that constitute the development of a computer simulation. However, it may be interesting to detail these steps: 
 
@@ -55,11 +56,12 @@ Most of the time, Fishwick's definition is sufficient to illustrate clearly and 
 
 .. image:: img/simu_det_fish.png
     :align: center
+    :width: 650
 
 This more complete description provides a better idea of what a computer simulation is and the different challenges to be overcome. It also introduces the validation and verification steps in a simulation: these two steps are fundamental and cannot be dissociated from the experimental process (even more in the context of a computer simulation). 
 
-d) Dynamic systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+4. Dynamic systems
+------------------------------
 
 Now that we have an idea of what a computer simulation is, it is worth presenting the different concepts that are manipulated to model real systems. In this context, the notion of *dynamic system* is essential. By *dynamic system* we mean:
 
@@ -76,6 +78,7 @@ Thus, at the highest level of abstraction, a dynamic system is seen as a black b
 
 .. image:: img/dyn_sys.png
     :align: center
+    :width: 450
 
 The external behavior of the system is defined by the relationship between the history of inputs and the history of observed output results. In other words, it characterizes how the system reacts from the observer's point of view at the input / output level (I/O).
 
@@ -89,8 +92,8 @@ Generally, the last two points are implicitly grouped together when talking abou
 
 The important point to remember here is the distinction that systems theory makes between the different aspects of a *dynamic system*: behavior and internal structure.
 
-e) The different temporal models used for the representation of dynamic systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5. The different temporal models used for the representation of dynamic systems
+-----------------------------------------------------------------------------------
 
 A dynamic system is defined by how it evolves over time. So, one of the most important features of a model which represent a dynamic system is how time is represented.
 
@@ -100,6 +103,7 @@ There are three types of time representations:
 
   .. image:: img/continuous.png
     :align: center
+    :width: 450
 
 .. warning::
   The simulation of continuous models raises many problems due to the nature of the computer: it is simply impossible to reproduce the continuity of the dynamics of a system because it evolves infinitely often while the computer simulation needs punctual computations.
@@ -108,26 +112,30 @@ There are three types of time representations:
 
   .. image:: img/discrete.png
     :align: center
+    :width: 450
 
 .. note::
   The simulation of discrete models is easy. When the functions which implement the dynamics of the system are clearly defined, it is only necessary to set up an algorithm that applies these functions and then increments time.
 
   .. image:: img/time_discrete.png
     :align: center
+    :width: 450
 
 - *Discrete event* time models: the time axis is generally continuous, ie represented by a real number. However, unlike continuous models, system state variables change discretely to specific times that are called *events*.
 
   .. image:: img/events.png
     :align: center
+    :width: 450
 
 .. note::
   There are three ways to simulate discrete event time models: (1) activity scanning, (2) interaction process and (3) event sceduling. The last one is the most common way and is described by the figure below.
 
   .. image:: img/time_event.png
     :align: center
+    :width: 450
 
-f) Modeling & Simulation theory
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+6. Modeling & Simulation theory
+-----------------------------------
 
 Because to what it allows, computer simulation should not be only considered as a tool but as a discipline and should therefore be theorized. This is the goal of Zeigler's *Modeling and Simulation theory*.
 
@@ -144,15 +152,16 @@ There are 6 entities clearly defined in the Modeling and Simulation theory:
 
   .. image:: img/resume.png
     :align: center
+    :width: 450
 
 The Modeling and Simulation theory makes it possible to highlight, through the modeling and simulation relationships, important issues related to simulation such as the simplicity of the model, the behavior of the simulated model, the validation of the simulation, the reproducibility of the simulation, etc. We will discuss some of these issues in more detail later.
 
 
-2. Multi-Agent Based Simulation
---------------------------------------------------------------------------------
+2.3. Multi-Agent Based Simulation
+========================================
 
-a) Difficulties of classical modeling
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Difficulties of classical modeling
+---------------------------------------
 
 To model dynamic systems, a mathematical approach has long been used. Called Equation Based Model (EBM), it is build on an interrelation of a set of equations that captures the variability of a system over time. EBM represents the whole system and does not support an explicit representation of components (top-down). The whole system is globally represented by equations defined at the macroscopic level which does not make it possible to take into account the individual characteristics of the entities that compose the system. Moreover, this level of representation raises the question of the realism and the complexity of the parameters used to formulate the equations which model the system. So, EBM is most naturally used to model central systems.
 
@@ -161,11 +170,13 @@ To model dynamic systems, a mathematical approach has long been used. Called Equ
 
   .. image:: img/preypredatorebm.png
     :align: center
+    :width: 250
 
   It focus on the global variation of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:
 
   .. image:: img/preypredatorebmout.png
     :align: center
+    :width: 450
 
 .. warning::
   Limits of the Equation Based Model (EBM):
@@ -178,8 +189,8 @@ To model dynamic systems, a mathematical approach has long been used. Called Equ
 
 To overcome EBM limitations, it is possible to use models that focus on entities and their interactions (bottom-up) and also considers that the dynamics of the system come from the interactions between the entities.
 
-b) An agent is a dynamic system
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. An agent is a dynamic system
+-----------------------------------
 
 Modeling a dynamic system using agents is simple because it is obvious that an agent can be considered as a dynamic system within the meaning of systems theory. Indeed, an agent has an internal state that changes according to his perceptions (inputs) and it has behaviors to react in its environment. 
 
@@ -188,13 +199,14 @@ Modeling a dynamic system using agents is simple because it is obvious that an a
 
 As shown in the figure above, an agent is defined by a set of perceptions (inputs), a set of actions (outputs) and we speak of the internal architecture of the agent to denote the mechanisms that define its intrinsic dynamics.
 
-c) Multi-agent modeling
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Multi-agent modeling
+------------------------------
 
 The multi-agent approach is based on an individual-centered approach: it considers that it is possible to model not only individuals and their behaviors, but also the interactions that take place between these individuals. It considers that the overall dynamics of a system, at the macroscopic level, result directly from the interactions between the individuals who compose this system at the microscopic level. Thus, while EBM model the relationships that exist between the different identified entities of a system using mathematical equations, the multi-agent approach directly models the interactions generated by individual behaviors.
 
 .. image:: img/mabs.png
   :align: center
+  :width: 450
 
 To create a multi-agent simulation, you must follow the principles of the agent paradigm presented in the previous course:  
 
@@ -213,6 +225,7 @@ To create a multi-agent simulation, you must follow the principles of the agent 
 
   .. image:: img/prey_predator.jpg
     :align: center
+    :width: 350
 
 Due to its ability to model the interactions between entities and the variations of a system at the micro level, Multi-Agent Based Simulation is used in many fields of application. 
 
@@ -220,6 +233,7 @@ Due to its ability to model the interactions between entities and the variations
   
   .. figure:: img/massive.png
     :align: center
+    :width: 450
 
     *Massive software for crowd simulation*
 
@@ -227,6 +241,7 @@ Due to its ability to model the interactions between entities and the variations
   
   .. figure:: img/glassbox.png
     :align: center
+    :width: 450
 
     *Glassbox engine for SimCity*
 
@@ -234,6 +249,7 @@ Due to its ability to model the interactions between entities and the variations
   
   .. figure:: img/flocking.png
     :align: center
+    :width: 450
 
     *Flock of birds simulation*
 
@@ -241,12 +257,15 @@ Due to its ability to model the interactions between entities and the variations
   
   .. figure:: img/col_rob.png
     :align: center
+    :width: 450
   
     *Collective behaviors for cooperative actions*
 
 
-3. Visualizing Multi-Agent Based Simulation
---------------------------------------------------------------------------------
+2.4. Visualizing Multi-Agent Based Simulation
+====================================================
+
+
 As we have seen, simulation creates a digital environment that looks like an artificial laboratory where we can test hypotheses, prospective scenarios or simply the evolution of the system in the future.
 
 As with any laboratory experiment, it is necessary to be able to follow the evolution of the experiments: with Multi-Agent based Simulation, it is necessary to visualize the evolution of the simulation and to collect data.
@@ -255,8 +274,8 @@ The visualization of the simulation is very important in the context of Multi-Ag
 
 In this section, we will present the two features of Mesa that make it possible to make data collection and visualization.
 
-a) Collecting data
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Collecting data
+-------------------------
 
 Mesa provides a class which can handle data collection and storage at runtime, which avoids to manipulates tables or dictionaries manually in the model. All this is done via the ``DataCollector`` class:
 
@@ -267,7 +286,7 @@ Mesa provides a class which can handle data collection and storage at runtime, w
 The data collector stores three categories of data: model-level variables, agent-level variables, and tables (which are a catch-all for everything else). Let’s start from the previous example: the *Money Model*.
 
 Agent-level
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 First, let us consider an agent-level variable. Imagine we want to store the value of each agent's wealth at each time step. We must add in the ``MoneyModel`` constructor a ``DataCollector`` with the parameter ``agent_reporters`` set to a dictionary that associates the label of the data and the name of the collected variable:
 
@@ -296,7 +315,7 @@ The result is a Pandas ``DataFrame``. See `the Pandas documentation <https://pan
 Add this data collector to your model and visualize the health value of one or several agents.
 
 Model-level
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 It is also possible to use functions in the collector. For example, assume we want to collect the value of the Gini Coefficient, a measure of wealth inequality, at each time step on the model. Let's define the ``compute_gini`` method:
 
@@ -324,8 +343,8 @@ Note that we still collect the agents' wealth values.
 Visualize the evolution of the Gini Coefficient in the simulation. What do you observe ?
 
 
-b) Dynamic visualization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+2. Dynamic visualization
+---------------------------
 
 So far, we've built a model, run it, and analyzed some output afterwards. However, one of the advantages of agent-based models is that we can often watch them run step by step, potentially spotting unexpected patterns, behaviors or bugs, or developing new intuitions, hypotheses, or insights. Other times, watching a model run can explain it to an unfamiliar audience better than static explanations. Like many ABM frameworks, Mesa allows you to create an interactive visualization of the model. In this section we'll walk through creating a visualization using built-in components.
 
@@ -334,7 +353,7 @@ First, a quick explanation of how Mesa's interactive visualization works. Visual
 A visualization is built up of a few different modules: for example, a module for drawing agents on a grid, and another one for drawing a chart of some variable. Each module has a Python part, which runs on the server and turns a model state into JSON data; and a JavaScript side, which takes that JSON data and draws it in the browser window. Mesa comes with a few modules built in, and let you add your own as well.
 
 Grid Visualization
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 To start with, let's have a visualization where we can watch the agents moving around the grid. For this, you will need to put your model code in a separate Python source file; for example, ``MoneyModel.py``. Next, either in the same file or in a new one (*e.g.* ``MoneyModel_Viz.py``) import the server class and the ``CanvasGrid`` class (so-called because it uses HTML5 canvas to draw a grid). If you're in a new file, you'll also need to import the actual model object.
 
@@ -413,6 +432,7 @@ You should see something like the figure below: the model title, a grid filled w
 
 .. image:: img/viz_redcircles.png
     :align: center
+    :width: 450
 
 
 - Click ``step`` to advance the model by one step, and the agents will move around.
@@ -423,7 +443,7 @@ You should see something like the figure below: the model title, a grid filled w
 To stop the visualization server, go back to the terminal where you launched it, and press ``Control+c``.
 
 Changing the agents
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 In the visualization above, all we could see is the agents moving around – but not how much money they had, or anything else of interest. Let's change it so that agents who are broke (wealth 0) are drawn in grey, smaller, and above agents who still have money.
 
@@ -449,10 +469,11 @@ Now launch the server again - this will open a new browser window pointed at the
 
 .. image:: img/viz_greycircles.png
     :align: center
+    :width: 450
 
 
 Adding a chart
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~
 
 Next, let's add another element to the visualization: a chart, tracking the model's Gini Coefficient. This is another built-in element that Mesa provides.
 
@@ -479,9 +500,10 @@ Launch the visualization and start a model run, and you'll see a line chart unde
 
 .. image:: img/viz_chart.png
     :align: center
+    :width: 350
 
 User settable parameter
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The last part of the tutorial helps you to create a visualization interface in order to see the evolution of the ABM in the simulation. To allow faster modification of model parameters, it is possible to use ``UserSettableParameter``. ``UserSettableParameter`` means that the user can modify this parameter in the web page. It takes 6 parameters (type, name, initial value, min value, max value, value per step).
 
@@ -509,8 +531,8 @@ The call of the ``ModularServer`` became:
 
 **Note:** to be used in the visualization interface, the density should be define in the ``MoneyModel``.
 
-4. Implementing Multi-Agent Based Simulation
---------------------------------------------------------------------------------
+2.5.  Implementing Multi-Agent Based Simulation
+===============================================
 
 TO BE COMPLETED
 
@@ -562,3 +584,4 @@ So, now it's up to you to work and implement the prey - predator model:
 
 .. image:: img/preypredatorebmout.png
   :align: center
+  :width: 450

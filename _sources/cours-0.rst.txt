@@ -1,6 +1,17 @@
 General presentation of the course
 ================================================================
 
+
+
+The team 
+-----------------
+
+
+.. figure:: img/team.png
+  :width: 550
+  :align: center
+
+
 Agenda
 -------------------------------------------
 
@@ -14,8 +25,8 @@ Agenda
 7. Friday, April the 16th, 2021 : Practical session
 
 
-Contents
--------------
+Content & Evaluation
+----------------------
 
 The first three sessions will give you the basics of MAS architectures and platforms. Based on this knowledge, you will implement a simple multi-agent based simulation (session 2) that will be evaluated by the teachers. This evaluation will be based on your source code and a very short report of your work. 
 Its aim is to assess that you have acquired the basics of MAS.

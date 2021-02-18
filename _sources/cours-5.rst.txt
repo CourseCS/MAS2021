@@ -15,9 +15,10 @@ Agenda -- Recall
 Session 5. 
 --------------
 
-This session is devoted to ...
+Argumenation Theory is a growing field of Artificial Intelligence. In short, it is the process of constructing and evaluating arguments in order to justify conclusions. The aim of this session is to give an overview of different concepts and notions of an argumentation process. 
+We introduce the general idea of non monotonic reasoning and discuss the different steps of an argumentation process. Indeed, different levels can be associated to such process: the logical level which provides the logical structure of a single arguments; the dialectical level which address the notion of conflict between arguments and the procedural level which introduces how we can use arguments within a dialogue.
 
 References
-~~~~~~~~~~
+--------------
 
 

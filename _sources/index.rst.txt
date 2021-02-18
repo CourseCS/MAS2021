@@ -26,7 +26,6 @@ The idea is to give a basis for understanding how agent-based simulations can be
    part-1
    part-2
    part-3
-   part-3-opt
    correction-part-2
    cours-2
    part-4
@@ -39,6 +38,7 @@ The idea is to give a basis for understanding how agent-based simulations can be
    part-8
    cours-6
    part-9
+   cours-7
    
 
 Indices and tables

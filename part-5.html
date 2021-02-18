@@ -5,14 +5,14 @@
   <head>
     <meta charset="utf-8" />
     <title>3.1. Indirect interactions &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
-    <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
@@ -44,7 +44,7 @@
   <div class="section" id="indirect-interactions">
 <h1>3.1. Indirect interactions<a class="headerlink" href="#indirect-interactions" title="Permalink to this headline">¶</a></h1>
 <p>Indirect interactions is the main interaction mechanism in MAS. Remember the PRS architecture:</p>
-<a class="reference internal image-reference" href="images/PRS.png"><img alt="images/PRS.png" class="align-center" src="images/PRS.png" style="width: 500px;" /></a>
+<a class="reference internal image-reference" href="_images/PRS.png"><img alt="_images/PRS.png" class="align-center" src="_images/PRS.png" style="width: 500px;" /></a>
 <p>Agents can only act (and perceive) from their environment. The idea behind indirect interactions is that agents that act on shared variables in the environment interact through this variable, even if they don’t have the intention to do so.</p>
 <div class="section" id="blackboards">
 <h2>1. Blackboards<a class="headerlink" href="#blackboards" title="Permalink to this headline">¶</a></h2>
@@ -258,7 +258,7 @@
 </div>
 <p>By doing so, we would have agents that work in a synchronous manner: the sender’s execution would have to end the termination of the <code class="docutils literal notranslate"><span class="pre">receive</span></code> method on the recipient’s side before it can continue its own execution.</p>
 <p>To overcome this limitation, computer scientist use a four step mechanism illustrated on the figure below:</p>
-<img alt="images/messages.png" class="align-center" src="images/messages.png" />
+<img alt="_images/messages.png" class="align-center" src="_images/messages.png" />
 <ol class="arabic">
 <li><p>The sender agent builds the message;</p></li>
 <li><p>The sender agents invokes a <code class="docutils literal notranslate"><span class="pre">send</span></code> method in the environment to send the message, as one of its actions;</p>
@@ -494,43 +494,43 @@
 <li><p>We shall use ALT, OPT and LOOP blocks to define the protocols.</p></li>
 </ol>
 <p>Here is a simple example of protocol:</p>
-<img alt="images/protocol1.png" class="align-center" src="images/protocol1.png" />
+<img alt="_images/protocol1.png" class="align-center" src="_images/protocol1.png" />
 <p>This protocol defines that teacher agents must answer with a “tell” performative when students send them an “ask” message. Now, let us consider a new version of the protocol:</p>
-<img alt="images/protocol2.png" class="align-center" src="images/protocol2.png" />
+<img alt="_images/protocol2.png" class="align-center" src="_images/protocol2.png" />
 <p>This protocol defines that students must answer with a “answer” performative to a “question” message sent by a teacher, and that they will receive a “reward” message in return. Now, we can add some constraints:</p>
 <ol class="arabic">
 <li><p>Only some students answer before a timeout:</p>
 <blockquote>
-<div><img alt="images/protocol3.png" class="align-center" src="images/protocol3.png" />
+<div><img alt="_images/protocol3.png" class="align-center" src="_images/protocol3.png" />
 <p>Note that only agents that did answer before the timeout remain in the protocol. All other agents are ignored. They won’t receive the “reward” message.</p>
 </div></blockquote>
 </li>
 <li><p>Only some of the students (who answered before the timeout) will receive the reward:</p>
 <blockquote>
-<div><img alt="images/protocol4.png" class="align-center" src="images/protocol4.png" />
+<div><img alt="_images/protocol4.png" class="align-center" src="_images/protocol4.png" />
 <p>Note that <em>m</em> and <em>n</em> are not values: the conditions always remain at an abstract level. It is up to the agent to decide how many students it wants to reward, and for which reason.</p>
 </div></blockquote>
 </li>
 <li><p>Another manner of writing the same protocol with the “optional” answer is to use an “OPT” block:</p>
 <blockquote>
-<div><img alt="images/protocol5.png" class="align-center" src="images/protocol5.png" />
+<div><img alt="_images/protocol5.png" class="align-center" src="_images/protocol5.png" />
 </div></blockquote>
 </li>
 <li><p>The most commonly used block is however the ALT block with shows different options with conditions. For instance:</p>
 <blockquote>
-<div><img alt="images/protocol6.png" class="align-center" src="images/protocol6.png" />
+<div><img alt="_images/protocol6.png" class="align-center" src="_images/protocol6.png" />
 </div></blockquote>
 </li>
 <li><p>And in that case, people often want to add conditions to the blocks:</p>
 <blockquote>
-<div><img alt="images/protocol7.png" class="align-center" src="images/protocol7.png" />
+<div><img alt="_images/protocol7.png" class="align-center" src="_images/protocol7.png" />
 </div></blockquote>
 <p>Here, the condition expresses that <em>all</em> agents that answered receive either an “success” or a “failure” message. No agent remains unanswered.</p>
 </li>
 <li><p>It is also possible to use the classical “choice” UML symbol to represent ALT blocks. This makes the protocol easier to read when you have blocks within blocks. Here is the famous “Contract Net” protocol proposed by FIPA, with 3 ALT blocks:</p>
 <blockquote>
 <div><div class="figure align-center" id="id1">
-<img alt="images/contractnet.jpeg" src="images/contractnet.jpeg" />
+<img alt="_images/contractnet.jpeg" src="_images/contractnet.jpeg" />
 <p class="caption"><span class="caption-text">The <cite>Contract Net Protocol &lt;http://www.fipa.org/specs/fipa00029/SC00029H.html&gt;</cite> defined by FIPA</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div></blockquote>
@@ -607,7 +607,7 @@
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
-      <li><a href="sources/part-5.rst.txt"
+      <li><a href="_sources/part-5.rst.txt"
             rel="nofollow">Show Source</a></li>
     </ul>
    </div>
