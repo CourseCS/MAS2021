@@ -15,11 +15,17 @@ Agenda -- Recall
 Session 7. 
 --------------
 
+This session is entirely dedicated to finish the implementation and prepare the evaluation (see below). 
 
 
 For the evaluation ! 
 --------------------------
 
+- We expect that you write a small report (up to 5 pages) about your negotiation model. Give some printouts of negotiations. Compute some statistics on the negotiation outputs depending on the simulation parameters. You should clearly identify the parameters and the observed values.
+
+- Prepare a zip of your code, 
+
+- The report and the code should be sumbitted on EDUNAO. **Deadline April 23rd, 2021 - midnight**. 
 
 
 

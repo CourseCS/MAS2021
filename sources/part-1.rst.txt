@@ -139,7 +139,7 @@ Due to the variety of origins of multiagent research, there exists several defin
 
 .. image:: img/mas.png
     :align: center
-    :width: 1000px
+    :width: 550
 
 In the next section, we shall see very concretely how an agent and a multiagent system work. But before we do so, here is a brief presentation of some concrete MAS applications.
 
@@ -177,7 +177,7 @@ MAS Applied to the Study of Electrical Consumption
 
 .. image:: img/edf-smach.png
     :align: center
-    :width: 600px
+    :width: 500px
 
 The R&D branch of EDF, one of the French electricity companies, has been working on a MAS for the simulation of electrical consumption in households. This applied research project is called `SMACH <https://www.edf.fr/groupe-edf/inventer-l-avenir-de-l-energie/r-d-un-savoir-faire-mondial/nos-offres/gamme-inveni/smach>`_. The MAS platform that was developped in this project is now being used by all services at EDF R&D for the generation of realistic load curves in answer to prospective studies: market research & pricing, new production means (*e.g.* renewable energy self-consumption), new consumption habits (*e.g.* electrical vehicules), *etc*.
 

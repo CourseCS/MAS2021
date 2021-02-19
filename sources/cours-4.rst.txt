@@ -15,16 +15,20 @@ Agenda -- Recall
 Session 4. 
 --------------
 
-The fourth session aims at 
+Argumentation-based negotiation has been proposed as an alternative to proposalbased approaches such as game theory and heuristic. 
+The main advantage is that it allows agents to exchange additional information rather than just simple proposals. 
+This property of argumentation protocols can lead to beneficial agreements when used for complex multi agent negotiation. 
 
-As for the first sessions, all implementation is done using the Python programming language and the Mesa library.
+This session is the starting point towards understanding what is an argumentation-based negotiation protocol. Moreover, in this session we will start the second practical work aiming to implement your second mulit-agent based model.  
 
-References
-~~~~~~~~~~
+Some references
+---------------
 
 - Ferber, J. (1995), *Les Systèmes Multi-Agents*, InterEditions. **(French version)**
 - Ferber, J. (1999), *Multi-agent systems: An introduction to distributed artificial intelligence*, Addison Wesley. **(English version)**
 - Michael Wooldridge (2002), *An Introduction to MultiAgent Systems*, John Wiley & Sons Ltd.
 - `The AgentLink roadmap <http://www.agentlink.org/roadmap/>`_
-
+- Rahwan, Iyad (2009), *Argumentation in Artificial Intelligence*,Springer. 
+- Lopes, Fernando & Coelho, Helder. (2014). *Negotiation and Argumentation in Multi-Agent Systems: Fundamentals, Theories, Systems and Applications*. Bentham Science Publishers. 
+- `Argumentation in Multi-Agent Systems (ArgMAS) Workshop Series <http://www.mit.edu/~irahwan/argmas/>`_
 

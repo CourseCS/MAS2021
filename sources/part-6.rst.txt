@@ -32,6 +32,9 @@ Create an *__init__.py* file in the **communication**, **agent**, **mailbox** an
 
 As everything is setting up, we can now move on to the implementation of the communication layer.
 
+
+.. _q1:
+
 Messages
 ~~~~~~~~~~~
 
@@ -53,57 +56,13 @@ The four accessor methods of the ``Message`` class are:
 
 **Practice yourself!**: you can try to implement this class by your own!
 
-Below, a possible implementation of the ``Message`` class:
+.. note::
 
-.. code:: python
-
-	#!/usr/bin/env python3
+   a possible implementation of the ``Message`` class is :ref:`codemessageclass`.
 
 
-	class Message:
-		"""Message class.
-		Class implementing the message object which is exchanged between agents through a message service during communication.
 
-		attr:
-			from_agent: the sender of the message (id)
-			to_agent: the receiver of the message (id)
-			message_performative: the performative of the message
-			content: the content of the message
-		 """
-		def __init__(self, from_agent, to_agent, message_performative, content):
-			""" Create a new message.
-			"""
-			self.__from_agent = from_agent
-			self.__to_agent = to_agent
-			self.__message_performative = message_performative
-			self.__content = content
 
-		def __str__(self):
-			""" Return Message as a String.
-			"""
-			return "From " + str(self.__from_agent) + " to " + str(self.__to_agent) \
-				   + " (" + str(self.__message_performative) + ") " + str(self.__content)
-
-		def get_exp(self):
-			""" Return the sender of the message.
-			"""
-			return self.__from_agent
-
-		def get_dest(self):
-			""" Return the receiver of the message.
-			"""
-			return self.__to_agent
-
-		def get_performative(self):
-			""" Return the performative of the message.
-			"""
-			return self.__message_performative
-
-		def get_content(self):
-			""" Return the content of the message.
-			"""
-			return self.__content
-			
 Now that we have a usable ``Message`` object, we are going to create the set of allowed message performatives from a python enumeration. We will define seven message performatives for the moment. It will be very easy to add more later. The seven performatives are as follows:
 
 - propose;
@@ -116,32 +75,11 @@ Now that we have a usable ``Message`` object, we are going to create the set of 
 
 In the **message** folder, create a new file called *MessagePerformative.py*. Open it and implement the ``MessagePerformative`` enumeration class.
 
-.. code:: python
+.. note::
+   
+   a possible implementation of the ``MessagePerformative`` class is :ref:`codemessageperformativeclass`
 
-	#!/usr/bin/env python3
-
-	from enum import Enum
-
-
-	class MessagePerformative(Enum):
-		"""MessagePerformative enum class.
-		Enumeration containing the possible message performative.
-		"""
-		PROPOSE = 101
-		ACCEPT = 102
-		COMMIT = 103
-		ASK_WHY = 104
-		ARGUE = 105
-		QUERY_REF = 106
-		INFORM_REF = 107
-
-		def __str__(self):
-			"""Returns the name of the enum item.
-			"""
-			return '{0}'.format(self.name)
-			
-.. image:: img/part5_folders_message.png
-    :align: center
+.. _q2:
 
 Mailbox
 ~~~~~~~~~~
@@ -163,68 +101,12 @@ The five methods of the ``Mailbox`` class are:
 
 **Practice yourself!**: you can try to implement this class by your own!
 
-Below, a possible implementation of the ``Mailbox`` class:
+.. note::
 
-.. code:: python
-
-	#!/usr/bin/env python3
+   A possible implementation of the ``Mailbox`` class is :ref:`mailboxclass`
 
 
-	class Mailbox:
-		"""Mailbox class.
-		Class implementing the mailbox object which manages messages in communicating agents.
 
-		attr:
-			unread_messages: The list of unread messages
-			read_messages: The list of read messages
-		 """
-
-		def __init__(self):
-			""" Create a new Mailbox.
-			"""
-			self.__unread_messages = []
-			self.__read_messages = []
-
-		def receive_messages(self, message):
-			""" Receive a message and add it in the unread messages list.
-			"""
-			self.__unread_messages.append(message)
-
-		def get_new_messages(self):
-			""" Return all the messages from unread messages list.
-			"""
-			unread_messages = self.__unread_messages.copy()
-			if len(unread_messages) > 0:
-				for messages in unread_messages:
-					self.__read_messages.append(messages)
-
-			self.__unread_messages.clear()
-			return unread_messages
-
-		def get_messages(self):
-			""" Return all the messages from both unread and read messages list.
-			"""
-			if len(self.__unread_messages) > 0:
-				self.get_new_messages()
-			return self.__read_messages
-
-		def get_messages_from_performative(self, performative):
-			""" Return a list of messages which have the same performative.
-			"""
-			messages_from_performative = []
-			for message in self.__unread_messages + self.__read_messages:
-				if message.get_performative() == performative:
-					messages_from_performative.append(message)
-			return messages_from_performative
-
-		def get_messages_from_exp(self, exp):
-			""" Return a list of messages which have the same sender.
-			"""
-			messages_from_exp = []
-			for message in self.__unread_messages + self.__read_messages:
-				if message.get_exp() == exp:
-					messages_from_exp.append(message)
-			return messages_from_exp
 
 The ``Message`` and ``Mailbox`` classes being created, we will test them. Go to the **communication** folder and create a new *runtests.py* file. In this file, we will incrementally add tests to verify that our implementations are working well.
 
@@ -235,51 +117,17 @@ The ``Message`` and ``Mailbox`` classes being created, we will test them. Go to 
 
 Let's start testing the ``Mailbox`` class: using the ``assert()`` function. Create three messages with various performatives, one mailbox and test the different methods of the ``Mailbox`` class (``receive_messages(message)``, ``get_new_messages()``, ``get_messages()``, ``get_messages_from_exp()`` and ``get_messages_from_performative()``). Before looking at the solution, try to implement the tests by your own.
 
-Below, a possible implementation of the *runtests.py* file:
+.. note::
 
-.. code:: python
+    A possible implementation of the *runtests.py* file is :ref:`runtest`
 
-	#!/usr/bin/env python3
-	"""
-	Testing all the functionalities of the communication package.
-	"""
-
-	from communication.mailbox.Mailbox import Mailbox
-	from communication.message.Message import Message
-	from communication.message.MessagePerformative import MessagePerformative
-
-
-	if __name__ == "__main__":
-		print("*---- Testing communication package ----")
-		print("*")
-		print("* 1) Testing Mailbox receive & get methods")
-
-		mailbox = Mailbox()
-		m1 = Message("Agent1", "Agent2", MessagePerformative.PROPOSE, "Bonjour")
-		m2 = Message("Agent1", "Agent2", MessagePerformative.ACCEPT, "Hello")
-		m3 = Message("Agent2", "Agent1", MessagePerformative.ARGUE, "Buenos Dias")
-
-		mailbox.receive_messages(m1)
-		mailbox.receive_messages(m2)
-
-		assert(len(mailbox.get_new_messages()) == 2)
-		print("*     get_new_messages() => OK")
-		assert(len(mailbox.get_messages()) == 2)
-		print("*     get_messages() => OK")
-
-		mailbox.receive_messages(m3)
-		assert(len(mailbox.get_messages()) == 3)
-		assert(len(mailbox.get_messages_from_exp("Agent1")) == 2)
-		print("*     get_messages_from_exp() => OK")
-		assert(len(mailbox.get_messages_from_performative(MessagePerformative.ACCEPT)) == 1)
-		assert(len(mailbox.get_messages_from_performative(MessagePerformative.PROPOSE)) == 1)
-		assert(len(mailbox.get_messages_from_performative(MessagePerformative.ARGUE)) == 1)
-		print("*     get_messages_from_performative() => OK")
 
 If you see all the *OK* messages appear, it means that your classes are well implemented and will behave correctly. This is called doing unit tests. It is very important in making sure your code is robust and bugs free.
 
 .. image:: img/part5_folders_tests.png
     :align: center
+
+
 
 Message Service
 ~~~~~~~~~~~~~~~~~~
@@ -402,6 +250,8 @@ The ``MessageService`` can dispatch the messages instantly or at each time step.
 
 	MessageService.get_instance().set_instant_delivery(False)
 
+.. _q3:
+
 Communicating Agent
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -440,77 +290,12 @@ As you can see, many methods of the ``CommunicatingAgent`` class are the same as
 
 **Practice yourself!**: you can try to implement the ``CommunicatingAgent`` class by your own!
 
-Below, a possible implementation of the ``CommunicatingAgent`` class:
+.. note::
 
-.. code:: python
-
-	#!/usr/bin/env python3
-
-	from mesa import Agent
-
-	from communication.mailbox.Mailbox import Mailbox
-	from communication.message.MessageService import MessageService
+  A possible implementation of the ``CommunicatingAgent`` class is :ref:`communicatingagent`
 
 
-	class CommunicatingAgent(Agent):
-		"""CommunicatingAgent class.
-		Class implementing communicating agent in a generalized manner.
 
-		Not intended to be used on its own, but to inherit its methods to multiple
-		other agents.
-
-		attr:
-			name: The name of the agent (str)
-			mailbox: The mailbox of the agent (Mailbox)
-			message_service: The message service used to send and receive message (MessageService)
-		"""
-
-		def __init__(self, unique_id, model, name):
-			""" Create a new communicating agent.
-			"""
-			super().__init__(unique_id, model)
-			self.__name = name
-			self.__mailbox = Mailbox()
-			self.__messages_service = MessageService.get_instance()
-
-		def step(self):
-			""" The step methods of the agent called by the scheduler at each time tick.
-			"""
-			super().step()
-
-		def get_name(self):
-			""" Return the name of the communicating agent."""
-			return self.__name
-
-		def receive_message(self, message):
-			""" Receive a message (called by the MessageService object) and store it in the mailbox.
-			"""
-			self.__mailbox.receive_messages(message)
-
-		def send_message(self, message):
-			""" Send message through the MessageService object.
-			"""
-			self.__messages_service.send_message(message)
-
-		def get_new_messages(self):
-			""" Return all the unread messages.
-			"""
-			return self.__mailbox.get_new_messages()
-
-		def get_messages(self):
-			""" Return all the received messages.
-			"""
-			return self.__mailbox.get_messages()
-
-		def get_messages_from_performative(self, performative):
-			""" Return a list of messages which have the same performative.
-			"""
-			return self.__mailbox.get_messages_from_performative(performative)
-
-		def get_messages_from_exp(self, exp):
-			""" Return a list of messages which have the same sender.
-			"""
-			return self.__mailbox.get_messages_from_exp(exp)
 
 **Practice yourself!**
 
@@ -521,88 +306,12 @@ All the features of the **Mesa** communication layer being implemented, we will 
 3. Implement a ``TestModel`` class which inherits from **Mesa** ``Model``. This model isntantiate the ``MessageService`` and two communicating agents;
 4. In the ``if __name__ == "__main__":``, instantiate the ``TestModel`` and make the two communicating agents communicate through messages. Use the ``assert()`` function to ensure that the behaviors (number of messages sent, received, etc.) are those expected. 
 
-Below, a possible implementation of these four steps:
 
-1.  Open the *runtests.py* file;
+.. note::
 
-2. The implementation of the ``TestAgent`` class is very simple and only consists of calling the constructor of the inherited class and the ``step()`` method.
+   A possible implementation of these four steps is :ref:`test`
 
-.. code:: python
-
-	class TestAgent(CommunicatingAgent):
-		""" TestAgent which inherit from CommunicatingAgent to test these functionalities.
-		"""
-		def __init__(self, unique_id, model, name):
-			super().__init__(unique_id, model, name)
-
-		def step(self):
-			super().step()
-
-3. The implementation of the ``TestModel`` class is very similar to what you did earlier with others **Mesa** ``Model``. The only difference is the instantiation of the ``MessageService`` and its call in the ``step()`` method.
-
-.. code:: python
-
-	class TestModel(Model):
-		""" TestModel which inherit from Model to test CommunicatingAgent and MessageService.
-		"""
-		def __init__(self):
-			self.schedule = RandomActivation(self)
-			self.__messages_service = MessageService(self.schedule)
-			for i in range(2):
-				a = TestAgent(i, self, "Agent" + str(i))
-				self.schedule.add(a)
-			self.running = True
-
-		def step(self):
-			self.__messages_service.dispatch_messages()
-			self.schedule.step()
-
-4. In the ``if __name__ == "__main__":``, we test the sending of messages instantly at first and then at each simulation step using ``MessageService.get_instance().set_instant_delivery(False)``. To test the communication between each agent, we retrieve the two agents created by the ``TestModel`` via the scheduler (``agent0 = communicating_model.schedule.agents[0]``) and we make send them messages to each other (``agent0.send_message(Message("Agent0", "Agent1", MessagePerformative.COMMIT, "Bonjour"))``). We use the ``assert()`` function to verify that the exchanges are carried out as expected: ``assert(len(agent1.get_new_messages()) == 1)`` (the number of new messages of agent 1 is equal to 1). We try to cover all implemented functionality in the same way.
-
-.. code:: python
-
-	print("* 2) Testing CommunicatingAgent & MessageService")
-
-    communicating_model = TestModel()
-
-    assert(len(communicating_model.schedule.agents) == 2)
-    print("*     get the number of CommunicatingAgent => OK")
-
-    agent0 = communicating_model.schedule.agents[0]
-    agent1 = communicating_model.schedule.agents[1]
-
-    assert(agent0.get_name() == "Agent0")
-    assert(agent1.get_name() == "Agent1")
-    print("*     get_name() => OK")
-
-    agent0.send_message(Message("Agent0", "Agent1", MessagePerformative.COMMIT, "Bonjour"))
-    agent1.send_message(Message("Agent1", "Agent0", MessagePerformative.COMMIT, "Bonjour"))
-    agent0.send_message(Message("Agent0", "Agent1", MessagePerformative.COMMIT, "Comment ça va ?"))
-
-    assert(len(agent0.get_new_messages()) == 1)
-    assert(len(agent1.get_new_messages()) == 2)
-    assert(len(agent0.get_messages()) == 1)
-    assert(len(agent1.get_messages()) == 2)
-    print("*     send_message() & dispatch_message (instant delivery) => OK")
-
-    MessageService.get_instance().set_instant_delivery(False)
-
-    agent0.send_message(Message("Agent0", "Agent1", MessagePerformative.COMMIT, "Bonjour"))
-    agent1.send_message(Message("Agent1", "Agent0", MessagePerformative.COMMIT, "Bonjour"))
-    agent0.send_message(Message("Agent0", "Agent1", MessagePerformative.COMMIT, "Comment ça va ?"))
-
-    assert(len(agent0.get_messages()) == 1)
-    assert(len(agent1.get_messages()) == 2)
-
-    communicating_model.step()
-
-    assert(len(agent0.get_new_messages()) == 1)
-    assert(len(agent1.get_new_messages()) == 2)
-    assert(len(agent0.get_messages()) == 2)
-    assert(len(agent1.get_messages()) == 4)
-    print("*     send_message() & dispatch_messages => OK")
-
-If you reuse the last code in your ``if __name__ == "__main__":`` and see all the *OK* messages appear, it means that your classes are well implemented and will behave correctly. The implementation of the communication layer in **Mesa** is now complete.
+If you reuse the provided code in your ``if __name__ == "__main__":`` and see all the *OK* messages appear, it means that your classes are well implemented and will behave correctly. The implementation of the communication layer in **Mesa** is now complete.
 
 2. Concrete using of messaging communication in Mesa
 ------------------------------------------------------

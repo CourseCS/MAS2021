@@ -17,7 +17,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Argumentation-based negotiation" href="cours-4.html" />
+    <link rel="next" title="3.5. Corrections mesa communication" href="correction-part-6.html" />
     <link rel="prev" title="3.1. Indirect interactions" href="part-5.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -27,7 +27,7 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="cours-4.html" title="4. Argumentation-based negotiation"
+          <a href="correction-part-6.html" title="3.5. Corrections mesa communication"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="part-5.html" title="3.1. Indirect interactions"
@@ -63,7 +63,7 @@
 <p>Create an <em>__init__.py</em> file in the <strong>communication</strong>, <strong>agent</strong>, <strong>mailbox</strong> and <strong>message</strong> folders to initiate python packages.</p>
 <p>As everything is setting up, we can now move on to the implementation of the communication layer.</p>
 <div class="section" id="messages">
-<h3>Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h3>
+<span id="q1"></span><h3>Messages<a class="headerlink" href="#messages" title="Permalink to this headline">¶</a></h3>
 <p>Enter the <strong>message</strong> folder and create a new <em>Message.py</em> file. Let’s open this file and implement the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class. The purpose of this <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is to create a python message object containing the receiver and sender identifiers but also the performative of the message sent as well as a content. Agents will exchange information using these items during their communication phases. The <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is therefore composed of four attributes, four accessor methods (used to access the state of the object i.e, the data hidden in the object can be accessed from this method) and a string method (which returns a string, which is considered an informal or nicely printable representation of the message object).</p>
 <p>The four attributes of the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class are:</p>
 <ul class="simple">
@@ -80,54 +80,9 @@
 <li><p><em>get_content()</em>: return the content of the message.</p></li>
 </ul>
 <p><strong>Practice yourself!</strong>: you can try to implement this class by your own!</p>
-<p>Below, a possible implementation of the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-
-<span class="k">class</span> <span class="nc">Message</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Message class.</span>
-<span class="sd">        Class implementing the message object which is exchanged between agents through a message service during communication.</span>
-
-<span class="sd">        attr:</span>
-<span class="sd">                from_agent: the sender of the message (id)</span>
-<span class="sd">                to_agent: the receiver of the message (id)</span>
-<span class="sd">                message_performative: the performative of the message</span>
-<span class="sd">                content: the content of the message</span>
-<span class="sd">         &quot;&quot;&quot;</span>
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">from_agent</span><span class="p">,</span> <span class="n">to_agent</span><span class="p">,</span> <span class="n">message_performative</span><span class="p">,</span> <span class="n">content</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Create a new message.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__from_agent</span> <span class="o">=</span> <span class="n">from_agent</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__to_agent</span> <span class="o">=</span> <span class="n">to_agent</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__message_performative</span> <span class="o">=</span> <span class="n">message_performative</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__content</span> <span class="o">=</span> <span class="n">content</span>
-
-        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return Message as a String.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="s2">&quot;From &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__from_agent</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; to &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__to_agent</span><span class="p">)</span> \
-                           <span class="o">+</span> <span class="s2">&quot; (&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__message_performative</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;) &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__content</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">get_exp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return the sender of the message.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__from_agent</span>
-
-        <span class="k">def</span> <span class="nf">get_dest</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return the receiver of the message.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__to_agent</span>
-
-        <span class="k">def</span> <span class="nf">get_performative</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return the performative of the message.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__message_performative</span>
-
-        <span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return the content of the message.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__content</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>a possible implementation of the <code class="docutils literal notranslate"><span class="pre">Message</span></code> class is <a class="reference internal" href="correction-part-6.html#codemessageclass"><span class="std std-ref">Message class</span></a>.</p>
 </div>
 <p>Now that we have a usable <code class="docutils literal notranslate"><span class="pre">Message</span></code> object, we are going to create the set of allowed message performatives from a python enumeration. We will define seven message performatives for the moment. It will be very easy to add more later. The seven performatives are as follows:</p>
 <ul class="simple">
@@ -140,33 +95,13 @@
 <li><p>inform.</p></li>
 </ul>
 <p>In the <strong>message</strong> folder, create a new file called <em>MessagePerformative.py</em>. Open it and implement the <code class="docutils literal notranslate"><span class="pre">MessagePerformative</span></code> enumeration class.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
-
-
-<span class="k">class</span> <span class="nc">MessagePerformative</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;MessagePerformative enum class.</span>
-<span class="sd">        Enumeration containing the possible message performative.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">PROPOSE</span> <span class="o">=</span> <span class="mi">101</span>
-        <span class="n">ACCEPT</span> <span class="o">=</span> <span class="mi">102</span>
-        <span class="n">COMMIT</span> <span class="o">=</span> <span class="mi">103</span>
-        <span class="n">ASK_WHY</span> <span class="o">=</span> <span class="mi">104</span>
-        <span class="n">ARGUE</span> <span class="o">=</span> <span class="mi">105</span>
-        <span class="n">QUERY_REF</span> <span class="o">=</span> <span class="mi">106</span>
-        <span class="n">INFORM_REF</span> <span class="o">=</span> <span class="mi">107</span>
-
-        <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot;Returns the name of the enum item.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="s1">&#39;{0}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>a possible implementation of the <code class="docutils literal notranslate"><span class="pre">MessagePerformative</span></code> class is <a class="reference internal" href="correction-part-6.html#codemessageperformativeclass"><span class="std std-ref">Message Performative Class</span></a></p>
 </div>
-<img alt="images/part5_folders_message.png" class="align-center" src="images/part5_folders_message.png" />
 </div>
 <div class="section" id="mailbox">
-<h3>Mailbox<a class="headerlink" href="#mailbox" title="Permalink to this headline">¶</a></h3>
+<span id="q2"></span><h3>Mailbox<a class="headerlink" href="#mailbox" title="Permalink to this headline">¶</a></h3>
 <p>To manage messages, each communicating agent will have his own mailbox. The purpose of this class is to provide to agents some mechanisms for handling sent and received messages. So, go to the <strong>mailbox</strong> folder and create a new <em>Mailbox.py</em> file. Let’s open this file and implement the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class which is composed of two attributes and five methods.</p>
 <p>The two attributes of the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class are:</p>
 <ul class="simple">
@@ -182,109 +117,17 @@
 <li><p><em>get_messages_from_exp(exp)</em>: return a list of messages which have the same sender.</p></li>
 </ul>
 <p><strong>Practice yourself!</strong>: you can try to implement this class by your own!</p>
-<p>Below, a possible implementation of the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-
-<span class="k">class</span> <span class="nc">Mailbox</span><span class="p">:</span>
-        <span class="sd">&quot;&quot;&quot;Mailbox class.</span>
-<span class="sd">        Class implementing the mailbox object which manages messages in communicating agents.</span>
-
-<span class="sd">        attr:</span>
-<span class="sd">                unread_messages: The list of unread messages</span>
-<span class="sd">                read_messages: The list of read messages</span>
-<span class="sd">         &quot;&quot;&quot;</span>
-
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Create a new Mailbox.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__read_messages</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="k">def</span> <span class="nf">receive_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Receive a message and add it in the unread messages list.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">get_new_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return all the messages from unread messages list.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="n">unread_messages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">unread_messages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                        <span class="k">for</span> <span class="n">messages</span> <span class="ow">in</span> <span class="n">unread_messages</span><span class="p">:</span>
-                                <span class="bp">self</span><span class="o">.</span><span class="n">__read_messages</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
-
-                <span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-                <span class="k">return</span> <span class="n">unread_messages</span>
-
-        <span class="k">def</span> <span class="nf">get_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return all the messages from both unread and read messages list.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">()</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__read_messages</span>
-
-        <span class="k">def</span> <span class="nf">get_messages_from_performative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">performative</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return a list of messages which have the same performative.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="n">messages_from_performative</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__read_messages</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">get_performative</span><span class="p">()</span> <span class="o">==</span> <span class="n">performative</span><span class="p">:</span>
-                                <span class="n">messages_from_performative</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">messages_from_performative</span>
-
-        <span class="k">def</span> <span class="nf">get_messages_from_exp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exp</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return a list of messages which have the same sender.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="n">messages_from_exp</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">message</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">__unread_messages</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">__read_messages</span><span class="p">:</span>
-                        <span class="k">if</span> <span class="n">message</span><span class="o">.</span><span class="n">get_exp</span><span class="p">()</span> <span class="o">==</span> <span class="n">exp</span><span class="p">:</span>
-                                <span class="n">messages_from_exp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-                <span class="k">return</span> <span class="n">messages_from_exp</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A possible implementation of the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class is <a class="reference internal" href="correction-part-6.html#mailboxclass"><span class="std std-ref">Mailbox Class</span></a></p>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">Message</span></code> and <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> classes being created, we will test them. Go to the <strong>communication</strong> folder and create a new <em>runtests.py</em> file. In this file, we will incrementally add tests to verify that our implementations are working well.</p>
 <img alt="images/part5_folders_mailbox.png" class="align-center" src="images/part5_folders_mailbox.png" />
 <p><strong>Practice yourself!</strong></p>
 <p>Let’s start testing the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class: using the <code class="docutils literal notranslate"><span class="pre">assert()</span></code> function. Create three messages with various performatives, one mailbox and test the different methods of the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class (<code class="docutils literal notranslate"><span class="pre">receive_messages(message)</span></code>, <code class="docutils literal notranslate"><span class="pre">get_new_messages()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_messages()</span></code>, <code class="docutils literal notranslate"><span class="pre">get_messages_from_exp()</span></code> and <code class="docutils literal notranslate"><span class="pre">get_messages_from_performative()</span></code>). Before looking at the solution, try to implement the tests by your own.</p>
-<p>Below, a possible implementation of the <em>runtests.py</em> file:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-<span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">Testing all the functionalities of the communication package.</span>
-<span class="sd">&quot;&quot;&quot;</span>
-
-<span class="kn">from</span> <span class="nn">communication.mailbox.Mailbox</span> <span class="kn">import</span> <span class="n">Mailbox</span>
-<span class="kn">from</span> <span class="nn">communication.message.Message</span> <span class="kn">import</span> <span class="n">Message</span>
-<span class="kn">from</span> <span class="nn">communication.message.MessagePerformative</span> <span class="kn">import</span> <span class="n">MessagePerformative</span>
-
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;*---- Testing communication package ----&quot;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;* 1) Testing Mailbox receive &amp; get methods&quot;</span><span class="p">)</span>
-
-        <span class="n">mailbox</span> <span class="o">=</span> <span class="n">Mailbox</span><span class="p">()</span>
-        <span class="n">m1</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent2&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">PROPOSE</span><span class="p">,</span> <span class="s2">&quot;Bonjour&quot;</span><span class="p">)</span>
-        <span class="n">m2</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent2&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">ACCEPT</span><span class="p">,</span> <span class="s2">&quot;Hello&quot;</span><span class="p">)</span>
-        <span class="n">m3</span> <span class="o">=</span> <span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent2&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">ARGUE</span><span class="p">,</span> <span class="s2">&quot;Buenos Dias&quot;</span><span class="p">)</span>
-
-        <span class="n">mailbox</span><span class="o">.</span><span class="n">receive_messages</span><span class="p">(</span><span class="n">m1</span><span class="p">)</span>
-        <span class="n">mailbox</span><span class="o">.</span><span class="n">receive_messages</span><span class="p">(</span><span class="n">m2</span><span class="p">)</span>
-
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     get_new_messages() =&gt; OK&quot;</span><span class="p">)</span>
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     get_messages() =&gt; OK&quot;</span><span class="p">)</span>
-
-        <span class="n">mailbox</span><span class="o">.</span><span class="n">receive_messages</span><span class="p">(</span><span class="n">m3</span><span class="p">)</span>
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">3</span><span class="p">)</span>
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_messages_from_exp</span><span class="p">(</span><span class="s2">&quot;Agent1&quot;</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     get_messages_from_exp() =&gt; OK&quot;</span><span class="p">)</span>
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_messages_from_performative</span><span class="p">(</span><span class="n">MessagePerformative</span><span class="o">.</span><span class="n">ACCEPT</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_messages_from_performative</span><span class="p">(</span><span class="n">MessagePerformative</span><span class="o">.</span><span class="n">PROPOSE</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mailbox</span><span class="o">.</span><span class="n">get_messages_from_performative</span><span class="p">(</span><span class="n">MessagePerformative</span><span class="o">.</span><span class="n">ARGUE</span><span class="p">))</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     get_messages_from_performative() =&gt; OK&quot;</span><span class="p">)</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A possible implementation of the <em>runtests.py</em> file is <a class="reference internal" href="correction-part-6.html#runtest"><span class="std std-ref">Runtest</span></a></p>
 </div>
 <p>If you see all the <em>OK</em> messages appear, it means that your classes are well implemented and will behave correctly. This is called doing unit tests. It is very important in making sure your code is robust and bugs free.</p>
 <img alt="images/part5_folders_tests.png" class="align-center" src="images/part5_folders_tests.png" />
@@ -400,7 +243,7 @@
 </div>
 </div>
 <div class="section" id="communicating-agent">
-<h3>Communicating Agent<a class="headerlink" href="#communicating-agent" title="Permalink to this headline">¶</a></h3>
+<span id="q3"></span><h3>Communicating Agent<a class="headerlink" href="#communicating-agent" title="Permalink to this headline">¶</a></h3>
 <p>We now have all the tools implemented: (1) <code class="docutils literal notranslate"><span class="pre">Message</span></code>, (2) <code class="docutils literal notranslate"><span class="pre">MessagePerformative</span></code>, (3) <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> and (4) <code class="docutils literal notranslate"><span class="pre">MessageService</span></code>. We are going to create a communicating agent that inherits from <strong>Mesa</strong> <code class="docutils literal notranslate"><span class="pre">Agent</span></code> class. This <code class="docutils literal notranslate"><span class="pre">CommunicatingAgent</span></code> class is not intended to be used on its own, but must be inherit to create other agent classes.</p>
 <p>If we refer to the four step mechanism presented on the previous section of the course, a communicating agent must be able to:</p>
 <ol class="arabic simple">
@@ -432,75 +275,9 @@
 </ul>
 <p>As you can see, many methods of the <code class="docutils literal notranslate"><span class="pre">CommunicatingAgent</span></code> class are the same as the methods of the <code class="docutils literal notranslate"><span class="pre">Mailbox</span></code> class: we have chosen to have mailbox accessible only through dedicated methods which makes it private.</p>
 <p><strong>Practice yourself!</strong>: you can try to implement the <code class="docutils literal notranslate"><span class="pre">CommunicatingAgent</span></code> class by your own!</p>
-<p>Below, a possible implementation of the <code class="docutils literal notranslate"><span class="pre">CommunicatingAgent</span></code> class:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
-
-<span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Agent</span>
-
-<span class="kn">from</span> <span class="nn">communication.mailbox.Mailbox</span> <span class="kn">import</span> <span class="n">Mailbox</span>
-<span class="kn">from</span> <span class="nn">communication.message.MessageService</span> <span class="kn">import</span> <span class="n">MessageService</span>
-
-
-<span class="k">class</span> <span class="nc">CommunicatingAgent</span><span class="p">(</span><span class="n">Agent</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;CommunicatingAgent class.</span>
-<span class="sd">        Class implementing communicating agent in a generalized manner.</span>
-
-<span class="sd">        Not intended to be used on its own, but to inherit its methods to multiple</span>
-<span class="sd">        other agents.</span>
-
-<span class="sd">        attr:</span>
-<span class="sd">                name: The name of the agent (str)</span>
-<span class="sd">                mailbox: The mailbox of the agent (Mailbox)</span>
-<span class="sd">                message_service: The message service used to send and receive message (MessageService)</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Create a new communicating agent.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__name</span> <span class="o">=</span> <span class="n">name</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__mailbox</span> <span class="o">=</span> <span class="n">Mailbox</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span> <span class="o">=</span> <span class="n">MessageService</span><span class="o">.</span><span class="n">get_instance</span><span class="p">()</span>
-
-        <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; The step methods of the agent called by the scheduler at each time tick.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-        <span class="k">def</span> <span class="nf">get_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return the name of the communicating agent.&quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__name</span>
-
-        <span class="k">def</span> <span class="nf">receive_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Receive a message (called by the MessageService object) and store it in the mailbox.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__mailbox</span><span class="o">.</span><span class="n">receive_messages</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">send_message</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Send message through the MessageService object.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">get_new_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return all the unread messages.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mailbox</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">()</span>
-
-        <span class="k">def</span> <span class="nf">get_messages</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return all the received messages.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mailbox</span><span class="o">.</span><span class="n">get_messages</span><span class="p">()</span>
-
-        <span class="k">def</span> <span class="nf">get_messages_from_performative</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">performative</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return a list of messages which have the same performative.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mailbox</span><span class="o">.</span><span class="n">get_messages_from_performative</span><span class="p">(</span><span class="n">performative</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">get_messages_from_exp</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exp</span><span class="p">):</span>
-                <span class="sd">&quot;&quot;&quot; Return a list of messages which have the same sender.</span>
-<span class="sd">                &quot;&quot;&quot;</span>
-                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">__mailbox</span><span class="o">.</span><span class="n">get_messages_from_exp</span><span class="p">(</span><span class="n">exp</span><span class="p">)</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A possible implementation of the <code class="docutils literal notranslate"><span class="pre">CommunicatingAgent</span></code> class is <a class="reference internal" href="correction-part-6.html#communicatingagent"><span class="std std-ref">CommunicatingAgent Class</span></a></p>
 </div>
 <p><strong>Practice yourself!</strong></p>
 <p>All the features of the <strong>Mesa</strong> communication layer being implemented, we will complete the <em>runtests.py</em> file to test the <code class="docutils literal notranslate"><span class="pre">MessageService</span></code> and <code class="docutils literal notranslate"><span class="pre">CommunicatingAgent</span></code> classes. To do this, we will implement a <strong>Mesa</strong> <code class="docutils literal notranslate"><span class="pre">Model</span></code> and communicating agents:</p>
@@ -510,86 +287,11 @@
 <li><p>Implement a <code class="docutils literal notranslate"><span class="pre">TestModel</span></code> class which inherits from <strong>Mesa</strong> <code class="docutils literal notranslate"><span class="pre">Model</span></code>. This model isntantiate the <code class="docutils literal notranslate"><span class="pre">MessageService</span></code> and two communicating agents;</p></li>
 <li><p>In the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>, instantiate the <code class="docutils literal notranslate"><span class="pre">TestModel</span></code> and make the two communicating agents communicate through messages. Use the <code class="docutils literal notranslate"><span class="pre">assert()</span></code> function to ensure that the behaviors (number of messages sent, received, etc.) are those expected.</p></li>
 </ol>
-<p>Below, a possible implementation of these four steps:</p>
-<ol class="arabic simple">
-<li><p>Open the <em>runtests.py</em> file;</p></li>
-<li><p>The implementation of the <code class="docutils literal notranslate"><span class="pre">TestAgent</span></code> class is very simple and only consists of calling the constructor of the inherited class and the <code class="docutils literal notranslate"><span class="pre">step()</span></code> method.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestAgent</span><span class="p">(</span><span class="n">CommunicatingAgent</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; TestAgent which inherit from CommunicatingAgent to test these functionalities.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
-                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-
-        <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A possible implementation of these four steps is <a class="reference internal" href="correction-part-6.html#test"><span class="std std-ref">Tests</span></a></p>
 </div>
-<ol class="arabic simple" start="3">
-<li><p>The implementation of the <code class="docutils literal notranslate"><span class="pre">TestModel</span></code> class is very similar to what you did earlier with others <strong>Mesa</strong> <code class="docutils literal notranslate"><span class="pre">Model</span></code>. The only difference is the instantiation of the <code class="docutils literal notranslate"><span class="pre">MessageService</span></code> and its call in the <code class="docutils literal notranslate"><span class="pre">step()</span></code> method.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot; TestModel which inherit from Model to test CommunicatingAgent and MessageService.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span> <span class="o">=</span> <span class="n">MessageService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">)</span>
-                <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
-                        <span class="n">a</span> <span class="o">=</span> <span class="n">TestAgent</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="s2">&quot;Agent&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
-                        <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">True</span>
-
-        <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span><span class="o">.</span><span class="n">dispatch_messages</span><span class="p">()</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>In the <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code>, we test the sending of messages instantly at first and then at each simulation step using <code class="docutils literal notranslate"><span class="pre">MessageService.get_instance().set_instant_delivery(False)</span></code>. To test the communication between each agent, we retrieve the two agents created by the <code class="docutils literal notranslate"><span class="pre">TestModel</span></code> via the scheduler (<code class="docutils literal notranslate"><span class="pre">agent0</span> <span class="pre">=</span> <span class="pre">communicating_model.schedule.agents[0]</span></code>) and we make send them messages to each other (<code class="docutils literal notranslate"><span class="pre">agent0.send_message(Message(&quot;Agent0&quot;,</span> <span class="pre">&quot;Agent1&quot;,</span> <span class="pre">MessagePerformative.COMMIT,</span> <span class="pre">&quot;Bonjour&quot;))</span></code>). We use the <code class="docutils literal notranslate"><span class="pre">assert()</span></code> function to verify that the exchanges are carried out as expected: <code class="docutils literal notranslate"><span class="pre">assert(len(agent1.get_new_messages())</span> <span class="pre">==</span> <span class="pre">1)</span></code> (the number of new messages of agent 1 is equal to 1). We try to cover all implemented functionality in the same way.</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;* 2) Testing CommunicatingAgent &amp; MessageService&quot;</span><span class="p">)</span>
-
-<span class="n">communicating_model</span> <span class="o">=</span> <span class="n">TestModel</span><span class="p">()</span>
-
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">communicating_model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     get the number of CommunicatingAgent =&gt; OK&quot;</span><span class="p">)</span>
-
-<span class="n">agent0</span> <span class="o">=</span> <span class="n">communicating_model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">agent1</span> <span class="o">=</span> <span class="n">communicating_model</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">agents</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="k">assert</span><span class="p">(</span><span class="n">agent0</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Agent0&quot;</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="n">agent1</span><span class="o">.</span><span class="n">get_name</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;Agent1&quot;</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     get_name() =&gt; OK&quot;</span><span class="p">)</span>
-
-<span class="n">agent0</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent0&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">COMMIT</span><span class="p">,</span> <span class="s2">&quot;Bonjour&quot;</span><span class="p">))</span>
-<span class="n">agent1</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent0&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">COMMIT</span><span class="p">,</span> <span class="s2">&quot;Bonjour&quot;</span><span class="p">))</span>
-<span class="n">agent0</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent0&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">COMMIT</span><span class="p">,</span> <span class="s2">&quot;Comment ça va ?&quot;</span><span class="p">))</span>
-
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent0</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent1</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent0</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent1</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     send_message() &amp; dispatch_message (instant delivery) =&gt; OK&quot;</span><span class="p">)</span>
-
-<span class="n">MessageService</span><span class="o">.</span><span class="n">get_instance</span><span class="p">()</span><span class="o">.</span><span class="n">set_instant_delivery</span><span class="p">(</span><span class="bp">False</span><span class="p">)</span>
-
-<span class="n">agent0</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent0&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">COMMIT</span><span class="p">,</span> <span class="s2">&quot;Bonjour&quot;</span><span class="p">))</span>
-<span class="n">agent1</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent0&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">COMMIT</span><span class="p">,</span> <span class="s2">&quot;Bonjour&quot;</span><span class="p">))</span>
-<span class="n">agent0</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">Message</span><span class="p">(</span><span class="s2">&quot;Agent0&quot;</span><span class="p">,</span> <span class="s2">&quot;Agent1&quot;</span><span class="p">,</span> <span class="n">MessagePerformative</span><span class="o">.</span><span class="n">COMMIT</span><span class="p">,</span> <span class="s2">&quot;Comment ça va ?&quot;</span><span class="p">))</span>
-
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent0</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent1</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-
-<span class="n">communicating_model</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
-
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent0</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent1</span><span class="o">.</span><span class="n">get_new_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent0</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-<span class="k">assert</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">agent1</span><span class="o">.</span><span class="n">get_messages</span><span class="p">())</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="s2">&quot;*     send_message() &amp; dispatch_messages =&gt; OK&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>If you reuse the last code in your <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> and see all the <em>OK</em> messages appear, it means that your classes are well implemented and will behave correctly. The implementation of the communication layer in <strong>Mesa</strong> is now complete.</p>
+<p>If you reuse the provided code in your <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">__name__</span> <span class="pre">==</span> <span class="pre">&quot;__main__&quot;:</span></code> and see all the <em>OK</em> messages appear, it means that your classes are well implemented and will behave correctly. The implementation of the communication layer in <strong>Mesa</strong> is now complete.</p>
 </div>
 </div>
 <div class="section" id="concrete-using-of-messaging-communication-in-mesa">
@@ -646,8 +348,8 @@
   <p class="topless"><a href="part-5.html"
                         title="previous chapter">3.1. Indirect interactions</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="cours-4.html"
-                        title="next chapter">4. Argumentation-based negotiation</a></p>
+  <p class="topless"><a href="correction-part-6.html"
+                        title="next chapter">3.5. Corrections mesa communication</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -676,7 +378,7 @@
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="cours-4.html" title="4. Argumentation-based negotiation"
+          <a href="correction-part-6.html" title="3.5. Corrections mesa communication"
              >next</a> |</li>
         <li class="right" >
           <a href="part-5.html" title="3.1. Indirect interactions"

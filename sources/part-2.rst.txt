@@ -10,8 +10,10 @@ The basic model of an agent is the `Procedural Reasoning System <https://hal.laa
 
 .. figure:: img/PRS.png
     :align: center
+    :width: 450
 
-    The Procedural Reasoning System - *Georgeff, M.P., and Ingrand, F.F. (1989). Decision-making in an embedded reasoning system. Proc. 11th IJCAI, pp. 972-978*
+    The Procedural Reasoning System (`Georgeff and Ingrand, 1989 <https://hal.laas.fr/hal-01980071>`_). 
+  
 
 In this model, the first object to consider is the **environment**. The environment is characterised by a (partially) observable state, which means that 1) it can be modified and 2) some of the variable values can be observed by the agents. As a consequence, an environment is always provided with a set of observation functions and a set of modification functions.
 

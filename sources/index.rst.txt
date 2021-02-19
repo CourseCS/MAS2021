@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the course "Multiagent Systems: architecture and reasoning"
+Welcome to the course "Multiagent Systems: architectures and reasoning"
 =======================================================================
 
-Multi-agent systems (MAS) are currently widely used, especially for complex applications requiring interaction between several entities. More specifically, they are used in applications where it is necessary to solve problems in a distributed manner (data processing) or in the design of distributed systems in which each component has some degree of autonomy (control of processes). Some examples of applications are trading agents, drones, smart grids. 
+Multiagent systems (MAS) are currently widely used, especially for complex applications requiring interaction between several entities. More specifically, they are used in applications where it is necessary to solve problems in a distributed manner (data processing) or in the design of distributed systems in which each component has some degree of autonomy (control of processes). Some examples of applications are trading agents, drones, smart grids. 
 
 
 .. figure:: img/welcome.png
@@ -32,6 +32,7 @@ The idea is to give a basis for understanding how agent-based simulations can be
    cours-3
    part-5
    part-6
+   correction-part-6
    cours-4
    part-7
    cours-5

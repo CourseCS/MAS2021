@@ -6,8 +6,8 @@
 
    </strike> 
 
-5.1. Previsously !!
-====================
+5.1. Previsously ...
+======================
 
 In the last session, we started the discussion about an argumentation-based negotiation agent (see figure below for recall). 
 
@@ -571,6 +571,12 @@ Agent 2 may reply by:
 4. Status of arguments? 
 ------------------------
 
+
+.. note::
+
+  You can skip for the moment this section and go ahead for the next course.
+
+
 In an argumentation process, it is important to define the status of arguments (or to evaluate
 them) on the basis of all the ways in which they interact. Thus, the best or acceptable arguments
 must be identified at the end of the argumentation process.
@@ -581,12 +587,23 @@ only on the definition of the status of arguments. In such framework, the accept
 terms, the acceptability of arguments is defined without considering the internal structure of the
 arguments.
 
+Different extensions exists, namely: 
+
+- *Admissible set*: it is a minimal notion of a reasonable position (internally consistent and defends itslef, and it is coherent, defendable position).
+
+- *Stable set*: un argument is not accepted because it is attacked by at least one accepted argument;
+
+- *Preferred extension*: it represents maximal coherent positions, able to defend themselves against all attackers;
+
+- *Grounded extension*: accept only the argument that one cannot avoid to accept. 
+
+Fore more formal defintions of the different extensions, and examples, you can have a look at this `summary <MAS_DungFramework.pdf>`_. 
 
 
 
 
 *Notes*
-----------------------------
+^^^^^^^^^^
 
 .. [#n1] In this course we are mainly interessted by decision making. Thus, we will discuss the structure of arguments withing this setting. 
 
