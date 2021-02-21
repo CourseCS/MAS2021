@@ -264,7 +264,7 @@
 <h1>1.3. Properties &amp; Definitions<a class="headerlink" href="#properties-definitions" title="Permalink to this headline">¶</a></h1>
 <p>Before we move to the next important aspects of the course (<em>i.e.</em> multiagent interactions), we must consider some important definitions in the domain. All these definitions are related to some crucial questions to be answered before implementing a MAS.</p>
 <div class="section" id="properties-of-the-environment">
-<h2>Properties of the Environment<a class="headerlink" href="#properties-of-the-environment" title="Permalink to this headline">¶</a></h2>
+<h2>1. Properties of the Environment<a class="headerlink" href="#properties-of-the-environment" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="fully-or-partially-observable">
 <h3>Fully or partially observable?<a class="headerlink" href="#fully-or-partially-observable" title="Permalink to this headline">¶</a></h3>
 <p>Fully observable environments mean that all variables in the environment can be accessed by any agent. This is generally done with some generic mechanism such as:</p>
@@ -331,7 +331,7 @@
 </div>
 </div>
 <div class="section" id="properties-of-the-agents-in-the-mas">
-<h2>Properties of the Agents in the MAS<a class="headerlink" href="#properties-of-the-agents-in-the-mas" title="Permalink to this headline">¶</a></h2>
+<h2>2. Properties of the Agents in the MAS<a class="headerlink" href="#properties-of-the-agents-in-the-mas" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="autonomous-agents">
 <h3>Autonomous agents<a class="headerlink" href="#autonomous-agents" title="Permalink to this headline">¶</a></h3>
 <p><em>Autonomy</em> in a Multi-Agent Systems does not mean that the agents can do whatever they want to. To begin with, all agents behave according to a well-defined program. Autonomy must be understood as the independence of one agent’s behaviour (<em>i.e.</em> action selection) with respect to some part of the system. Understanding this concept requires to consider different levels.</p>
@@ -399,7 +399,7 @@
 </div>
 </div>
 <div class="section" id="concluding-remarks">
-<h2>Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
+<h2>3. Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
 <p>At this point in the course, you figured out that MAS programming is largely a question of design patterns to implement a distributed system with some interesting properties. You can implement a MAS in plain C if you want. Thread, classes, or even more complex features are all compiled to assembler language in the end. However, computer scientists generally rely on high-level models and multi-agent platforms to make agent based programming easier. A multi-agent platform implements the scheduler, the procedural loop and the interaction mechanisms that we will see in the third session of this course. Some of them rely on existing languages (<em>e.g.</em> <a class="reference external" href="https://repast.github.io/">Repast Symphony</a> or <a class="reference external" href="https://jade.tilab.com/">Jade</a> for Java, <a class="reference external" href="https://mesa.readthedocs.io/en/master/">Mesa</a> or <a class="reference external" href="https://spade-mas.readthedocs.io/">Spade</a> for Python). Some other define dedicated languages to get rid of the initial language’s hassle: this is the case for <a class="reference external" href="https://ccl.northwestern.edu/netlogo/">Netlogo</a> or <a class="reference external" href="https://gama-platform.github.io/">Gamma</a> (both are initially programmed in Java).</p>
 <p>The idea with platforms is to avoid programmers to rewrite the basic mechanisms in MAS. This principle is at the basis of C/C++/C# libraries, or Java APIs, or Python modules. When such libraries get complex enough and take control over the runtime, we call them platforms. In the next section, we will introduce the Mesa platform for Python.</p>
 </div>
@@ -438,21 +438,21 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#properties-definitions">1.3. Properties &amp; Definitions</a><ul>
-<li><a class="reference internal" href="#properties-of-the-environment">Properties of the Environment</a><ul>
+<li><a class="reference internal" href="#properties-of-the-environment">1. Properties of the Environment</a><ul>
 <li><a class="reference internal" href="#fully-or-partially-observable">Fully or partially observable?</a></li>
 <li><a class="reference internal" href="#deterministic-or-stochastic">Deterministic or stochastic?</a></li>
 <li><a class="reference internal" href="#static-or-dynamic">Static or dynamic?</a></li>
 <li><a class="reference internal" href="#discrete-or-continuous">Discrete or continuous?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#properties-of-the-agents-in-the-mas">Properties of the Agents in the MAS</a><ul>
+<li><a class="reference internal" href="#properties-of-the-agents-in-the-mas">2. Properties of the Agents in the MAS</a><ul>
 <li><a class="reference internal" href="#autonomous-agents">Autonomous agents</a></li>
 <li><a class="reference internal" href="#loosely-vs-tightly-coupled">Loosely vs tightly coupled?</a></li>
 <li><a class="reference internal" href="#open-mas">Open MAS?</a></li>
 <li><a class="reference internal" href="#distributed-systems">Distributed systems?</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#concluding-remarks">Concluding remarks</a></li>
+<li><a class="reference internal" href="#concluding-remarks">3. Concluding remarks</a></li>
 </ul>
 </li>
 </ul>
