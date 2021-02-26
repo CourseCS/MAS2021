@@ -43,7 +43,9 @@
             
   <div class="section" id="multi-agent-based-simulation-introduction">
 <h1>2.1. Multi-Agent Based Simulation: Introduction<a class="headerlink" href="#multi-agent-based-simulation-introduction" title="Permalink to this headline">¶</a></h1>
-<p>INTRODUCTION TO BE DONE HERE</p>
+<p>Between Multi-Agent System, that you saw previously, and computer simulation, Multi-Agent Based Simulation is a relevant solution for the engineering and the study of complex systems in many fields (artificial life, biology, economics, etc.) thanks to its individual-centered representation of the considered systems. Indeed, Multi-Agent Based Simulation implements models in which individual entities (autonomous agents), their environment and their interactions are directly represented. Thus, the description of the dynamics of the system is no longer done by declaring equations relating to the macroscopic properties of the simulation, but to the individual behavior of each entity.</p>
+<p>Multi-agent simulation is more and more widespread because it has become, like computer simulation, an essential tool for understanding phenomena competing with experimentation and prototyping but at a much lower cost. It is thus used by a large part of the scientific community but also by many industrial players.</p>
+<p>In this course, we will first present the concept of simulation and computer simulation. Then we will focus on Multi-Agent Based Simulation.</p>
 </div>
 <div class="section" id="simulation-in-general">
 <h1>2.2. Simulation in general<a class="headerlink" href="#simulation-in-general" title="Permalink to this headline">¶</a></h1>
@@ -447,7 +449,61 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <div class="section" id="implementing-multi-agent-based-simulation">
 <h1>2.5.  Implementing Multi-Agent Based Simulation<a class="headerlink" href="#implementing-multi-agent-based-simulation" title="Permalink to this headline">¶</a></h1>
-<p>TO BE COMPLETED</p>
+<p>From a technical point of view, the characteristics of a Multi-Agent Based Simulaton are related to the software architecture used to implement the agents and the environment. In this context, the needs and constraints relating to the software architecture can vary due to the heterogeneity of the fields on which  Multi-Agent Based simulation can be applied. The structures of the models representing the agents and the environment are not the same depending on the experimental framework (biology, ecology, ethology, etc.).</p>
+<div class="section" id="architecture-of-a-multi-agent-base-simulation">
+<h2>1. Architecture of a Multi-Agent Base Simulation<a class="headerlink" href="#architecture-of-a-multi-agent-base-simulation" title="Permalink to this headline">¶</a></h2>
+<p>The software architecture of a Multi-Agent Base Simulation is also strongly influenced by the nature of the source system that we want to model. This is one of the reasons why there is currently no generic methodology linked to the modeling and the implementation of Multi-Agent Base Simulation.</p>
+<p>Consequently, the nature of the environment (<strong>continuous</strong> or <strong>discrete</strong>, <strong>static</strong> or <strong>dynamic</strong>, etc.), the granularity of actions / perceptions (<strong>fine</strong> or <strong>coarse</strong>) and the <strong>complexity of the internal architecture</strong> of an agent are all points on which the modeler has to make personal choices which are based on his needs. The large number of existing platforms is proof of this (see the <em>note</em> below).</p>
+<p>Thus, when we want to implement a simulation, we must clearly define :</p>
+<ul class="simple">
+<li><p>the architecture of autonomous entities that act in the system (Agent);</p></li>
+<li><p>the interactions between entities (Interaction);</p></li>
+<li><p>the shared resources and processes between agents (Environment);</p></li>
+<li><p>the coordination and cooperation between agents (Organization).</p></li>
+</ul>
+<img alt="images/mabs_details.png" class="align-center" src="images/mabs_details.png" />
+<p>The implementation of multi-agent models also requires to take into account three
+constraints:</p>
+<ol class="arabic">
+<li><p>Genericity and modularity constraint
+Individual and autonomous entities are modeled and implemented. We want to be able to vary their implementation without questioning the entire source code.</p></li>
+<li><p>Locality constraint
+The environment is not fully accessible to an agent. An agent has only a local perception of the world and his actions/perceptions are limited in their scope.</p>
+<img alt="img/locality_discrete.png" class="align-center" src="img/locality_discrete.png" />
+</li>
+<li><p>Environmental integrity constraint
+There is no direct relationship between the internal architectures of two autonomous agents. An agent must not be able to directly change environment state variables.</p>
+<img alt="img/integrity.png" class="align-center" src="img/integrity.png" />
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here is a small list of existing platforms with advantages and disadvantages:</p>
+<ul class="simple">
+<li><p>Specialized tools for Multi-Agent Based Simulation: ATOM, ARCHISIM, MATSim, MITSIMlab</p>
+<ul>
+<li><p>(+) Allow to reuse some parts of models.</p></li>
+<li><p>(-) Models need adaptation to be used in a new platform.</p></li>
+</ul>
+</li>
+<li><p>Generic tools for Multi-Agent Based Simulation: AnyLogic, GAMA, MASON, SWARM, CORMAS, TurtleKit, Repast, Netlogo, JASMIN</p>
+<ul>
+<li><p>(+) Possible to use the same tool for different models.</p></li>
+<li><p>(-) Need to create a single operational model for each simulation.</p></li>
+</ul>
+</li>
+<li><p>Generic tools for multi-agent softwares: Jason, JADE/TAPAS, JADE/PlaSMA, MADKIT</p>
+<ul>
+<li><p>(+) General knowledge of the tool (easy to use).</p></li>
+<li><p>(-) Need adaptation to implement simulation models.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="time-management-in-mabs">
+<h2>2. Time management in MABS<a class="headerlink" href="#time-management-in-mabs" title="Permalink to this headline">¶</a></h2>
+</div>
 </div>
 <div class="section" id="implementing-a-prey-predator-simulation-with-mesa">
 <h1>2.6. Implementing  a prey / predator simulation with Mesa<a class="headerlink" href="#implementing-a-prey-predator-simulation-with-mesa" title="Permalink to this headline">¶</a></h1>
@@ -465,6 +521,8 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </dd>
 </dl>
 <p>The goal is to implement a prey - predator model closely based on the NetLogo Wolf-Sheep Predation Model: <em>Wilensky, U. (1997). NetLogo Wolf Sheep Predation model</em>. <a class="reference external" href="http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation">http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation</a></p>
+<div class="section" id="practice-yourself">
+<h2>Practice yourself!<a class="headerlink" href="#practice-yourself" title="Permalink to this headline">¶</a></h2>
 <p>Download the following archive which contains the project from which to start and extract it. The extracted folder contains 6 python files:</p>
 <ul class="simple">
 <li><p><em>prey_predator/random_walker.py</em>: this defines the <em>RandomWalker</em> agent, which implements the behavior of moving randomly across a grid, one cell at a time. Both the Wolf and Sheep agents will inherit from it.</p></li>
@@ -495,6 +553,7 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <li><p>Tune the initial parameters to find a balanced state in the model: none of the species disappears during the simulation. The output graph should be like that:</p></li>
 </ol>
 <a class="reference internal image-reference" href="images/preypredatorebmout.png"><img alt="images/preypredatorebmout.png" class="align-center" src="images/preypredatorebmout.png" style="width: 450px;" /></a>
+</div>
 </div>
 
 
@@ -536,8 +595,15 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#implementing-multi-agent-based-simulation">2.5.  Implementing Multi-Agent Based Simulation</a></li>
-<li><a class="reference internal" href="#implementing-a-prey-predator-simulation-with-mesa">2.6. Implementing  a prey / predator simulation with Mesa</a></li>
+<li><a class="reference internal" href="#implementing-multi-agent-based-simulation">2.5.  Implementing Multi-Agent Based Simulation</a><ul>
+<li><a class="reference internal" href="#architecture-of-a-multi-agent-base-simulation">1. Architecture of a Multi-Agent Base Simulation</a></li>
+<li><a class="reference internal" href="#time-management-in-mabs">2. Time management in MABS</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#implementing-a-prey-predator-simulation-with-mesa">2.6. Implementing  a prey / predator simulation with Mesa</a><ul>
+<li><a class="reference internal" href="#practice-yourself">Practice yourself!</a></li>
+</ul>
+</li>
 </ul>
 
   <h4>Previous topic</h4>

@@ -1,7 +1,12 @@
 2.1. Multi-Agent Based Simulation: Introduction 
 ================================================================================
 
-INTRODUCTION TO BE DONE HERE
+Between Multi-Agent System, that you saw previously, and computer simulation, Multi-Agent Based Simulation is a relevant solution for the engineering and the study of complex systems in many fields (artificial life, biology, economics, etc.) thanks to its individual-centered representation of the considered systems. Indeed, Multi-Agent Based Simulation implements models in which individual entities (autonomous agents), their environment and their interactions are directly represented. Thus, the description of the dynamics of the system is no longer done by declaring equations relating to the macroscopic properties of the simulation, but to the individual behavior of each entity.
+
+Multi-agent simulation is more and more widespread because it has become, like computer simulation, an essential tool for understanding phenomena competing with experimentation and prototyping but at a much lower cost. It is thus used by a large part of the scientific community but also by many industrial players. 
+
+In this course, we will first present the concept of simulation and computer simulation. Then we will focus on Multi-Agent Based Simulation. 
+
 
 2.2. Simulation in general
 ================================================================================
@@ -534,10 +539,78 @@ The call of the ``ModularServer`` became:
 2.5.  Implementing Multi-Agent Based Simulation
 ===============================================
 
-TO BE COMPLETED
+From a technical point of view, the characteristics of a Multi-Agent Based Simulaton are related to the software architecture used to implement the agents and the environment. In this context, the needs and constraints relating to the software architecture can vary due to the heterogeneity of the fields on which  Multi-Agent Based simulation can be applied. The structures of the models representing the agents and the environment are not the same depending on the experimental framework (biology, ecology, ethology, etc.).
 
-5. Implementing  a prey / predator simulation with Mesa
---------------------------------------------------------------------------------
+1. Architecture of a Multi-Agent Base Simulation
+--------------------------------------------------
+
+The software architecture of a Multi-Agent Base Simulation is also strongly influenced by the nature of the source system that we want to model. This is one of the reasons why there is currently no generic methodology linked to the modeling and the implementation of Multi-Agent Base Simulation.
+
+Consequently, the nature of the environment (**continuous** or **discrete**, **static** or **dynamic**, etc.), the granularity of actions / perceptions (**fine** or **coarse**) and the **complexity of the internal architecture** of an agent are all points on which the modeler has to make personal choices which are based on his needs. The large number of existing platforms is proof of this (see the *note* below).
+
+Thus, when we want to implement a simulation, we must clearly define :
+
+- the architecture of autonomous entities that act in the system (Agent);
+- the interactions between entities (Interaction);
+- the shared resources and processes between agents (Environment);
+- the coordination and cooperation between agents (Organization).
+
+.. image:: img/mabs_details.png
+    :align: center
+
+The implementation of multi-agent models also requires to take into account three
+constraints:
+
+1. Genericity and modularity constraint
+   Individual and autonomous entities are modeled and implemented. We want to be able to vary their implementation without questioning the entire source code.
+
+2. Locality constraint
+   The environment is not fully accessible to an agent. An agent has only a local perception of the world and his actions/perceptions are limited in their scope.
+   
+   .. image:: img/locality_discrete.png
+    :align: center
+
+3. Environmental integrity constraint
+   There is no direct relationship between the internal architectures of two autonomous agents. An agent must not be able to directly change environment state variables.
+
+   .. image:: img/integrity.png
+    :align: center
+
+.. note::
+  Here is a small list of existing platforms with advantages and disadvantages:
+
+  - Specialized tools for Multi-Agent Based Simulation: ATOM, ARCHISIM, MATSim, MITSIMlab
+
+    - (+) Allow to reuse some parts of models.
+    - (-) Models need adaptation to be used in a new platform.
+
+  - Generic tools for Multi-Agent Based Simulation: AnyLogic, GAMA, MASON, SWARM, CORMAS, TurtleKit, Repast, Netlogo, JASMIN
+
+    - (+) Possible to use the same tool for different models.
+    - (-) Need to create a single operational model for each simulation.
+
+  - Generic tools for multi-agent softwares: Jason, JADE/TAPAS, JADE/PlaSMA, MADKIT
+
+    - (+) General knowledge of the tool (easy to use).
+    - (-) Need adaptation to implement simulation models.
+
+2. Time management in MABS
+--------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+2.6. Implementing  a prey / predator simulation with Mesa
+=============================================================
 
 The objective of this practical work is to implement a simulation of a prey - predator model. The prey - predator model is a simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.
 
@@ -554,7 +627,7 @@ The implementation of this model will make you use several Mesa concepts and fea
 The goal is to implement a prey - predator model closely based on the NetLogo Wolf-Sheep Predation Model: *Wilensky, U. (1997). NetLogo Wolf Sheep Predation model*. http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation
 
 Practice yourself!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Download the following archive which contains the project from which to start and extract it. The extracted folder contains 6 python files:
 

@@ -4,8 +4,8 @@
 
 .. _codemessageclass:
 
-Message class
----------------
+1. Message class
+------------------
 
 .. code:: python
 
@@ -62,8 +62,8 @@ Return to previous page: :ref:`q1`.
 
 .. _codemessageperformativeclass:
 
-Message Performative Class
----------------------------
+2. Message Performative Class
+------------------------------
 .. code:: python
 
 	#!/usr/bin/env python3
@@ -96,7 +96,7 @@ Return to previous page: :ref:`q1`.
 
 .. _mailboxclass:
 
-Mailbox Class
+3. Mailbox Class
 -----------------
 
 .. code:: python
@@ -166,7 +166,7 @@ Return to previous page: :ref:`q2`.
 
 .. _runtest:
 
-Runtest 
+4. Runtest 
 --------------
 
 .. code:: python
@@ -213,8 +213,8 @@ Return to previous page: :ref:`q2`.
 
 .. _communicatingagent:
 
-CommunicatingAgent Class
----------------------------
+5. CommunicatingAgent Class
+-----------------------------
 
 .. code:: python
 
@@ -293,7 +293,7 @@ Return to previous page: :ref:`q3`.
 .. _test:
 
 
-Tests
+6. Tests
 ----------
 
 

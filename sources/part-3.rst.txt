@@ -42,8 +42,8 @@ Documentation
 To help you during this tutorial, we recommend that you bookmark the `Mesa API documentation <https://mesa.readthedocs.io/en/master/apis/api_main.html>`_.
 
 
-Mesa Basics
-------------
+2. Mesa Basics
+----------------
 
 Implementing a multi-agent system in Mesa requires to define two core classes:
 
@@ -141,7 +141,7 @@ Running three steps of the system with N=4 should produce the following output (
 Check your code with your neighbour of with the teachers.
 
 
-2. The Money example
+3. The Money example
 ---------------------
 
 Our goal is to implement a simple agent model in which each agent has only one variable that represents **how much wealth it currently has** (each agent will also have a unique identifier as in the example above). We want the agent to adopt the following behaviour at each step of their execution (*i.e.* in their *procedural loop*):
@@ -186,7 +186,7 @@ Implement a ``MoneyModel`` class that creates ``N`` money-agents. Run some steps
     plt.show()
 
 
-3. Adding a spatial environment
+4. Adding a spatial environment
 ---------------------------------
 
 Many agent-based models have a spatial element, with agents moving around and interacting with nearby neighbors. Mesa supports two overall kinds of spaces:

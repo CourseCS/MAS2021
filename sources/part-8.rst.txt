@@ -222,7 +222,7 @@ Agent3 : Durability :math:`\succ` Environment Impact  :math:`\succ`  Noise :math
 Questions
 ^^^^^^^^^^
 
-1- In your folder you should have the package *arguments* as it is depicted in the following picture. This package contains three classes. If this is not the case, you can download it here.  
+1- In your folder you should have the package *arguments* as it is depicted in the following picture (you can download it :download:`here <arguments.zip>` or download all the package of mesa :download:`here <mesa_argumentation.zip>`). This package contains three classes. 
 
 .. image:: img/arguments_package.jpg
   :width: 170
@@ -597,13 +597,13 @@ Different extensions exists, namely:
 
 - *Grounded extension*: accept only the argument that one cannot avoid to accept. 
 
-Fore more formal defintions of the different extensions, and examples, you can have a look at this `summary <MAS_DungFramework.pdf>`_. 
+Fore more formal defintions of the different extensions, and examples, you can have a look at this :download:`summary <MAS_DungFramework.pdf>`. 
 
 
 
 
 *Notes*
-^^^^^^^^^^
+----------------------------
 
 .. [#n1] In this course we are mainly interessted by decision making. Thus, we will discuss the structure of arguments withing this setting. 
 

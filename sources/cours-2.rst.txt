@@ -21,8 +21,8 @@ The second session aims at presenting Multi-Agent Based Simulation. We will firs
 
 As for the previous session, all implementation is done using the Python programming language and the Mesa library.
 
-References
-~~~~~~~~~~
+Some references
+-----------------------
 
 - Ferber, J. (1995), *Les Systèmes Multi-Agents*, InterEditions. **(French version)**
 - Ferber, J. (1999), *Multi-agent systems: An introduction to distributed artificial intelligence*, Addison Wesley. **(English version)**

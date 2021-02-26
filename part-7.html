@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>4.1. Argumentation-Based Negootiation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
+    <title>4.1. Argumentation-Based Negotiation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
     <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
     
@@ -41,8 +41,8 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="argumentation-based-negootiation-introduction">
-<h1>4.1. Argumentation-Based Negootiation: Introduction<a class="headerlink" href="#argumentation-based-negootiation-introduction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="argumentation-based-negotiation-introduction">
+<h1>4.1. Argumentation-Based Negotiation: Introduction<a class="headerlink" href="#argumentation-based-negotiation-introduction" title="Permalink to this headline">¶</a></h1>
 <p>As it was discussed in the previsous sessions, Multi-Agent Systems (MAS) are systems composed of software agents that interact to solve problems that are beyond the individual capabilities of each agent. Software agents are elements situated in some environment and capable of flexible autonomous action in order to meet their design objectives.
 In almost cases, such agents need to interact to fulfill their objctives or improve their performance. Diffent types of interactions/dialogues exit (as it is illustrated in the following table), it depends on the application. In this course, we are interested by negotiation in multi-agent systems.</p>
 <div class="figure align-center" id="id1">
@@ -208,7 +208,7 @@ different order of preferences among the criteria themselves (total order in our
 <h2>3. The Python project<a class="headerlink" href="#the-python-project" title="Permalink to this headline">¶</a></h2>
 <p>In the third session of the course, in section III.2 “Interaction with mesa libreary”, we have implemented a communication layer in Mesa to handle the direct interactions.
 In this practical work we will use this layer and add argumentation and negotiation features.
-To do so, you can either download the following zip including the preference package or start from the following zip in which the preference package is already integrated in mesa.</p>
+To do so, you can either download the following <a class="reference download internal" download="" href="dowloads/fa3ab80688b72c9f63ecbd51888dbcb8/preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span></code></a> or start from the following <a class="reference download internal" download="" href="dowloads/af3c70e87aa2d2f4337fa83098d3bc1f/mesa_preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span></code></a> in which the preference package is already integrated in mesa.</p>
 <p>Thus, you should have the following:</p>
 <a class="reference internal image-reference" href="images/code.png"><img alt="images/code.png" class="align-center" src="images/code.png" style="width: 200px;" /></a>
 <p>For reminder,</p>
@@ -288,13 +288,65 @@ equality, select one randomly.</p>
 </div>
 <div class="section" id="agents-and-communication">
 <h2>2. Agents and communication<a class="headerlink" href="#agents-and-communication" title="Permalink to this headline">¶</a></h2>
-<p>1- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder. This file  will contain our class of agents and our model for the argumentation simulation.</p>
-<a class="reference internal image-reference" href="images/capture.png"><img alt="images/capture.png" class="align-center" src="images/capture.png" style="width: 350px;" /></a>
-<p>2-  As it was done in the course communication, create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
-<p>3- Write a method that allows to generate a performance table (see the example for Agent1)</p>
+<p>1-  As it was done in the course communication, create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
+<p>2- Write a method that allows to generate a performance table (see the example for Agent1)</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">():</span>
      <span class="c1"># To be completed</span>
      <span class="k">return</span> <span class="n">preferences</span>
+</pre></div>
+</div>
+<p>3- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder (or download it <a class="reference download internal" download="" href="dowloads/34fb58796b14e389d6a8992d45050342/pw_argumentation.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> ).</p>
+<a class="reference internal image-reference" href="images/capture.png"><img alt="images/capture.png" class="align-center" src="images/capture.png" style="width: 350px;" /></a>
+<p>This file  will contain our class of agents and our model for the argumentation simulation (to be completed next session).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
+
+<span class="kn">from</span> <span class="nn">communication.agent.CommunicatingAgent</span> <span class="kn">import</span> <span class="n">CommunicatingAgent</span>
+<span class="kn">from</span> <span class="nn">communication.message.MessageService</span> <span class="kn">import</span> <span class="n">MessageService</span>
+
+
+ <span class="k">class</span> <span class="nc">ArgumentAgent</span><span class="p">(</span><span class="n">CommunicatingAgent</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot; TestAgent which inherit from CommunicatingAgent.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">preference</span> <span class="o">=</span> <span class="bp">None</span>
+
+  <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+  <span class="k">def</span> <span class="nf">get_preference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">preference</span>
+
+  <span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_items</span><span class="p">):</span>
+      <span class="c1"># To be completed</span>
+
+ <span class="k">class</span> <span class="nc">ArgumentModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot; ArgumentModel which inherit from Model.</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span> <span class="o">=</span> <span class="n">RandomActivation</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span> <span class="o">=</span> <span class="n">MessageService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">)</span>
+
+      <span class="c1"># To be completed</span>
+      <span class="c1"># list_items = [...]</span>
+      <span class="c1">#</span>
+      <span class="c1"># a = TestAgent(id, self, &quot;agent_name&quot;)</span>
+      <span class="c1"># a.generate_preferences(list_items)</span>
+      <span class="c1"># self.schedule.add(a)</span>
+      <span class="c1"># ...</span>
+
+      <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">True</span>
+
+  <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span><span class="o">.</span><span class="n">dispatch_messages</span><span class="p">()</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+
+
+ <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+  <span class="n">argument_model</span> <span class="o">=</span> <span class="n">ArgumentModel</span><span class="p">()</span>
+
+  <span class="c1"># To be completed</span>
 </pre></div>
 </div>
 <p>4- Implement the following situation between the three agents:</p>
@@ -341,7 +393,7 @@ have the three following information:</p>
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">4.1. Argumentation-Based Negootiation: Introduction</a></li>
+<li><a class="reference internal" href="#">4.1. Argumentation-Based Negotiation: Introduction</a></li>
 <li><a class="reference internal" href="#automated-negotiation-mechanisms">4.2. Automated Negotiation Mechanisms</a></li>
 <li><a class="reference internal" href="#argumentation-based-negotiation-abn">4.3. Argumentation-Based Negotiation (ABN)</a></li>
 <li><a class="reference internal" href="#practical-work-the-story">4.4. Practical work: The story…</a><ul>

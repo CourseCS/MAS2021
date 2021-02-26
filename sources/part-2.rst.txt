@@ -280,8 +280,8 @@ The answer is available here: :ref:`answer4`. It also proposes a solution to han
 
 Before we move to the next important aspects of the course (*i.e.* multiagent interactions), we must consider some important definitions in the domain. All these definitions are related to some crucial questions to be answered before implementing a MAS.
 
-Properties of the Environment
------------------------------
+1. Properties of the Environment
+-----------------------------------
 
 Fully or partially observable?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -358,8 +358,8 @@ Discrete or continuous?
 As in most modelling problem, computer science systems deal with the discrete *vs* continuous question. However, in multiagent systems, this question comes to a particular level, as far as actions in the environment are considered. In the Alice and Bob example, the number of possible actions and perceptions is fixed and finite. This is the case in most MAS and we can say that we have a *discrete* environments. However, some problems require the environment to support an infinite set of actions, possibly with continuous values as parameters.
 
 
-Properties of the Agents in the MAS
------------------------------------
+2. Properties of the Agents in the MAS
+---------------------------------------
 
 Autonomous agents
 ~~~~~~~~~~~~~~~~~
@@ -437,8 +437,8 @@ Implementing such systems (robots, sensors, distributed services or simulation t
 - The Robot OS (`ROS <https://www.ros.org/>`_) which provides a set of tools to ease the implementation and simulation of robotic systems and robots in a physical environment. The resulting code can be easily transferred to physical robots.
 
 
-Concluding remarks
-------------------
+3. Concluding remarks
+-----------------------
 
 At this point in the course, you figured out that MAS programming is largely a question of design patterns to implement a distributed system with some interesting properties. You can implement a MAS in plain C if you want. Thread, classes, or even more complex features are all compiled to assembler language in the end. However, computer scientists generally rely on high-level models and multi-agent platforms to make agent based programming easier. A multi-agent platform implements the scheduler, the procedural loop and the interaction mechanisms that we will see in the third session of this course. Some of them rely on existing languages (*e.g.* `Repast Symphony <https://repast.github.io/>`_ or `Jade <https://jade.tilab.com/>`_ for Java, `Mesa <https://mesa.readthedocs.io/en/master/>`_ or `Spade <https://spade-mas.readthedocs.io/>`_ for Python). Some other define dedicated languages to get rid of the initial language's hassle: this is the case for `Netlogo <https://ccl.northwestern.edu/netlogo/>`_ or `Gamma <https://gama-platform.github.io/>`_ (both are initially programmed in Java).
 
