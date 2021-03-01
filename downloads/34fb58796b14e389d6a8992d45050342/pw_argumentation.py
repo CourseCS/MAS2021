@@ -18,7 +18,7 @@ class ArgumentAgent(CommunicatingAgent):
     def get_preference(self):
         return self.preference
 
-    def generate_preferences(self, list_items):
+    def generate_preferences(self, preferences):
         # To be completed
 
 class ArgumentModel(Model):
@@ -31,8 +31,8 @@ class ArgumentModel(Model):
         # To be completed
         # list_items = [...]
         #
-        # a = TestAgent(id, self, "agent_name")
-        # a.generate_preferences(list_items)
+        # a = ArgumentAgent(id, "agent_name")
+        # a.generate_preferences(preferences)
         # self.schedule.add(a)
         # ...
 

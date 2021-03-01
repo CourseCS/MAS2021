@@ -54,21 +54,21 @@ Labor and management
 negotiate the terms of contracts. Businesses negotiate to purchase raw materials and to sell final products. Lawyers negotiate to settle legal claims before they go to court.
 Friends negotiate to decide which television programs to watch, etc.
 The negotiation process is a complex dynamic process. The core of such a process is reciprocal offer and counter-offer, argument and counter-argument in an attempt to agree upon outcomes mutually perceived as beneficial.</p>
-<p>In MAS and according to [Rahwan et al., ]</p>
+<p>In MAS and according to [Rahwan et al., 2004]</p>
 <blockquote>
 <div><p>“Negotiation is a form of interaction in which a group of agents, with conflicting interests and a desire to cooperate, try to come a mutually acceptable agreement on the division of scarce resources”.</p>
 </div></blockquote>
 <p>The use of the word “ressources” here is to be taken in the broadest possible sens. In short, anything that is needed to achieve something.</p>
-<p>Before discussing different frameworks for studying automated negotiation, we discuss in what follows some fundamental concepts in the automated negotiation literature.</p>
+<p>Before discussing different frameworks for studying automated negotiation, we discuss in what follows some fundamental concepts in the automated negotiation literature [Rahwan, 2004].</p>
 <p>1- <strong>The negotiation agreement space</strong>. Negotiation aims at reaching some allocation of resources that is acceptable to all parties.
-Since there are usually many different possible allocations (or possible agreements, or deals, or outcomes), negotiation can be seen as a “distributed search through a space of potential agreements” [Jennings et al., 2001].
+Since there are usually many different possible allocations (or possible agreements, or deals, or outcomes), negotiation can be seen as a “distributed search through a space of potential agreements” (<a class="reference external" href="https://link.springer.com/article/10.1023/A:1008746126376">Jennings et al., 2001</a>).
 Hence, we first require some way of characterising such a space. Abstractly, the space can be seen as a set of deals <span class="math notranslate nohighlight">\(\psi = \{\Omega_1, \dots, \Omega_n \}\)</span>  where <span class="math notranslate nohighlight">\(n\)</span> is the size of the search space.</p>
 <p>Another way of characterising the search space is in terms of vectors in a multidimensional Euclidean space. In this characterisation, a deal is defined in terms of a set of attributes <span class="math notranslate nohighlight">\(A_1, \dots, A_n\)</span> (dimensions in an <span class="math notranslate nohighlight">\(n\)</span> dimensional vector space),
 where each attribute <span class="math notranslate nohighlight">\(A_i\)</span> can take a set of values <span class="math notranslate nohighlight">\(a^i_1, \dots, a^i_m\)</span>.  In this course we will adopt this representation</p>
 <p>2- <strong>Evaluating deals</strong>.  To evaluate a deal (outcome) at the agent level, we need to capture agent preference over <span class="math notranslate nohighlight">\(\psi\)</span>. As you have seen in the course ‘Systèmes de Décision’, preferences of agent <span class="math notranslate nohighlight">\(i\)</span> can be captured using a
-<em>preference relation</em> <span class="math notranslate nohighlight">\(\succsim_i\)</span> over <span class="math notranslate nohighlight">\(\psi\)</span>, and we denote by <span class="math notranslate nohighlight">\(\Omega_1 \succsim_i \Omega_2\)</span> that for agent <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\Omega_1\)</span> is at least as good as <span class="math notranslate nohighlight">\(\Omega_2\)</span>. Morevero, the preference relation of agent <span class="math notranslate nohighlight">\(i\)</span>
-is often described in termes of a <em>utility function</em> that captures the level of satisfaction of an agent with a particular outcome (for a recall see course ‘Systèmes de Décision’). Thus, a <em>rational</em> agent seeks to reach a deal that maximises the utility it receives.</p>
-<p>Another evaluation concerns the <em>global evaluation</em> of the deals (outcomes). At this level we may use notions such as domiance and pareto optimality (again please refer to the decision course).</p>
+<em>preference relation</em> <span class="math notranslate nohighlight">\(\succsim_i\)</span> over <span class="math notranslate nohighlight">\(\psi\)</span>, and we denote by <span class="math notranslate nohighlight">\(\Omega_1 \succsim_i \Omega_2\)</span> that for agent <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\Omega_1\)</span> is at least as good as <span class="math notranslate nohighlight">\(\Omega_2\)</span>. Moreover, the preference relation of agent <span class="math notranslate nohighlight">\(i\)</span>
+is often described in termes of a <em>utility function</em> that captures the level of satisfaction of an agent with a particular outcome (for a recall see course ‘Systèmes de Décision’). Thus, a <em>rational</em> agent seeks to reach a deal that maximises the utility it receives.
+Another evaluation concerns the <em>global evaluation</em> of the deals (outcomes). At this level we may use notions such as domiance and pareto optimality (again please refer to the decision course).</p>
 <p>3- <strong>Negotiation mechanisms</strong>. Given a set of agents, a set of resources (decision, actions,…), the main goal of negotiation is to find an allocation that is better in some sense, if such allocation exists.
 In order to achieve this goal, agents need some mechanism. Abstractly, a mechanism specifies a set of
 rules, such as: what agents are allowed to say and when, how allocations are calculated,
@@ -92,9 +92,9 @@ These approaches are divedeed maintly into three groups. The more traditional on
 <li><p><strong>Heuristic-based approaches</strong> (<a class="reference external" href="https://qmro.qmul.ac.uk/xmlui/handle/123456789/28945">Faratin, 2000</a>; <a class="reference external" href="https://dl.acm.org/doi/10.5555/648173.751120">Kowalczyk &amp; Bui, 2001</a> ; <a class="reference external" href="https://eprints.soton.ac.uk/256873/1/shaheen-aamas.pdf">Fatima et al., 2002</a>), where the aim is to use heuristics rules that produce good enough, rather than optimal, outcomes/decisions.</p></li>
 </ul>
 <p>However, these approches suffers from some limitations. For instance, the game-absed approaches assume that agent have unbounded computational resources and that the space of outcomes is completely known.
-For the second approcahes, outcomes are sub-optimal (do not examine the full space of possible outcomes), and it
+For the second approaches, outcomes are sub-optimal (do not examine the full space of possible outcomes), and it
 is difficult to predict precisely how the system and the constituent agents will behave, thus the models need extensive evaluation through simulation and empirical analysis.
-Moreover, both approaches assume that agent’s utilities or preferences are usually assumed to be completely characterized prior to interaction (what situation woth incomplete information), and fixed (no possibility to influence another agent’s preference model or internal mental attitudes: beliefs, desires goals, etc.)</p>
+Moreover, both approaches assume that agent’s utilities or preferences are usually assumed to be completely characterized prior to interaction (what about situation with incomplete information), and fixed (no possibility to influence another agent’s preference model or internal mental attitudes: beliefs, desires goals, etc.)</p>
 <p>To overcome these limitations, new kind of approaches appear, called <strong>Argumentation-based approaches</strong> (<a class="reference external" href="https://www.emse.fr/~boissier/enseignement/sma05/exposes/kraus98reaching.pdf">Kraus et al., 1998</a>; <a class="reference external" href="https://eprints.soton.ac.uk/252113/2/paper5.pdf">Parsons et al., 1998</a>; <a class="reference external" href="https://link.springer.com/chapter/10.1007/BFb0026758">Sierra et al., 1998</a>). They allow agents to exchange different kinds of information, to “argue” about their beliefs and other mental attitudes during the negotiation process.
 Indeed, the two first types of settings do not allow for the addition of information or for exchanging opinions about offers. Thus, an argument can be viewed as a piece of information to i) <em>justify</em> its negotiation stance, or ii) <em>influence</em> another agent’s negotiation stance.
 In addition to accepting or rejecting a porposal, an agent can offer a critique of it. This can help negotiation more efficient.  The justification of a proposal,
@@ -104,14 +104,17 @@ stating why an agent made such a proposal or why the counterpart should accept i
 <div class="section" id="argumentation-based-negotiation-abn">
 <h1>4.3. Argumentation-Based Negotiation (ABN)<a class="headerlink" href="#argumentation-based-negotiation-abn" title="Permalink to this headline">¶</a></h1>
 <p>A negotiation framework can be viewed in terms of its <strong>negotiating agents</strong> (with their internal motivations, decision mechanisms, knowledge bases, etc. ) and the <strong>environment</strong> in which these agents interact. Thus, we can distinguish:</p>
-<p>1- External elements of an ABN framewoks: they represent the environment in which the agents evolve. It includes:</p>
+<p>1- External elements of an ABN frameworks: they represent the environment in which the agents evolve. It includes:</p>
 <ul class="simple">
 <li><p><strong>Communication language</strong> which are usually referred to as <em>locutions</em>, utterances or speach acts (see session 3). Traditional automated negotiation include the basic locutions such as PROPOSE for making proposal, ACCEPT for accepting a proposal and REJECT for rejecting proposals.</p></li>
 <li><p><strong>Negotiation protocol</strong>. A protocol can be viewed as a fromal <em>set of conventions</em> governing the interaction among participants. This includes, as we have seen in session 3 , the interaction protocol as well as other rules of the dialogue. These rules will be discussed in the next session.</p></li>
 </ul>
 <p>2-  Internal elements of an ABN frameworks. If we take a look to a basic, non-ABN negotiating agent (see figure-left), a first component is <em>a locution interpretation</em>, which parses incoming messages. These locutions (see Course 3) usually contain a proposal, or an acceptance or rejection message of a previous proposal. Other information can be added such as
 the identity of the sender. The proposal is then stored in a <em>proposal database</em> for future reference. Then, proposals feed into a <em>proposal evaluation and generation</em> component, which makes a decision about whether to accept, reject or generate a counter-proposal. This finally feeds into the <em>locution generation</em> component which sends the response.</p>
-<a class="reference internal image-reference" href="images/ABN.png"><img alt="images/ABN.png" class="align-center" src="images/ABN.png" style="width: 850px;" /></a>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="images/ABN.png"><img alt="images/ABN.png" src="images/ABN.png" style="width: 850px;" /></a>
+<p class="caption"><span class="caption-text">Classical negotiating agents vs Argument-based negotiating agent [Rahwan et al., 2004]</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p>In contrast with this classical negotiating agent, more sophisticated meta-level information can be exchanged between ABN agents (see Figure-right). Indeed, in addition to evaluating and generating proposals, an agent capable of particiapting in ABN must be equipped with mechanisms for <em>evaluating</em> arguments and for <em>generating</em> and <em>selecting</em> arguments.
 The argument <em>generation</em> is responsible for deciding what response to actually send to the counterpart and what (if any) arguments should accompagny the response. Deciding on which argument to actually send is the responsability of the <em>selection</em> mechanism.</p>
 <p>More precisely, to design and build an agent capable of effective argumentation-based negotiation, it requires the following:</p>
@@ -120,7 +123,7 @@ The argument <em>generation</em> is responsible for deciding what response to ac
 <p><strong>b-</strong> Techniques for generating proposals (counter-proposals or critiques) and for providing the supporting arguments;</p>
 <p>Proposal generation involves two main activities: (i) instantiating the negotiation object in accordance with the agent’s acceptability region and its rating function; (ii) determining which argument(s) should accompany the agreement (if any) in order to maximise the likelihood of it being accepted. In terms of the latter point, in the majority of cases there will be many types of argument which can be made in support of a proposal (varying from explanations to threats). In determining which ones to send, the agent needs to pick those arguments which are most likely to be effective, but within the constraints of the agent’s negotiation objectives. Thus, for example, continually issuing threats may provoke short-term gains, but may not be a good long-term strategy if the agent has to interact frequently with the same group.</p>
 <p><strong>c-</strong> Techniques for assessing proposals (counter-proposals or critiques) and their associated supporting arguments;</p>
-<p>Received proposals need to be evaluated to determine how the agent should respond. This evaluation involves two main facets: (i) assessing the desirability of the proposal contained in the negotiation object; (ii) assessing the likely impact of the supporting arguments. From this, a number of potential outcomes are possible: the negotiation object is acceptable as it stands, the negotiation object alone is unacceptable but the supporting arguments overcome this and make the proposal acceptable, or the negotiation object is unacceptable and the supporting arguments are insufficient to warrant proposal acceptance4. Having assessed the proposal, the agent may decide to update its acceptability region or rating function to reflect the incoming proposal’s arguments.</p>
+<p>Received proposals need to be evaluated to determine how the agent should respond. This evaluation involves two main facets: (i) assessing the desirability of the proposal contained in the negotiation object; (ii) assessing the likely impact of the supporting arguments. From this, a number of potential outcomes are possible: the negotiation object is acceptable as it stands, the negotiation object alone is unacceptable but the supporting arguments overcome this and make the proposal acceptable, or the negotiation object is unacceptable and the supporting arguments are insufficient to warrant proposal acceptance. Having assessed the proposal, the agent may decide to update its acceptability region or rating function to reflect the incoming proposal’s arguments.</p>
 <p><strong>d-</strong> Techniques for responding to proposals (counter-proposals or critiques) and their associated supporting arguments;</p>
 <p>Having assessed a proposal, the agent can respond by accepting it, by rejecting it, by generating a critique, or by returning a counter-proposal. So the first functional requirement is to determine which of these courses of action should be taken. In the case of a critique, the agent has to determine what components it wants to accept and which it wants to reject, which issues it intends to provide constraints on, and what such constraints should be. It must then decide what arguments (if any) it will offer in support of this stance, and how it should respond to any arguments which accompanied the incoming proposal (varying from ignoring them to trying to undermine them). Counter-proposals are handled in a broadly similar manner, except that rather than giving feedback and constraints the agent has to instantiate the negotiation object with particular values.</p>
 </div></blockquote>
@@ -146,7 +149,7 @@ will be used to help them to decide which item to select. Moreover, the argument
 <h2>1. Some assumptions–only to ease the programming<a class="headerlink" href="#some-assumptions-only-to-ease-the-programming" title="Permalink to this headline">¶</a></h2>
 <p>As we are limited in the time and the idea is not to built at the end a software, but to understand the different concepts described in the course, we will take the following assumptions to ease the programming:</p>
 <ul class="simple">
-<li><p>Only three agents for the moment !</p></li>
+<li><p>the example illustrates only three agents for the moment !</p></li>
 <li><p>The agents share the same set of options (items) and the same set of criteria.</p></li>
 <li><p>The negotiation protocol is run only between each pair of agents.</p></li>
 <li><p>We will not update or modify the knowledge base of an agent.</p></li>
@@ -201,14 +204,14 @@ different order of preferences among the criteria themselves (total order in our
 <p>Agent3 : Durability <span class="math notranslate nohighlight">\(\succ\)</span> Environment Impact  <span class="math notranslate nohighlight">\(\succ\)</span>  Noise <span class="math notranslate nohighlight">\(\succ\)</span>  Consumption <span class="math notranslate nohighlight">\(\succ\)</span>  cost</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Will not discuss the rating and how the values are obtained, it can be computed by taking into account different sources, different statical analysis, etc. Moreover, we can use another scale.</p>
+<p>Will not discuss the rating and how the values are obtained, it can be computed by taking into account different sources, different statical analysis, etc. Moreover, we can use another scale (you may decide to change it).</p>
 </div>
 </div>
 <div class="section" id="the-python-project">
 <h2>3. The Python project<a class="headerlink" href="#the-python-project" title="Permalink to this headline">¶</a></h2>
-<p>In the third session of the course, in section III.2 “Interaction with mesa libreary”, we have implemented a communication layer in Mesa to handle the direct interactions.
+<p>In the third session of the course, in section 3.2. “Interaction with mesa libreary”, we have implemented a communication layer in Mesa to handle the direct interactions.
 In this practical work we will use this layer and add argumentation and negotiation features.
-To do so, you can either download the following <a class="reference download internal" download="" href="dowloads/fa3ab80688b72c9f63ecbd51888dbcb8/preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span></code></a> or start from the following <a class="reference download internal" download="" href="dowloads/af3c70e87aa2d2f4337fa83098d3bc1f/mesa_preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">zip</span></code></a> in which the preference package is already integrated in mesa.</p>
+To do so, you can either download the following <a class="reference download internal" download="" href="dowloads/fa3ab80688b72c9f63ecbd51888dbcb8/preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">archive</span></code></a> (preference package) or start from the following <a class="reference download internal" download="" href="dowloads/af3c70e87aa2d2f4337fa83098d3bc1f/mesa_preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">archive</span></code></a> in which the preference package is already integrated in mesa.</p>
 <p>Thus, you should have the following:</p>
 <a class="reference internal image-reference" href="images/code.png"><img alt="images/code.png" class="align-center" src="images/code.png" style="width: 200px;" /></a>
 <p>For reminder,</p>
@@ -221,7 +224,7 @@ To do so, you can either download the following <a class="reference download int
 </div>
 <div class="section" id="what-is-our-goal">
 <h2>4. What is our goal?<a class="headerlink" href="#what-is-our-goal" title="Permalink to this headline">¶</a></h2>
-<p>To give an idea of what is the target of this practical work, in what follows is the algoriothm of the argumentation-based negotiation that we will try to implement. you can examine the algorithm to get a first idea of the structure and content. A complete understanding of the algorithm is not necessary at the moment, as the different steps in the next sessions will allow you to build it.</p>
+<p>To give you an idea of what is the target of this practical work, in what follows is the algoriothm of the argumentation-based negotiation that we will try to implement. You can examine the algorithm to get a first idea of the structure and content. A complete understanding of the algorithm is not necessary at the moment, as the different steps in the next sessions will allow you to build it.</p>
 <a class="reference internal image-reference" href="images/algo.png"><img alt="images/algo.png" class="align-center" src="images/algo.png" style="width: 550px;" /></a>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -240,14 +243,18 @@ To do so, you can either download the following <a class="reference download int
 <li><p><span class="math notranslate nohighlight">\(\texttt{CriterionName}\)</span> class: implements  the possible criterion name (e.g. environment impact, Cost, etc.)</p></li>
 <li><p><span class="math notranslate nohighlight">\(\texttt{CriterionValue}\)</span> class :  associates an Item with a CriterionName and a Value.</p></li>
 <li><p><span class="math notranslate nohighlight">\(\texttt{Value}\)</span> class: implements the Value class Enumeration containing the possible values (e.g. Bad, Good, etc.)</p></li>
-<li><p><span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class: whose instances represent the preferences of participants. One participant will be associated with a single instance of this class. The preferences consists of: a list of criteria ordered (from most important to least important) and a list of value about each item on each criterion.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class: whose instances represent the preferences of agents. One agent will be associated with a single instance of this class. The preferences consists of: a list of criteria ordered (from most important to least important) and a list of value about each item on each criterion.</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The provided package is only to help you to start, you are of course allowed to change the structure of the code and to add your own classes and functions.</p>
+</div>
 </div>
 <div class="section" id="testing-your-texttt-preferences-class">
 <h2>2. Testing your <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class<a class="headerlink" href="#testing-your-texttt-preferences-class" title="Permalink to this headline">¶</a></h2>
 <p>1- Using the methods present in the <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class and the get_score(self, preferences) function that computes the value of each
 item (see <span class="math notranslate nohighlight">\(\texttt{Item}\)</span> class), add to your class a method that allows an agent to select its most preferred item in a list. In case of
-equality, select one randomly.</p>
+equality, select one randomly. If you think that it is hlepful to add another function of your choice, please feel free to do it.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">most_preferred</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item_list</span><span class="p">):</span>
      <span class="sd">&quot;&quot;&quot;Returns the most preferred item from a list.</span>
 <span class="sd">     &quot;&quot;&quot;</span>
@@ -262,11 +269,12 @@ equality, select one randomly.</p>
 
 <span class="sd">    :return: a boolean, True means that the item is among the favourite ones</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="c1">#Todo</span>
+    <span class="c1"># To be completed</span>
 </pre></div>
 </div>
 <p>3- Run the unit tests at the end of the <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span> class (Prefereces.py) to check wether you code is correct or not. You should get the following:</p>
 <a class="reference internal image-reference" href="images/sortie.png"><img alt="images/sortie.png" class="align-center" src="images/sortie.png" style="width: 350px;" /></a>
+<p>You can add other units tests not included in the file.</p>
 <div class="line-block">
 <div class="line"><br /></div>
 <div class="line"><br /></div>
@@ -277,27 +285,21 @@ equality, select one randomly.</p>
 <h1>4.6. Agents and Messages<a class="headerlink" href="#agents-and-messages" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="performatives-and-messages-content">
 <h2>1. Performatives and Messages content<a class="headerlink" href="#performatives-and-messages-content" title="Permalink to this headline">¶</a></h2>
-<p>During the dialogue (negiotiation), we will need some locutions/performatives. we will mainly consider the following:</p>
+<p>During the dialogue (negotiation), we will need some locutions/performatives. we will mainly consider the following:</p>
 <ul class="simple">
 <li><p>PROPOSE: it is used to propose to select an item. Its content is the name of the item.</p></li>
-<li><p>ACCEPT: it  is used to accept to select an item. Its content is the item’s name. If should always appear after a PROPOSE of the same item, but several other message can exist between the proposal and the acceptance.</p></li>
+<li><p>ACCEPT: it  is used to accept to select an item. Its content is the item’s name. It should always appear after a PROPOSE of the same item, but several other message can exist between the proposal and the acceptance.</p></li>
 <li><p>COMMIT: it is used to confirm that an object has to be selected. Its content is an item’s name. Both agents must send (and receive) this message at the end of the interaction.</p></li>
-<li><p>ASK_WHY: it is used to ask another agent to propose arguments for a given item. Its content is an item’s name. It should be used after a propose. This message expects an ARGUE message as answer.</p></li>
+<li><p>ASK_WHY: it is used to ask another agent to propose arguments for a given item. Its content is an item’s name. It should be used after a propose. This message expects an ARGUE message as answer.  This latter is decribed in the next session.</p></li>
 </ul>
-<p>You should check that these performatives are implemented in MessagePerformative.py, if not make sure to add the missing ones.</p>
+<p>You should check that these performatives are implemented in MessagePerformative.py, if not make sure to add the missing ones. Again, you can add other perofmatives (for instance, REJECT. You need then to update the protocol to integrate this new locution).</p>
 </div>
 <div class="section" id="agents-and-communication">
 <h2>2. Agents and communication<a class="headerlink" href="#agents-and-communication" title="Permalink to this headline">¶</a></h2>
-<p>1-  As it was done in the course communication, create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
-<p>2- Write a method that allows to generate a performance table (see the example for Agent1)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">():</span>
-     <span class="c1"># To be completed</span>
-     <span class="k">return</span> <span class="n">preferences</span>
-</pre></div>
-</div>
-<p>3- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder (or download it <a class="reference download internal" download="" href="dowloads/34fb58796b14e389d6a8992d45050342/pw_argumentation.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> ).</p>
+<p>1- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder (or download it <a class="reference download internal" download="" href="dowloads/34fb58796b14e389d6a8992d45050342/pw_argumentation.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> ).</p>
 <a class="reference internal image-reference" href="images/capture.png"><img alt="images/capture.png" class="align-center" src="images/capture.png" style="width: 350px;" /></a>
-<p>This file  will contain our class of agents and our model for the argumentation simulation (to be completed next session).</p>
+<p>This file  will contain our class of agents and our model for the argumentation simulation (will be completed as we go through our sessions).</p>
+<p>Translated with www.DeepL.com/Translator (free version)).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
 
@@ -306,7 +308,7 @@ equality, select one randomly.</p>
 
 
  <span class="k">class</span> <span class="nc">ArgumentAgent</span><span class="p">(</span><span class="n">CommunicatingAgent</span><span class="p">):</span>
-  <span class="sd">&quot;&quot;&quot; TestAgent which inherit from CommunicatingAgent.</span>
+  <span class="sd">&quot;&quot;&quot; ArgumentAgent which inherit from CommunicatingAgent.</span>
 <span class="sd">  &quot;&quot;&quot;</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
       <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
@@ -318,7 +320,8 @@ equality, select one randomly.</p>
   <span class="k">def</span> <span class="nf">get_preference</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">preference</span>
 
-  <span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">list_items</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preferences</span><span class="p">):</span>
+      <span class="c1"># see question 3</span>
       <span class="c1"># To be completed</span>
 
  <span class="k">class</span> <span class="nc">ArgumentModel</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
@@ -329,10 +332,9 @@ equality, select one randomly.</p>
       <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span> <span class="o">=</span> <span class="n">MessageService</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schedule</span><span class="p">)</span>
 
       <span class="c1"># To be completed</span>
-      <span class="c1"># list_items = [...]</span>
       <span class="c1">#</span>
-      <span class="c1"># a = TestAgent(id, self, &quot;agent_name&quot;)</span>
-      <span class="c1"># a.generate_preferences(list_items)</span>
+      <span class="c1"># a = ArgumentAgent(id, &quot;agent_name&quot;)</span>
+      <span class="c1"># a.generate_preferences(preferences)</span>
       <span class="c1"># self.schedule.add(a)</span>
       <span class="c1"># ...</span>
 
@@ -349,9 +351,19 @@ equality, select one randomly.</p>
   <span class="c1"># To be completed</span>
 </pre></div>
 </div>
+<p>2-  As it was done at the end of the course 3 (Alice/Bob example), create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
+<p>3- Write a method that allows to generate the preferences of the agent (see the example for Agent1 and its corresponding ranking on criteria). You can also try to have a function that read the data from a csv file (not mandatory).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preferences</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">     Set the preferences of the agent</span>
+
+<span class="sd">     &quot;&quot;&quot;</span>
+     <span class="c1"># To be completed</span>
+</pre></div>
+</div>
 <p>4- Implement the following situation between the three agents:</p>
 <ul class="simple">
-<li><p>On their turn, Agent1 and Agent2 <strong>ask</strong> Agent3 its most preferred item (performartive ASK to add).</p></li>
+<li><p>On their turn, Agent1 and Agent2 <strong>ask</strong> Agent3 its most preferred item.</p></li>
 <li><p>If the item is different from their most preferred one, they send a message to Agent3 to remove the item from its list.</p></li>
 <li><p>On its turn, Agent3 reads its mailbox and processes all messages: Messages that request information about the preferred item produce an anwer; and Messages that request a change to the list are applied.</p></li>
 </ul>

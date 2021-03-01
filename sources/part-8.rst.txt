@@ -16,7 +16,7 @@ In the last session, we started the discussion about an argumentation-based nego
   :width: 450
   :align: center
 
-In this session we will pursue the discussion and address more precisely what do we mean by arguing and argumentation.  
+In this session we will pursue the discussion and address more precisely what do we mean by arguing and argumentation. We are concerned with argument genration, evaluation and selection.   
 
 
 5.2. Introduction to Argumentation Theory
@@ -42,25 +42,29 @@ it is necessary to be able to jump to plausible conclusions from the given knowl
  
    But what if *tweety is a penguin*, type of bird that does not fly, is added to the knowledge base (KB)? 
 
-By adding this information to the KB, we have good reasons to retract the previous inference and 
+A knowledge base is a set of propositions represented in some formal logics (classical or non-monotonic).By adding this information to the KB, we have good reasons to retract the previous inference and 
 instead, the new conclusion that Tweety does not fly will hold. However, this is not possible with the classical logic (the three sentences in the premises are true so the derived conclusion is true). 
 
 One way to do this is to say, ''Normally, birds fly'' or '' if :math:`x` is a typical bird, then we can assume by default that :math:`x` flies ''.  This can be read as: "in the absence of information to the contrary, assume that :math:`x` flies"
 
 Argumentation logics formalises such **defeasible reasoning** as construction
 and comparison of arguments. In other terms, Argumentation is the process of attempting to agree about what to believe or **what to do** [#n1]_.  We use argumentation only when information, beliefs, actions, ... are **contradictory**. It means if eveyrhting is consistent, just merge information from multiple agents. In other terms, 
-the process offers sensible rules for deciding what to believe or what to do in the face of inconsistency. We find argumentation, for instance, in : consumer websites (Amazon for instance), law (policy making, supreme transcript, case based reasoning,...), mediacal diagnosis, `social media <http://ftp.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-405/paper4.pdf>`_, etc. 
-Thus, argumentation-based approaches are suited for applications in which agents have incomplete or inconsistent information about each other and the
-environment in which they act. 
+the process offers sensible rules for deciding what to believe or what to do in the face of inconsistency. argumentation-based approaches are suited for applications in which agents have incomplete or inconsistent information about each other and the
+environment in which they act. For instance, in : consumer websites (Amazon for instance), law (policy making, supreme transcript, case based reasoning,...), `mediacal diagnosis <https://bmjopen.bmj.com/content/2/3/e000439>`_, `social media <http://ftp.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-405/paper4.pdf>`_, etc. 
+
+.. figure:: img/arguing.jpeg
+  :width: 450
+  :align: center
+
+
 
 Several works were interested by using argumentation in different fields, such as  legal reasoning,
-multi-agent systems, decision making, etc. [Prakken and Sartor, 2002; Amgoud and Cayrol,
-2002; Benferhat et al., 1993; Parsons and McBurney, 2003]. In most of such approaches, arguments
-are constructed from an *inconsistent knowledge base* where the knowledge base is a
-set of propositions represented in some formal logics (classical or non-monotonic). In this case,
+multi-agent systems, decision making, etc. (`Prakken and Sartor, 2002 <https://link.springer.com/chapter/10.1007/3-540-45632-5_14>`_; `Amgoud and Prade,
+2006 <https://www.aaai.org/Papers/AAAI/2006/AAAI06-035.pdf>`_ ; `Parsons and McBurney, 2003 <https://nms.kcl.ac.uk/peter.mcburney/downloads/pubs/2003/pm-2003-04.pdf>`_, ...). In most of such approaches, arguments
+are constructed from an *inconsistent knowledge base*.  In this case,
 argumentation can be viewed as a method for **deducing** justified conclusion from an inconsistent
 knowledge base. Which conclusion are justified depends on the attack and the defeat relations
-among the arguments which can be constructed from the knowledge base. 
+among the arguments which can be constructed from the knowledge base (see relations among arguments).  
 
 
 The classical steps in an argumentation process are depticted in the following figure. 
@@ -603,7 +607,7 @@ Fore more formal defintions of the different extensions, and examples, you can h
 
 
 *Notes*
-----------------------------
+^^^^^^^^^^^^^
 
 .. [#n1] In this course we are mainly interessted by decision making. Thus, we will discuss the structure of arguments withing this setting. 
 

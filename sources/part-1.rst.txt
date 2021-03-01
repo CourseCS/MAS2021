@@ -13,7 +13,7 @@ Writing software using different programming languages, design principles or sys
 
 In the 90s, software engineering research moved from the notion of objects to the notion of *service*. The core idea is that a piece of code, possibly a thread, should be provided with some machine-understandable interface that could allow other code to use it without a priori knowledge of its operational content. Such interface defines which method to call first, what are the expected properties of the outputs given the inputs for each method, *etc*. Software engineers rely on **interaction protocols** to define how the different services should be assembled, how the information has to be exchanged between them, so as to produce some expected result. Multiagent systems were proposed in this context as a series of platforms to support the development of such service-oriented software, with coordination entities capable to interpreting protocols.
 
-.. figure:: img/OASIS-coordinator.gif
+.. figure:: img/OASIS.png
     :align: center
 
     `The OASIS Web Services Coordination standard (version 1.1, 2007) <http://docs.oasis-open.org/ws-tx/wstx-wscoor-1.1-spec-os/wstx-wscoor-1.1-spec-os.html>`_

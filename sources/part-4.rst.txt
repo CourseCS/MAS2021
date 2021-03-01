@@ -16,23 +16,22 @@ In this course, we will first present the concept of simulation and computer sim
 
 Simulation is one of the most effective decision support tools available to scientists, designers and managers of complex systems. It consists in building a model of a real system and conducting experiments on this model in order to understand the behavior of this system and improve its performance. Here is one of the definitions of a simulation: 
 
-  "The process of designing a model of a real system and conducting experiments with this model for the purpose either of understanding the behaviour of the system or of evaluating various strategies (within the limits imposed by a criterion or a set of criteria) for the operation of the system." Shannon, 1998.
+  "The process of designing a model of a real system and conducting experiments with this model for the purpose either of understanding the behaviour of the system or of evaluating various strategies (within the limits imposed by a criterion or a set of criteria) for the operation of the system." *Shannon*, 1998.
 
-The issue behind a digital simulation is therefore to study a real system in order to understand its internal functioning and / or to predict its evolution under certain conditions. Moreover, to achieve these objectives, this study is necessarily done through a **model** of the **real system** which is used to carry out the experiments. The terms **real system** and **model** are the two keywords in this definition. 
+The issue behind a simulation is therefore to study a real system in order to understand its internal functioning and / or to predict its evolution under certain conditions. Moreover, to achieve these objectives, this study is necessarily done through a **model** of the **real system** which is used to carry out the experiments. The terms **real system** and **model** are the two keywords in this definition. 
 
-It is important to understand that the real system does not necessarily refer to a phenomenon that exists in nature. It can also be an intellectual construction of a virtual phenomenon. This
-denomination is in fact used to clearly distinguish the phenomenon to be studied from its model which is also considered as a system. 
+It is important to understand that the real system does not necessarily refer to a phenomenon that exists in nature. It can also be an intellectual construction of a virtual phenomenon. This denomination is in fact used to clearly distinguish the phenomenon to be studied from its model which is also considered as a system. 
 
-Shannon adds that a simulation process is constituted by the construction of the model and by the analytical use which is made of the model to study the system.
+*Shannon* adds that a simulation process is constituted by the construction of the model and by the analytical use which is made of the model to study the system.
 
 2. Computeur simulation definition
 ---------------------------------------
 
 Computer simulation is in fact inseparable from the *experimental process* which is linked to its objective. 
 
-  "Computer simulation is the discipline of designing a model of an actual or theoretical physical system, executing the model on a digital computer, and analyzing the execution output." Fishwick, 1997.
+  "Computer simulation is the discipline of designing a model of an actual or theoretical physical system, executing the model on a digital computer, and analyzing the execution output." *Fishwick*, 1997.
 
-This definition gives a global overview of a process of a computer simulation process. Fishwick defines this discipline as an iterative and nonlinear process composed of three interdependent fundamental tasks:
+This definition gives a global overview of a computer simulation process. *Fishwick* defines this discipline as an iterative and nonlinear process composed of three interdependent fundamental tasks:
 
 1. The development of the model.
 2. Running the model on a computer.
@@ -47,7 +46,7 @@ This definition clearly shows the importance of the model and its development fo
 3. Simulation as an experimental process
 -------------------------------------------
 
-Most of the time, Fishwick's definition is sufficient to illustrate clearly and simply the different stages that constitute the development of a computer simulation. However, it may be interesting to detail these steps: 
+Most of the time, *Fishwick*'s definition is sufficient to illustrate clearly and simply the different stages that constitute the development of a computer simulation. However, it may be interesting to detail these steps: 
 
 1. Definition of the problem: clearly define the objectives of the study. What are the questions we want to answer?
 2. Definition of the system: determine which parts of the system to study. The model will then be developed according to the objectives set.
@@ -68,11 +67,11 @@ This more complete description provides a better idea of what a computer simulat
 4. Dynamic systems
 ------------------------------
 
-Now that we have an idea of what a computer simulation is, it is worth presenting the different concepts that are manipulated to model real systems. In this context, the notion of *dynamic system* is essential. By *dynamic system* we mean:
+Now that we have an idea of what a computer simulation is, it is worth presenting the different concepts that are manipulated to model real systems. In this context, the notion of **dynamic system** is essential. By **dynamic system** we mean:
 
     "Any formal construct which provides general modeling concepts for various kind of disciplines." Rozenblit & Zeigler, 1993.
 
-Most models used to represent a *dynamic system* are based on the abstractions offered by the **systems theory**.
+Most models used to represent a **dynamic system** are based on the abstractions offered by the **systems theory**.
 
 The basic principle of this theory is to consider that a system can be specified according to two fundamental aspects:
 
@@ -213,9 +212,9 @@ The multi-agent approach is based on an individual-centered approach: it conside
   :align: center
   :width: 450
 
-To create a multi-agent simulation, you must follow the principles of the agent paradigm presented in the previous course:  
+To create a Multi-Agent Based Simulation, you must follow the principles of the agent paradigm presented in the previous course:  
 
-- Creating an artificial world made up of interacting agents (Agent-Based Models) living in an environment.
+- Creating an artificial world made up of interacting agents (Agent-Based Models, ABM) living in an environment.
 - Each agent is described as an autonomous entity.
 - The behaviour of agents is the consequence of their observations, internal trends, beliefs and interactions with the environment and other agents.
 - Agents act and change the state of the environment through their actions.
@@ -266,10 +265,8 @@ Due to its ability to model the interactions between entities and the variations
   
     *Collective behaviors for cooperative actions*
 
-
 2.4. Visualizing Multi-Agent Based Simulation
 ====================================================
-
 
 As we have seen, simulation creates a digital environment that looks like an artificial laboratory where we can test hypotheses, prospective scenarios or simply the evolution of the system in the future.
 
@@ -539,24 +536,25 @@ The call of the ``ModularServer`` became:
 2.5.  Implementing Multi-Agent Based Simulation
 ===============================================
 
-From a technical point of view, the characteristics of a Multi-Agent Based Simulaton are related to the software architecture used to implement the agents and the environment. In this context, the needs and constraints relating to the software architecture can vary due to the heterogeneity of the fields on which  Multi-Agent Based simulation can be applied. The structures of the models representing the agents and the environment are not the same depending on the experimental framework (biology, ecology, ethology, etc.).
+From a technical point of view, the characteristics of a Multi-Agent Based Simulaton are related to the software architecture used to implement the agents and the environment. In this context, the needs and constraints relating to the software architecture can vary due to the heterogeneity of the fields on which  Multi-Agent Based Simulation can be applied. The structures of the models representing the agents and the environment are not the same depending on the experimental framework (biology, ecology, ethology, etc.).
 
 1. Architecture of a Multi-Agent Base Simulation
 --------------------------------------------------
 
-The software architecture of a Multi-Agent Base Simulation is also strongly influenced by the nature of the source system that we want to model. This is one of the reasons why there is currently no generic methodology linked to the modeling and the implementation of Multi-Agent Base Simulation.
+The software architecture of a Multi-Agent Base Simulation is strongly influenced by the nature of the source system that we want to model. This is one of the reasons why there is currently no generic methodology linked to the modeling and the implementation of Multi-Agent Base Simulation.
 
 Consequently, the nature of the environment (**continuous** or **discrete**, **static** or **dynamic**, etc.), the granularity of actions / perceptions (**fine** or **coarse**) and the **complexity of the internal architecture** of an agent are all points on which the modeler has to make personal choices which are based on his needs. The large number of existing platforms is proof of this (see the *note* below).
 
 Thus, when we want to implement a simulation, we must clearly define :
 
-- the architecture of autonomous entities that act in the system (Agent);
-- the interactions between entities (Interaction);
-- the shared resources and processes between agents (Environment);
-- the coordination and cooperation between agents (Organization).
+- The architecture of autonomous entities that act in the system (Agent);
+- The interactions between entities (Interaction);
+- The shared resources and processes between agents (Environment);
+- The coordination and cooperation between agents (Organization).
 
 .. image:: img/mabs_details.png
     :align: center
+    :width: 650
 
 The implementation of multi-agent models also requires to take into account three
 constraints:
@@ -569,12 +567,14 @@ constraints:
    
    .. image:: img/locality_discrete.png
     :align: center
+    :width: 350
 
 3. Environmental integrity constraint
    There is no direct relationship between the internal architectures of two autonomous agents. An agent must not be able to directly change environment state variables.
 
    .. image:: img/integrity.png
     :align: center
+    :width: 350
 
 .. note::
   Here is a small list of existing platforms with advantages and disadvantages:
@@ -597,17 +597,62 @@ constraints:
 2. Time management in MABS
 --------------------------------------------------
 
+Multi-Agent Based Simulation is based on the idea that it is possible to represent a set of autonomous entities operating in a common environment. In this context, all agents must be subject to the same temporal law in order to respect the principle of causality (see [Edem Fianyo and all, The Representation of Time, 1998] for more details). 
 
+.. note::
+  It must be noticed that all parameters that shape an agent's internal architecture and model its behaviour (desires, beliefs, world representation, etc.) change instantaneously.
 
+The behaviour of an agent is inherently discrete. The two main implementation principles for handling discrete events are:
 
+- Synchronous approach: regular discretization of time.
+  Very simple to use because it only need to program a very simple function that activates all the agents behaviors.
 
+  .. image:: img/TM_synchrone.png
+    :align: center
+    :width: 350
 
+  With a synchronous apporach, the activation order of the agents has a direct impact on the evolution of the world. in the Prey-Predator example, if a prey is captured when it is surrounded by four predators following the vicinity of Von Neumann, the simple fact of changing the order of activation of the agents can have a strong impact on the final result.
 
+  .. image:: img/TM_synchrone_issue.png
+    :align: center
+    :width: 450
 
+  From the same state of the world, the same behaviors can produce different states of the world according to the order of activation of the agents. To overcome this issue, it is possible to use:
+  
+  - a *random activation process* 
+  
+    .. image:: img/TM_synchrone_fix1.png
+      :align: center
+      :width: 450
+  
+  - *buffer variables*
+  
+    .. image:: img/TM_synchrone_fix2.png
+      :align: center
+      :width: 450
 
+- Asynchronous approach: Event simulation principle.
+  It is hard to picture out a reality where a set of entities would be updated simultaneously by a global clock. It is more natural that each autonomous entity evolves at its own pace and generates events whose date of realization is personal to it. So, the agent activation is asynchronous.
+  There are two ways to implement asynchronous approach:
+  
+  - Events are determined at the beginning and the simulation consists in executing the list of events.
+  
+  - Events are determined during the simulation to take into account the effects of previous events.
 
+  .. image:: img/TM_asynchrone.png
+    :align: center
+    :width: 450
 
+  As in synchronous approach, an asynchronous approach could produce some conflicts: two events can occur at the same simulation time step. To resolve these conflits, it is possible to introduce competition between agents or to make a random choice on the action to be prioritized.
 
+.. warning::
+  To conclude this part, it must be noticed that a consistency relationship between the time granularity of the actions and the time step must exist.
+  
+  .. image:: img/TM_synchrone_issue2.png
+    :align: center
+    :width: 450
+
+  If an agent can move on many cells in one time step. Several agents may have paths that intersect without ever colliding (speed not directly related to time). So, the temporal granularity of actions must be taken into account.
 
 2.6. Implementing  a prey / predator simulation with Mesa
 =============================================================

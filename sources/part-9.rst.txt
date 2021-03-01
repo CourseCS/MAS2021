@@ -36,9 +36,7 @@ the situation and the nature of the problem. For more details on dialogue system
 
 - **Commitments rules**. Rules defining the effect of the moves in the “commitment stores”. Indeed, associated with each player is a commitment store, which holds the statements players have made and the challenges they have issued. There are then rules which define how the commitment stores are updated. For example, a question posed by one agent to another may impose a commitment on the second to provide a response; until provided, this commitment remains undischarged.
 
-- **Dialogue rules (protocol)**,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [Prakken, 2001] and negotiation [Parsons et al., 1998; Amgoud et al., 2000b]. For example,
-the set of rules given in the following table correspond to a persuasion dialogue.
-
+- **Dialogue rules (protocol)**,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [Prakken, 2001] and negotiation [Parsons et al., 1998; Amgoud et al., 2000b]. For example, the set of rules given in the following table correspond to a persuasion dialogue.
 
 .. image:: img/persuasion.png
    :width: 470
