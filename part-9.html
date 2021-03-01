@@ -46,14 +46,14 @@
 <p>In the previous session, we have seen what is an argumentation system without any reference to interaction. However, arguments can be seen as
 embedded in a procedural context, in that they are put forward on one side or the other of an issue during a dialogue between human and/or artificial
 agents. In other terms, one way to define argumentation logics is in the dialectical form of dialogue games (or dialogue systems). Such games model interaction between two or more players,
-where arguments in favour and against a proposition are exchanged according to certain rules and conditions [Carlson, 1983].</p>
-<p>According to [Gordon et al., 2007]</p>
+where arguments in favour and against a proposition are exchanged according to certain rules and conditions [<a class="reference external" href="https://www.springer.com/gp/book/9789027714558">Carlson, 1983</a>].</p>
+<p>According to [<a class="reference external" href="https://dl.acm.org/doi/10.1016/j.artint.2007.04.010">Gordon et al., 2007</a>]</p>
 <p>“The information provided by a dialogue for constructing and evaluating argument is richer that just a set of sentences. Indeed, the context can tell us whether some party has
 questioned or conceded a statements, or whether a decision has been taken to accept or reject a claim.”</p>
 </div>
 <div class="section" id="dialogue-system">
 <h1>6.2. Dialogue system<a class="headerlink" href="#dialogue-system" title="Permalink to this headline">¶</a></h1>
-<p>Dialogue systems essentially define the principle of coherent dialogue and the condition under
+<p>Dialogue systems essentially define the principle of coherent dialogue and the conditions under
 which a statement made by an individual is appropriate. Different formal dialogues exist, taking
 into account various information, such as: participants, communication language, roles of
 participants, the dialogue goal, etc.</p>
@@ -63,9 +63,12 @@ the situation and the nature of the problem. For more details on dialogue system
 <li><p><strong>Admission rules</strong>,  which specify when an agent can participate in a dialogue and under what conditions;</p></li>
 <li><p><strong>Locutions rules (speech acts, moves)</strong>. Rules which indicate what utterances are permitted. Typically, legal locutions permit participants to assert propositions, permit others to question or contest prior assertions, and permit those asserting propositions which are subsequently questioned or contested to justify their assertions. Justifications may involve the presentation of a proof of the proposition or an argument for it.</p></li>
 <li><p><strong>Commitments rules</strong>. Rules defining the effect of the moves in the “commitment stores”. Indeed, associated with each player is a commitment store, which holds the statements players have made and the challenges they have issued. There are then rules which define how the commitment stores are updated. For example, a question posed by one agent to another may impose a commitment on the second to provide a response; until provided, this commitment remains undischarged.</p></li>
-<li><p><strong>Dialogue rules (protocol)</strong>,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [Prakken, 2001] and negotiation [Parsons et al., 1998; Amgoud et al., 2000b]. For example, the set of rules given in the following table correspond to a persuasion dialogue.</p></li>
+<li><p><strong>Dialogue rules (protocol)</strong>,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [<a class="reference external" href="https://link.springer.com/article/10.1023/A:1010322504453">Prakken, 2001</a>] and negotiation [<a class="reference external" href="https://academic.oup.com/logcom/article-abstract/8/3/261/1079347">Parsons et al., 1998</a>]. For example, the set of rules given in the following table correspond to a persuasion dialogue.</p></li>
 </ul>
-<a class="reference internal image-reference" href="images/persuasion.png"><img alt="images/persuasion.png" class="align-center" src="images/persuasion.png" style="width: 470px;" /></a>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="images/persuasion.png"><img alt="images/persuasion.png" src="images/persuasion.png" style="width: 470px;" /></a>
+<p class="caption"><span class="caption-text">Examples of speech acts</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
 <ul class="simple">
 <li><p><strong>Rules for proposal validity</strong>, which specify when a proposal is compliant with some conditions (e.g., an agent may not be allowed to make a proposal that has already been rejected);</p></li>
 <li><p><strong>Outcome determination rules</strong>, which specify the outcome of the interaction; in argumentation-based frameworks, these rules might enforce some outcome based on the underlying theory of argumentation (e.g., if an agent cannot construct an argument against a request, it accepts it [Parsons et al., 1998]);</p></li>
@@ -97,7 +100,7 @@ commitment. Its advantage is that it provids a clear and precise semantics of th
 <h1>6.3. Our argumentation-based negotiation protocol !<a class="headerlink" href="#our-argumentation-based-negotiation-protocol" title="Permalink to this headline">¶</a></h1>
 <p>We are at the end of this practical work.  The diffrent questions and functions implemented till now will help you to run (very soon :-) )  a negotiation between at least two agents.
 Before to push the run button, you need to check that you have implemented all the necessary components.</p>
-<p>For this, the following algorithm synthetises the conditions and the rules for the different moves during and interaction.</p>
+<p>For this, the following algorithm synthetises the conditions and the rules for the different moves during an interaction.</p>
 <a class="reference internal image-reference" href="images/algo.png"><img alt="images/algo.png" class="align-center" src="images/algo.png" style="width: 550px;" /></a>
 <p>This algorithm is represented by the following transition state diagram and a possible output (interaction) is depicted in the figure below.</p>
 <a class="reference internal image-reference" href="images/nego.png"><img alt="images/nego.png" class="align-center" src="images/nego.png" style="width: 300px;" /></a>
