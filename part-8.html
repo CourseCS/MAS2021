@@ -97,11 +97,11 @@ among the arguments which can be constructed from the knowledge base (see relati
 <p>In the following, we will detail what do we mean by an argument, an attack relation and how the arguments are used within a negotiation process.</p>
 <div class="section" id="modelling-arguments">
 <h2>1. Modelling arguments<a class="headerlink" href="#modelling-arguments" title="Permalink to this headline">¶</a></h2>
-<p>In this section we are interested by the the first step of an argumentation process, i.e. the construction of arguments in favor or against a statement (we recall that for our purpose the statements correspnds to a decision/option).
+<p>In this section we are interested by the the first step of an argumentation process, i.e. the construction of arguments in favor or against a statement (we recall that for our purpose the statements correspond to a decision/option).
 This step corresponds also to the box “agument generation”  of our ABN agent (see Figure above).</p>
 <p>The main challenge in this step is to determine the <em>form or the structure of the arguments</em>. Indeed,
 there are many ways to address the form of an argument: <em>as trees of inferences</em> (<a class="reference external" href="http://www-sop.inria.fr/websites/cermics/aidteam/nikos/papers/rici.ps">Karacapilidis
-and Papadias, 1998</a>), as a <em>sequences of inferences</em> (deductions) (<a class="reference external" href="https://cris.maastrichtuniversity.nl/ws/portalfiles/portal/1736888/guid-f8972ab2-c68f-4291-b229-d5207cd83320-ASSET1.0.pdf">Verheij, 1996</a> ), or as simple
+and Papadias, 1998a</a>), as a <em>sequences of inferences</em> (deductions) (<a class="reference external" href="https://cris.maastrichtuniversity.nl/ws/portalfiles/portal/1736888/guid-f8972ab2-c68f-4291-b229-d5207cd83320-ASSET1.0.pdf">Verheij, 1996</a> ), or as simple
 <em>premiss-conclusion pairs</em>. The different forms of arguments depend on the language and on the
 rules for constructing them. The choice between the different options depends on the context and the objective sought through
 the use of argumentation.</p>
@@ -124,7 +124,7 @@ the use of argumentation.</p>
 <li><p>We are told that the witness is short-sighted, so he is no more reliable.</p></li>
 </ul>
 </div></blockquote>
-<p>We can encode the previsous statements as the following:</p>
+<p>We can encode the previous statements as the following:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(s\)</span> (the killer is small);</p></li>
@@ -172,7 +172,7 @@ inference is against the item.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>To generate arguments or to make a logical inference, each agent needs to have a knowledge base (KB), which contains different information, facts, domain knowledge… Due to time limitation, we restrict this base to the agent’s preferences represented by the performance table (see previous session).
-This is clearly not sufficient to build diffrent kinds of arguments.  Moreover, each time an agent receives an argument, he is able to update this knowledge base to enrich his information and to update his behavior and reasoning according to the new information. Again, this is not taken into account in this practical work in order to ease the programming and this is also due to time limitation and .</p>
+This is clearly not sufficient to build diffrent kinds of arguments.  Moreover, each time an agent receives an argument, he is able to update this knowledge base to enrich his information and to update his behavior and reasoning according to the new information. Again, this is not taken into account in this practical work in order to ease the programming and this is also due to time limitation.</p>
 </div>
 </div>
 <div class="section" id="recall-of-the-example">
@@ -225,7 +225,7 @@ different order of preferences among the criteria themselves (total order in our
 </div>
 <div class="section" id="questions">
 <h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
-<p>1- In your folder you should have the package <em>arguments</em> as it is depicted in the following picture (you can download it <a class="reference download internal" download="" href="dowloads/4828e7b350a58b7e0f0bf6548137da77/arguments.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> or download all the package of mesa <a class="reference download internal" download="" href="dowloads/d506c06f06c5c0912004935b6f024c83/mesa_argumentation.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>). This package contains three classes.</p>
+<p>1- In your folder you should have the package <em>arguments</em> as it is depicted in the following picture (you can download it <a class="reference download internal" download="" href="downloads/4828e7b350a58b7e0f0bf6548137da77/arguments.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> or download all the package of mesa <a class="reference download internal" download="" href="downloads/d506c06f06c5c0912004935b6f024c83/mesa_argumentation.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>). This package contains three classes.</p>
 <a class="reference internal image-reference" href="images/arguments_package.jpg"><img alt="images/arguments_package.jpg" class="align-center" src="images/arguments_package.jpg" style="width: 170px;" /></a>
 <p>2-  In the class  <span class="math notranslate nohighlight">\(\texttt{Comparison}\)</span>  implement the  comparison object used in an argument object (<span class="math notranslate nohighlight">\(C_i \succ C_j\)</span> ).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
@@ -341,10 +341,10 @@ and (6) A threat.</p>
 <p>Suitable argument selection in a negotiation context must take into account information about the negotiation counterpart. To this end, for instance is Bayesian game theory a counterpart is modelled by a probability distribution representing the uncertainty of the first party regarding
 the counterparts’ initial information and the payoffs they receive from the different outcomes (i.e. action profiles). This raises the opportunity to use <strong>learning</strong> techniques in order to find
 patterns in the counterpart’s behaviour an use these findings in future encounters with the same (or similar) counterpart(s) (see for e.g. <a class="reference external" href="http://mas.cs.umass.edu/Documents/Sandholm/biosystems95.ps">Sandholm and Crites, 1995</a>).</p>
-<p>This is a particularly challenging task for ABN since agent may not only model the observed “beheviour” of one another, but also the “mental attitudes” motivating that behaviour.</p>
+<p>This is a particularly challenging task for ABN since agent may not only model the observed “behaviour” of one another, but also the “mental attitudes” motivating that behaviour.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Instead what we are doing here, argument selection may take place in conjunction with argument generation. An agent need not to generate all possible
+<p>Instead what we are doing here, argument selection may take place in conjunction with argument generation. An agent needs not to generate all possible
 arguments before it makes a selection of the most suitable one.</p>
 </div>
 <div class="section" id="id2">
@@ -399,11 +399,11 @@ and only if <span class="math notranslate nohighlight">\(\exists \alpha \in \phi
 <a class="reference internal image-reference" href="images/attack_ex.png"><img alt="images/attack_ex.png" class="align-center" src="images/attack_ex.png" style="width: 770px;" /></a>
 <p>Moreover, let us remark that both types of defeaters, discussed above, represent negative relations
 between arguments. However, recent studies have proposed another kind of relation between
-argument, namely a <em>positive relation</em>, called <em>support</em> relation [Verheij, 2002; Amgoud et al.,
-2004; Karacapilidis and Papadias, 1998a]. Indeed, an argument can defeat another argument, but
+argument, namely a <em>positive relation</em>, called <em>support</em> relation [<a class="reference external" href="https://www.irit.fr/~Leila.Amgoud/art-NMR-UF-04.pdf">Amgoud et al.,
+2004</a>; <a class="reference external" href="https://link.springer.com/chapter/10.1007/3-540-64413-X_36">Karacapilidis and Papadias, 1998</a>]. Indeed, an argument can defeat another argument, but
 it can also support another one. This new relation is completely independent of the attack relation
 (i.e., the support relation is not defined in terms of the attack relation, and vice-versa). As it was
-pointed by [Cayrol and Schiex, 2005]:</p>
+pointed by [<a class="reference external" href="https://link.springer.com/chapter/10.1007/11518655_33">Cayrol and Schiex, 2005</a>]:</p>
 <blockquote>
 <div><p>“This suggests a notion of bipolarity, i.e. the existence of two independent types of information which have a diametrically opposed nature and which represent contrasting forces”</p>
 </div></blockquote>
@@ -425,13 +425,13 @@ pointed by [Cayrol and Schiex, 2005]:</p>
 <p>Thus, as it is represented in the argumentation process (see Figure above), once you have identified your arguments, you need to define the relations among those arguments.
 Moreover, at the end, given the set of arguments and their attack relations, we can construt a graph such that nodes represent the arguments and the edges the relations between the arguments.</p>
 <p><strong>Example 6</strong></p>
-<p>The following figure represents a graph where we have 5 arguments (each color represent an argument) and 4 attack relations (represented bu the red dashed lines). Note that the black lines inside a
+<p>The following figure represents a graph where we have 5 arguments (each color represent an argument) and 4 attack relations (represented by the red dashed lines). Note that the black lines inside a
 color represent the logical inference of an argument from the premises to the conclusion.</p>
 <div class="figure align-center" id="id6">
 <a class="reference internal image-reference" href="images/attack_prakken.jpeg"><img alt="images/attack_prakken.jpeg" src="images/attack_prakken.jpeg" style="width: 870px;" /></a>
 <p class="caption"><span class="caption-text">Example of an argument graph (Prakken, 2014)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
-<p>More generally, the arguments and their relation can be represented by what we call “abstract argumentation system”. For our previsous example we may have the following:</p>
+<p>More generally, the arguments and their relations can be represented by what we call “abstract argumentation system”. For our previsous example we may have the following:</p>
 <p><strong>Example 7</strong></p>
 <div class="figure align-center">
 <a class="reference internal image-reference" href="images/abstract.png"><img alt="images/abstract.png" src="images/abstract.png" style="width: 270px;" /></a>
@@ -442,7 +442,7 @@ color represent the logical inference of an argument from the premises to the co
 <div><p>an argumentation system is a pair <span class="math notranslate nohighlight">\(\langle \mathcal{A},  \mathcal{R} \rangle\)</span>, where:  <span class="math notranslate nohighlight">\(\mathcal{A}\)</span> is a set of arguments and <span class="math notranslate nohighlight">\(\mathcal{R} \subset  \mathcal{A} \times  \mathcal{A}\)</span> : an attack relation among arguments.</p>
 </div></blockquote>
 <p>Now, the key question to ask about such an argumentation framework is whether a given argument, <span class="math notranslate nohighlight">\(x \in \mathcal{A}\)</span>, should be <em>accepted</em>?  (see the next section)</p>
-<p>Before to go furthere, let us consider again our deicison problem about engine choice and let’s build a system for generating arguments for our negotiation.</p>
+<p>Before to go further, let us consider again our deicison problem about engine choice and let’s build a system for generating arguments for our negotiation.</p>
 <div class="section" id="id4">
 <h3>Questions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p>1- Write a method that take as input an argument and recovers its premises and its conclusion.</p>
@@ -465,20 +465,15 @@ color represent the logical inference of an argument from the premises to the co
 <p class="admonition-title">Warning</p>
 <p>Of course, once it is decided that the agument can be contradicted, you need to construct its counter-arguement (or to select it in your list of counter-arguments–see question 6 in section “Modelling arguments”).</p>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">TODO</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument</span><span class="p">):</span>
-
-    <span class="c1"># To be completed</span>
-</pre></div>
-</div>
 <p><strong>Example 8</strong></p>
-<p>Agent1 to Agent2: argue(ICED, Consumption  = good)</p>
+<p>Agent1 to Agent2: argue(ICED, Consumption  = Good)</p>
 <p>Agent 2 may reply by:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>argue (not ICED, environment impact &gt; Consumption )</p></li>
-<li><p>argue (item, Consumption= very good)</p></li>
-<li><p>argue (not ICED, Consumption = bad)</p></li>
-<li><p>argue (note ICED, nvironment impact =Bad and nvironment impact &gt; Consumption)</p></li>
+<li><p>argue (not ICED, environment impact <span class="math notranslate nohighlight">\(\succ\)</span> Consumption )</p></li>
+<li><p>argue (item, Consumption= Very Good)</p></li>
+<li><p>argue (not ICED, Consumption = Bad)</p></li>
+<li><p>argue (note ICED, environment impact = Bad and environment impact <span class="math notranslate nohighlight">\(\succ\)</span> Consumption)</p></li>
 </ul>
 </div></blockquote>
 <p>3-  Update the interaction protocol to take into account the attack function and to implement the following situation:</p>
@@ -501,7 +496,7 @@ color represent the logical inference of an argument from the premises to the co
 them) on the basis of all the ways in which they interact. Thus, the best or acceptable arguments
 must be identified at the end of the argumentation process.</p>
 <p>Most of argumentation systems are based on the notion of acceptability as it was identified by
-[Dung, 1995]. Dung has proposed an abstract framework for argumentation in which he focuses
+[<a class="reference external" href="https://www.sciencedirect.com/science/article/pii/000437029400041X">Dung, 1995</a>]. Dung has proposed an abstract framework for argumentation in which he focuses
 only on the definition of the status of arguments. In such framework, the acceptability of an argument depends on its membership of some sets, called <em>acceptable sets or extensions</em>. In other
 terms, the acceptability of arguments is defined without considering the internal structure of the
 arguments.</p>
@@ -512,7 +507,7 @@ arguments.</p>
 <li><p><em>Preferred extension</em>: it represents maximal coherent positions, able to defend themselves against all attackers;</p></li>
 <li><p><em>Grounded extension</em>: accept only the argument that one cannot avoid to accept.</p></li>
 </ul>
-<p>Fore more formal defintions of the different extensions, and examples, you can have a look at this <a class="reference download internal" download="" href="dowloads/f94ece55ab509b4f10919c97af7736ea/MAS_DungFramework.pdf"><code class="xref download docutils literal notranslate"><span class="pre">summary</span></code></a>.</p>
+<p>Fore more formal defintions of the different extensions, and examples, you can have a look at this <a class="reference download internal" download="" href="downloads/f94ece55ab509b4f10919c97af7736ea/MAS_DungFramework.pdf"><code class="xref download docutils literal notranslate"><span class="pre">summary</span></code></a>.</p>
 <div class="section" id="notes">
 <h3><em>Notes</em><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <dl class="footnote brackets">
