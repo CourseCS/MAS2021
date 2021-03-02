@@ -1,19 +1,18 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1.1. a Brief History of Multiagent Systems &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -32,7 +31,8 @@
         <li class="right" >
           <a href="cours-1.html" title="1. Introduction to MAS : definitions and implementation of a platform"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">1.1. a Brief History of Multiagent Systems</a></li> 
       </ul>
     </div>  
 
@@ -50,7 +50,7 @@
 <p>Writing software using different programming languages, design principles or systematic validation models has been a research question in Computer Science since the first digital computers appeared in the 50s. Questions such as how to maximise the speed, the reusability, the readability, the security of code is at the core of software engineering. It has a long history of breakthroughs such as the abstraction of functions (reusable and parameterised pieces of code), the modularity (separation and encapsulation of pieces of code) or object-oriented programming. All these inventions aim at helping programmers deal with the ever-increasing complexity of software systems.</p>
 <p>In the 90s, software engineering research moved from the notion of objects to the notion of <em>service</em>. The core idea is that a piece of code, possibly a thread, should be provided with some machine-understandable interface that could allow other code to use it without a priori knowledge of its operational content. Such interface defines which method to call first, what are the expected properties of the outputs given the inputs for each method, <em>etc</em>. Software engineers rely on <strong>interaction protocols</strong> to define how the different services should be assembled, how the information has to be exchanged between them, so as to produce some expected result. Multiagent systems were proposed in this context as a series of platforms to support the development of such service-oriented software, with coordination entities capable to interpreting protocols.</p>
 <div class="figure align-center" id="id1">
-<img alt="images/OASIS.png" src="images/OASIS.png" />
+<a class="reference internal image-reference" href="images/OASIS.png"><img alt="images/OASIS.png" src="images/OASIS.png" style="width: 350px;" /></a>
 <p class="caption"><span class="caption-text"><a class="reference external" href="http://docs.oasis-open.org/ws-tx/wstx-wscoor-1.1-spec-os/wstx-wscoor-1.1-spec-os.html">The OASIS Web Services Coordination standard (version 1.1, 2007)</a></span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>As a consequence, for a software engineer’s point of view, what matters in multiagent systems is the possibility to <strong>assemble separate components or threads by designing well-formed interaction protocols</strong>. These protocols ensure that the right methods are called, that the answer are of correct type wrt the expectation of the calling method, etc. It is also important for software engineers to have a specific programming language to define the behaviour of the agents. As we shall see in sessions 4 to 7 of this course, logic-based programming and its relation to AI played a key role in this regards.</p>
@@ -187,6 +187,7 @@
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -235,7 +236,7 @@
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -252,12 +253,13 @@
         <li class="right" >
           <a href="cours-1.html" title="1. Introduction to MAS : definitions and implementation of a platform"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">1.1. a Brief History of Multiagent Systems</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Emmanuel Hermellin, Wassila Ouerdane, Nicolas Sabouret.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
     </div>
   </body>
 </html>

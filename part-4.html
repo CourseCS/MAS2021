@@ -1,19 +1,18 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>2.1. Multi-Agent Based Simulation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -32,7 +31,8 @@
         <li class="right" >
           <a href="cours-2.html" title="2. Multiagent simulation : preys and predators"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2.1. Multi-Agent Based Simulation: Introduction</a></li> 
       </ul>
     </div>  
 
@@ -53,20 +53,19 @@
 <h2>1. Simulation definition<a class="headerlink" href="#simulation-definition" title="Permalink to this headline">¶</a></h2>
 <p>Simulation is one of the most effective decision support tools available to scientists, designers and managers of complex systems. It consists in building a model of a real system and conducting experiments on this model in order to understand the behavior of this system and improve its performance. Here is one of the definitions of a simulation:</p>
 <blockquote>
-<div><p>“The process of designing a model of a real system and conducting experiments with this model for the purpose either of understanding the behaviour of the system or of evaluating various strategies (within the limits imposed by a criterion or a set of criteria) for the operation of the system.” Shannon, 1998.</p>
+<div><p>“The process of designing a model of a real system and conducting experiments with this model for the purpose either of understanding the behaviour of the system or of evaluating various strategies (within the limits imposed by a criterion or a set of criteria) for the operation of the system.” <em>Shannon</em>, 1998.</p>
 </div></blockquote>
-<p>The issue behind a digital simulation is therefore to study a real system in order to understand its internal functioning and / or to predict its evolution under certain conditions. Moreover, to achieve these objectives, this study is necessarily done through a <strong>model</strong> of the <strong>real system</strong> which is used to carry out the experiments. The terms <strong>real system</strong> and <strong>model</strong> are the two keywords in this definition.</p>
-<p>It is important to understand that the real system does not necessarily refer to a phenomenon that exists in nature. It can also be an intellectual construction of a virtual phenomenon. This
-denomination is in fact used to clearly distinguish the phenomenon to be studied from its model which is also considered as a system.</p>
-<p>Shannon adds that a simulation process is constituted by the construction of the model and by the analytical use which is made of the model to study the system.</p>
+<p>The issue behind a simulation is therefore to study a real system in order to understand its internal functioning and / or to predict its evolution under certain conditions. Moreover, to achieve these objectives, this study is necessarily done through a <strong>model</strong> of the <strong>real system</strong> which is used to carry out the experiments. The terms <strong>real system</strong> and <strong>model</strong> are the two keywords in this definition.</p>
+<p>It is important to understand that the real system does not necessarily refer to a phenomenon that exists in nature. It can also be an intellectual construction of a virtual phenomenon. This denomination is in fact used to clearly distinguish the phenomenon to be studied from its model which is also considered as a system.</p>
+<p><em>Shannon</em> adds that a simulation process is constituted by the construction of the model and by the analytical use which is made of the model to study the system.</p>
 </div>
 <div class="section" id="computeur-simulation-definition">
 <h2>2. Computeur simulation definition<a class="headerlink" href="#computeur-simulation-definition" title="Permalink to this headline">¶</a></h2>
 <p>Computer simulation is in fact inseparable from the <em>experimental process</em> which is linked to its objective.</p>
 <blockquote>
-<div><p>“Computer simulation is the discipline of designing a model of an actual or theoretical physical system, executing the model on a digital computer, and analyzing the execution output.” Fishwick, 1997.</p>
+<div><p>“Computer simulation is the discipline of designing a model of an actual or theoretical physical system, executing the model on a digital computer, and analyzing the execution output.” <em>Fishwick</em>, 1997.</p>
 </div></blockquote>
-<p>This definition gives a global overview of a process of a computer simulation process. Fishwick defines this discipline as an iterative and nonlinear process composed of three interdependent fundamental tasks:</p>
+<p>This definition gives a global overview of a computer simulation process. <em>Fishwick</em> defines this discipline as an iterative and nonlinear process composed of three interdependent fundamental tasks:</p>
 <ol class="arabic simple">
 <li><p>The development of the model.</p></li>
 <li><p>Running the model on a computer.</p></li>
@@ -77,13 +76,13 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <div class="section" id="simulation-as-an-experimental-process">
 <h2>3. Simulation as an experimental process<a class="headerlink" href="#simulation-as-an-experimental-process" title="Permalink to this headline">¶</a></h2>
-<p>Most of the time, Fishwick’s definition is sufficient to illustrate clearly and simply the different stages that constitute the development of a computer simulation. However, it may be interesting to detail these steps:</p>
+<p>Most of the time, <em>Fishwick</em>’s definition is sufficient to illustrate clearly and simply the different stages that constitute the development of a computer simulation. However, it may be interesting to detail these steps:</p>
 <ol class="arabic simple">
 <li><p>Definition of the problem: clearly define the objectives of the study. What are the questions we want to answer?</p></li>
 <li><p>Definition of the system: determine which parts of the system to study. The model will then be developed according to the objectives set.</p></li>
 <li><p>Definition of the model: develop a first model graphically or in pseudo code. This involves defining the different entities that belong to the system: components, variables, interaction between components, etc.</p></li>
 <li><p>Preliminary analysis of the experiment: determine what the criteria are which will make it possible to assess the quality of the experiment: what are the parameters to vary, with what amplitude and over how many runs? How experience will be needed for the whole experiment?</p></li>
-<li><p>Definition of initial parameters: Definition of initial parameters: determine and collect the data that are necessary for the development of the initial values that will be used for the configuration of the model.</p></li>
+<li><p>Definition of initial parameters: determine and collect the data that are necessary for the development of the initial values ​​that will be used for the configuration of the model.</p></li>
 <li><p>Implementation of the model: convert the developed model into a simulation language to allow its implementation on a computer.</p></li>
 <li><p>Verification and validation of the model: check that the simulator correctly execute the model to validate the results obtained by it. Are they acceptable and representative of the system being want to study?</p></li>
 <li><p>Experimentation: run the actual simulation to recover desired results and perform a sensitivity analysis of the model taccording to the initial parameters.</p></li>
@@ -94,11 +93,11 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <div class="section" id="dynamic-systems">
 <h2>4. Dynamic systems<a class="headerlink" href="#dynamic-systems" title="Permalink to this headline">¶</a></h2>
-<p>Now that we have an idea of what a computer simulation is, it is worth presenting the different concepts that are manipulated to model real systems. In this context, the notion of <em>dynamic system</em> is essential. By <em>dynamic system</em> we mean:</p>
+<p>Now that we have an idea of what a computer simulation is, it is worth presenting the different concepts that are manipulated to model real systems. In this context, the notion of <strong>dynamic system</strong> is essential. By <strong>dynamic system</strong> we mean:</p>
 <blockquote>
 <div><p>“Any formal construct which provides general modeling concepts for various kind of disciplines.” Rozenblit &amp; Zeigler, 1993.</p>
 </div></blockquote>
-<p>Most models used to represent a <em>dynamic system</em> are based on the abstractions offered by the <strong>systems theory</strong>.</p>
+<p>Most models used to represent a <strong>dynamic system</strong> are based on the abstractions offered by the <strong>systems theory</strong>.</p>
 <p>The basic principle of this theory is to consider that a system can be specified according to two fundamental aspects:</p>
 <ul class="simple">
 <li><p>The <em>behavior of the system</em> at its limits (external behavior): the observable reactions of the system from outside it;</p></li>
@@ -175,9 +174,9 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <p>To model dynamic systems, a mathematical approach has long been used. Called Equation Based Model (EBM), it is build on an interrelation of a set of equations that captures the variability of a system over time. EBM represents the whole system and does not support an explicit representation of components (top-down). The whole system is globally represented by equations defined at the macroscopic level which does not make it possible to take into account the individual characteristics of the entities that compose the system. Moreover, this level of representation raises the question of the realism and the complexity of the parameters used to formulate the equations which model the system. So, EBM is most naturally used to model central systems.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Take the example of the prey / predatory model: it is used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.</p>
+<p>Take the example of the Prey - Predatory model: it is used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.</p>
 <a class="reference internal image-reference" href="images/preypredatorebm.png"><img alt="images/preypredatorebm.png" class="align-center" src="images/preypredatorebm.png" style="width: 250px;" /></a>
-<p>It focus on the global variation of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:</p>
+<p>It focus on the global variation of the prey and predator populations. Below, you can find the output of a Prey - Predator EBM simulation:</p>
 <a class="reference internal image-reference" href="images/preypredatorebmout.png"><img alt="images/preypredatorebmout.png" class="align-center" src="images/preypredatorebmout.png" style="width: 450px;" /></a>
 </div>
 <div class="admonition warning">
@@ -203,21 +202,21 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 <h2>3. Multi-agent modeling<a class="headerlink" href="#multi-agent-modeling" title="Permalink to this headline">¶</a></h2>
 <p>The multi-agent approach is based on an individual-centered approach: it considers that it is possible to model not only individuals and their behaviors, but also the interactions that take place between these individuals. It considers that the overall dynamics of a system, at the macroscopic level, result directly from the interactions between the individuals who compose this system at the microscopic level. Thus, while EBM model the relationships that exist between the different identified entities of a system using mathematical equations, the multi-agent approach directly models the interactions generated by individual behaviors.</p>
 <a class="reference internal image-reference" href="images/mabs.png"><img alt="images/mabs.png" class="align-center" src="images/mabs.png" style="width: 450px;" /></a>
-<p>To create a multi-agent simulation, you must follow the principles of the agent paradigm presented in the previous course:</p>
+<p>To create a Multi-Agent Based Simulation, you must follow the principles of the agent paradigm presented in the previous course:</p>
 <ul class="simple">
-<li><p>Creating an artificial world made up of interacting agents (Agent-Based Models) living in an environment.</p></li>
+<li><p>Creating an artificial world made up of interacting agents (Agent-Based Models, ABM) living in an environment.</p></li>
 <li><p>Each agent is described as an autonomous entity.</p></li>
 <li><p>The behaviour of agents is the consequence of their observations, internal trends, beliefs and interactions with the environment and other agents.</p></li>
 <li><p>Agents act and change the state of the environment through their actions.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Take again the example of the prey / predatory model. Each entity (prey and predator) is represented by an agent and has behaviors:</p>
+<p>Take again the example of the Prey - Predator model. Each entity (prey and predator) is represented by an agent and has behaviors:</p>
 <ul class="simple">
 <li><p>Prey: move, eat, reproduce, flee and die.</p></li>
 <li><p>Predator: move, eat, reproduce, hunt and die.</p></li>
 </ul>
-<p>Each agent activate one of its behavior according to its perception of the environment. This simulation focus on the local behaviors of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:</p>
+<p>Each agent activate one of its behavior according to its perception of the environment. This simulation focus on the local behaviors of the prey and predator populations. Below, you can find the output of a Prey - Predator EBM simulation:</p>
 <a class="reference internal image-reference" href="images/prey_predator.jpg"><img alt="images/prey_predator.jpg" class="align-center" src="images/prey_predator.jpg" style="width: 350px;" /></a>
 </div>
 <p>Due to its ability to model the interactions between entities and the variations of a system at the micro level, Multi-Agent Based Simulation is used in many fields of application.</p>
@@ -449,19 +448,19 @@ denomination is in fact used to clearly distinguish the phenomenon to be studied
 </div>
 <div class="section" id="implementing-multi-agent-based-simulation">
 <h1>2.5.  Implementing Multi-Agent Based Simulation<a class="headerlink" href="#implementing-multi-agent-based-simulation" title="Permalink to this headline">¶</a></h1>
-<p>From a technical point of view, the characteristics of a Multi-Agent Based Simulaton are related to the software architecture used to implement the agents and the environment. In this context, the needs and constraints relating to the software architecture can vary due to the heterogeneity of the fields on which  Multi-Agent Based simulation can be applied. The structures of the models representing the agents and the environment are not the same depending on the experimental framework (biology, ecology, ethology, etc.).</p>
+<p>From a technical point of view, the characteristics of a Multi-Agent Based Simulaton are related to the software architecture used to implement the agents and the environment. In this context, the needs and constraints relating to the software architecture can vary due to the heterogeneity of the fields on which  Multi-Agent Based Simulation can be applied. The structures of the models representing the agents and the environment are not the same depending on the experimental framework (biology, ecology, ethology, etc.).</p>
 <div class="section" id="architecture-of-a-multi-agent-base-simulation">
 <h2>1. Architecture of a Multi-Agent Base Simulation<a class="headerlink" href="#architecture-of-a-multi-agent-base-simulation" title="Permalink to this headline">¶</a></h2>
-<p>The software architecture of a Multi-Agent Base Simulation is also strongly influenced by the nature of the source system that we want to model. This is one of the reasons why there is currently no generic methodology linked to the modeling and the implementation of Multi-Agent Base Simulation.</p>
+<p>The software architecture of a Multi-Agent Base Simulation is strongly influenced by the nature of the source system that we want to model. This is one of the reasons why there is currently no generic methodology linked to the modeling and the implementation of Multi-Agent Base Simulation.</p>
 <p>Consequently, the nature of the environment (<strong>continuous</strong> or <strong>discrete</strong>, <strong>static</strong> or <strong>dynamic</strong>, etc.), the granularity of actions / perceptions (<strong>fine</strong> or <strong>coarse</strong>) and the <strong>complexity of the internal architecture</strong> of an agent are all points on which the modeler has to make personal choices which are based on his needs. The large number of existing platforms is proof of this (see the <em>note</em> below).</p>
 <p>Thus, when we want to implement a simulation, we must clearly define :</p>
 <ul class="simple">
-<li><p>the architecture of autonomous entities that act in the system (Agent);</p></li>
-<li><p>the interactions between entities (Interaction);</p></li>
-<li><p>the shared resources and processes between agents (Environment);</p></li>
-<li><p>the coordination and cooperation between agents (Organization).</p></li>
+<li><p>The architecture of autonomous entities that act in the system (Agent);</p></li>
+<li><p>The interactions between entities (Interaction);</p></li>
+<li><p>The shared resources and processes between agents (Environment);</p></li>
+<li><p>The coordination and cooperation between agents (Organization).</p></li>
 </ul>
-<img alt="images/mabs_details.png" class="align-center" src="images/mabs_details.png" />
+<a class="reference internal image-reference" href="images/mabs_details.png"><img alt="images/mabs_details.png" class="align-center" src="images/mabs_details.png" style="width: 650px;" /></a>
 <p>The implementation of multi-agent models also requires to take into account three
 constraints:</p>
 <ol class="arabic">
@@ -469,11 +468,11 @@ constraints:</p>
 Individual and autonomous entities are modeled and implemented. We want to be able to vary their implementation without questioning the entire source code.</p></li>
 <li><p>Locality constraint
 The environment is not fully accessible to an agent. An agent has only a local perception of the world and his actions/perceptions are limited in their scope.</p>
-<img alt="images/locality_discrete.png" class="align-center" src="images/locality_discrete.png" />
+<a class="reference internal image-reference" href="images/locality_discrete.png"><img alt="images/locality_discrete.png" class="align-center" src="images/locality_discrete.png" style="width: 350px;" /></a>
 </li>
 <li><p>Environmental integrity constraint
 There is no direct relationship between the internal architectures of two autonomous agents. An agent must not be able to directly change environment state variables.</p>
-<img alt="images/integrity.png" class="align-center" src="images/integrity.png" />
+<a class="reference internal image-reference" href="images/integrity.png"><img alt="images/integrity.png" class="align-center" src="images/integrity.png" style="width: 350px;" /></a>
 </li>
 </ol>
 <div class="admonition note">
@@ -503,11 +502,54 @@ There is no direct relationship between the internal architectures of two autono
 </div>
 <div class="section" id="time-management-in-mabs">
 <h2>2. Time management in MABS<a class="headerlink" href="#time-management-in-mabs" title="Permalink to this headline">¶</a></h2>
+<p>Multi-Agent Based Simulation is based on the idea that it is possible to represent a set of autonomous entities operating in a common environment. In this context, all agents must be subject to the same temporal law in order to respect the principle of causality (see [Edem Fianyo and all, The Representation of Time, 1998] for more details).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>It must be noticed that all parameters that shape an agent’s internal architecture and model its behaviour (desires, beliefs, world representation, etc.) change instantaneously.</p>
+</div>
+<p>The behaviour of an agent is inherently discrete. The two main implementation principles for handling discrete events are:</p>
+<ul>
+<li><p>Synchronous approach: regular discretization of time.
+Very simple to use because it only need to program a very simple function that activates all the agents behaviors.</p>
+<a class="reference internal image-reference" href="images/TM_synchrone.png"><img alt="images/TM_synchrone.png" class="align-center" src="images/TM_synchrone.png" style="width: 350px;" /></a>
+<p>With a synchronous apporach, the activation order of the agents has a direct impact on the evolution of the world. In the Prey - Predator example, if a prey is captured when it is surrounded by four predators following the vicinity of Von Neumann, the simple fact of changing the order of activation of the agents can have a strong impact on the final result. In the figure below, the right activation make the prey died, not the left activation.</p>
+<a class="reference internal image-reference" href="images/TM_synchrone_issue.png"><img alt="images/TM_synchrone_issue.png" class="align-center" src="images/TM_synchrone_issue.png" style="width: 450px;" /></a>
+<p>From the same state of the world, the same behaviors can produce different states of the world according to the order of activation of the agents. To overcome this issue, it is possible to use:</p>
+<ul>
+<li><p>a <em>random activation process</em></p>
+<a class="reference internal image-reference" href="images/TM_synchrone_fix1.png"><img alt="images/TM_synchrone_fix1.png" class="align-center" src="images/TM_synchrone_fix1.png" style="width: 450px;" /></a>
+</li>
+<li><p><em>buffer variables</em></p>
+<a class="reference internal image-reference" href="images/TM_synchrone_fix2.png"><img alt="images/TM_synchrone_fix2.png" class="align-center" src="images/TM_synchrone_fix2.png" style="width: 450px;" /></a>
+</li>
+</ul>
+</li>
+<li><p>Asynchronous approach: event simulation principle.
+It is hard to picture out a reality where a set of entities would be updated simultaneously by a global clock. It is more natural that each autonomous entity evolves at its own pace and generates events whose date of realization is personal to it. So, the agent activation is asynchronous.
+There are two ways to implement asynchronous approach:</p>
+<ul class="simple">
+<li><p>Events are determined at the beginning and the simulation consists in executing the list of events.</p></li>
+<li><p>Events are determined during the simulation to take into account the effects of previous events.</p></li>
+</ul>
+<a class="reference internal image-reference" href="images/TM_asynchrone.png"><img alt="images/TM_asynchrone.png" class="align-center" src="images/TM_asynchrone.png" style="width: 450px;" /></a>
+<p>As in synchronous approach, an asynchronous approach could produce some conflicts: for example, two events can occur at the same simulation time step. To resolve these conflits, it is possible to introduce competition between agents or to make a random choice on the action to be prioritized.</p>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>To conclude this part, it must be noticed that a consistency relationship between the time granularity of the actions and the time step must exist.</p>
+<a class="reference internal image-reference" href="images/TM_synchrone_issue2.png"><img alt="images/TM_synchrone_issue2.png" class="align-center" src="images/TM_synchrone_issue2.png" style="width: 450px;" /></a>
+<p>If an agent can move on many cells in one time step. Several agents may have paths that intersect without ever colliding (speed not directly related to time). So, the temporal granularity of actions must be taken into account.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To go further, you may be interested in the problem of simultaneity of actions in Multi-Agent Based Simulation.</p>
+</div>
 </div>
 </div>
 <div class="section" id="implementing-a-prey-predator-simulation-with-mesa">
-<h1>2.6. Implementing  a prey / predator simulation with Mesa<a class="headerlink" href="#implementing-a-prey-predator-simulation-with-mesa" title="Permalink to this headline">¶</a></h1>
-<p>The objective of this practical work is to implement a simulation of a prey - predator model. The prey - predator model is a simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.</p>
+<h1>2.6. Implementing a Prey - Predator simulation with Mesa<a class="headerlink" href="#implementing-a-prey-predator-simulation-with-mesa" title="Permalink to this headline">¶</a></h1>
+<p>The objective of this practical work is to implement a simulation of a Prey - Predator model. The Prey - Predator model is a simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.</p>
 <p>If wolves and sheep have enough energy, they reproduce, creating a new wolf or sheep (in this simplified model, only one parent is needed for reproduction). The grass on each cell regrows at a constant rate. If any wolves and sheep run out of energy, they die.</p>
 <dl class="simple">
 <dt>The implementation of this model will make you use several Mesa concepts and features:</dt><dd><ul class="simple">
@@ -520,7 +562,7 @@ There is no direct relationship between the internal architectures of two autono
 </ul>
 </dd>
 </dl>
-<p>The goal is to implement a prey - predator model closely based on the NetLogo Wolf-Sheep Predation Model: <em>Wilensky, U. (1997). NetLogo Wolf Sheep Predation model</em>. <a class="reference external" href="http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation">http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation</a></p>
+<p>The goal is to implement a Prey - Predator model closely based on the NetLogo Wolf-Sheep Predation Model: <em>Wilensky, U. (1997). NetLogo Wolf Sheep Predation model</em>. <a class="reference external" href="http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation">http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation</a></p>
 <div class="section" id="practice-yourself">
 <h2>Practice yourself!<a class="headerlink" href="#practice-yourself" title="Permalink to this headline">¶</a></h2>
 <p>Download the following archive which contains the project from which to start and extract it. The extracted folder contains 6 python files:</p>
@@ -528,11 +570,11 @@ There is no direct relationship between the internal architectures of two autono
 <li><p><em>prey_predator/random_walker.py</em>: this defines the <em>RandomWalker</em> agent, which implements the behavior of moving randomly across a grid, one cell at a time. Both the Wolf and Sheep agents will inherit from it.</p></li>
 <li><p><em>prey_predator/agents.py</em>: defines the Wolf, Sheep, and GrassPatch agent classes.</p></li>
 <li><p><em>prey_predator/schedule.py</em>: defines a custom variant on the RandomActivation scheduler, where all agents of one class are activated (in random order) before the next class goes – e.g. all the wolves go, then all the sheep, then all the grass.</p></li>
-<li><p><em>prey_predator/model.py</em>: defines the Prey-Predator model itself.</p></li>
+<li><p><em>prey_predator/model.py</em>: defines the Prey - Predator model itself.</p></li>
 <li><p><em>prey_predator/server.py</em>: sets up the interactive visualization server</p></li>
 <li><p><em>run.py</em>: launches a model visualization server.</p></li>
 </ul>
-<p>So, now it’s up to you to work and implement the prey - predator model:</p>
+<p>So, now it’s up to you to work and implement the Prey - Predator model:</p>
 <ol class="arabic simple">
 <li><p>Defines the Wolf, Sheep, and GrassPatch agent classes in the <em>prey_predator/agents.py</em> file.</p></li>
 </ol>
@@ -542,7 +584,7 @@ There is no direct relationship between the internal architectures of two autono
 <li><p>A patch of grass that grows at a fixed rate and it is eaten by sheep.</p></li>
 </ul>
 <ol class="arabic simple" start="2">
-<li><p>Defines the Prey-Predator model by completing the <em>prey_predator/model.py</em> file.</p></li>
+<li><p>Defines the Prey - Predator model by completing the <em>prey_predator/model.py</em> file.</p></li>
 <li><p>Sets up the interactive visualization server by completing <em>prey_predator/server.py</em> file.</p></li>
 </ol>
 <ul class="simple">
@@ -557,6 +599,7 @@ There is no direct relationship between the internal architectures of two autono
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -600,7 +643,7 @@ There is no direct relationship between the internal architectures of two autono
 <li><a class="reference internal" href="#time-management-in-mabs">2. Time management in MABS</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#implementing-a-prey-predator-simulation-with-mesa">2.6. Implementing  a prey / predator simulation with Mesa</a><ul>
+<li><a class="reference internal" href="#implementing-a-prey-predator-simulation-with-mesa">2.6. Implementing a Prey - Predator simulation with Mesa</a><ul>
 <li><a class="reference internal" href="#practice-yourself">Practice yourself!</a></li>
 </ul>
 </li>
@@ -628,7 +671,7 @@ There is no direct relationship between the internal architectures of two autono
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -645,12 +688,13 @@ There is no direct relationship between the internal architectures of two autono
         <li class="right" >
           <a href="cours-2.html" title="2. Multiagent simulation : preys and predators"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">2.1. Multi-Agent Based Simulation: Introduction</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Emmanuel Hermellin, Wassila Ouerdane, Nicolas Sabouret.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
     </div>
   </body>
 </html>
