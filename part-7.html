@@ -1,19 +1,19 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>4.1. Argumentation-Based Negotiation: Introduction &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -32,7 +32,8 @@
         <li class="right" >
           <a href="cours-4.html" title="4. Argumentation-based negotiation"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">4.1. Argumentation-Based Negotiation: Introduction</a></li> 
       </ul>
     </div>  
 
@@ -211,7 +212,7 @@ different order of preferences among the criteria themselves (total order in our
 <h2>3. The Python project<a class="headerlink" href="#the-python-project" title="Permalink to this headline">¶</a></h2>
 <p>In the third session of the course, in section 3.2. “Interaction with mesa libreary”, we have implemented a communication layer in Mesa to handle the direct interactions.
 In this practical work we will use this layer and add argumentation and negotiation features.
-To do so, you can either download the following <a class="reference download internal" download="" href="dowloads/fa3ab80688b72c9f63ecbd51888dbcb8/preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">archive</span></code></a> (preference package) or start from the following <a class="reference download internal" download="" href="dowloads/af3c70e87aa2d2f4337fa83098d3bc1f/mesa_preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">archive</span></code></a> in which the preference package is already integrated in mesa.</p>
+To do so, you can either download the following <a class="reference download internal" download="" href="_downloads/fa3ab80688b72c9f63ecbd51888dbcb8/preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">archive</span></code></a> (preference package) or start from the following <a class="reference download internal" download="" href="_downloads/af3c70e87aa2d2f4337fa83098d3bc1f/mesa_preference.zip"><code class="xref download docutils literal notranslate"><span class="pre">archive</span></code></a> in which the preference package is already integrated in mesa.</p>
 <p>Thus, you should have the following:</p>
 <a class="reference internal image-reference" href="images/code.png"><img alt="images/code.png" class="align-center" src="images/code.png" style="width: 200px;" /></a>
 <p>For reminder,</p>
@@ -296,10 +297,9 @@ equality, select one randomly. If you think that it is hlepful to add another fu
 </div>
 <div class="section" id="agents-and-communication">
 <h2>2. Agents and communication<a class="headerlink" href="#agents-and-communication" title="Permalink to this headline">¶</a></h2>
-<p>1- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder (or download it <a class="reference download internal" download="" href="dowloads/34fb58796b14e389d6a8992d45050342/pw_argumentation.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> ).</p>
+<p>1- Create a new Python file named <cite>pw_argumentation.py</cite> (as it is illustrated in the following picture) at the root of the mesa folder (or download it <a class="reference download internal" download="" href="_downloads/34fb58796b14e389d6a8992d45050342/pw_argumentation.py"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> ).</p>
 <a class="reference internal image-reference" href="images/capture.png"><img alt="images/capture.png" class="align-center" src="images/capture.png" style="width: 350px;" /></a>
 <p>This file  will contain our class of agents and our model for the argumentation simulation (will be completed as we go through our sessions).</p>
-<p>Translated with www.DeepL.com/Translator (free version)).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mesa</span> <span class="kn">import</span> <span class="n">Model</span>
 <span class="kn">from</span> <span class="nn">mesa.time</span> <span class="kn">import</span> <span class="n">RandomActivation</span>
 
@@ -312,7 +312,7 @@ equality, select one randomly. If you think that it is hlepful to add another fu
 <span class="sd">  &quot;&quot;&quot;</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
       <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">unique_id</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-      <span class="bp">self</span><span class="o">.</span><span class="n">preference</span> <span class="o">=</span> <span class="bp">None</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">preference</span> <span class="o">=</span> <span class="kc">None</span>
 
   <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
@@ -338,7 +338,7 @@ equality, select one randomly. If you think that it is hlepful to add another fu
       <span class="c1"># self.schedule.add(a)</span>
       <span class="c1"># ...</span>
 
-      <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="bp">True</span>
+      <span class="bp">self</span><span class="o">.</span><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
 
   <span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
       <span class="bp">self</span><span class="o">.</span><span class="n">__messages_service</span><span class="o">.</span><span class="n">dispatch_messages</span><span class="p">()</span>
@@ -398,6 +398,7 @@ have the three following information:</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -449,7 +450,7 @@ have the three following information:</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -466,12 +467,13 @@ have the three following information:</p>
         <li class="right" >
           <a href="cours-4.html" title="4. Argumentation-based negotiation"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">4.1. Argumentation-Based Negotiation: Introduction</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Emmanuel Hermellin, Wassila Ouerdane, Nicolas Sabouret.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
     </div>
   </body>
 </html>
