@@ -1,19 +1,20 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>5.1. Previsously … &#8212; MultiAgent Systems 2020-2021 documentation</title>
-    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     <link rel="stylesheet" href="static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="static/classic.css" type="text/css" />
     
-    <script type="text/javascript" id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
-    <script type="text/javascript" src="static/jquery.js"></script>
-    <script type="text/javascript" src="static/underscore.js"></script>
-    <script type="text/javascript" src="static/doctools.js"></script>
-    <script type="text/javascript" src="static/language_data.js"></script>
-    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script id="documentation_options" data-url_root="./" src="static/documentation_options.js"></script>
+    <script src="static/jquery.js"></script>
+    <script src="static/underscore.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -32,7 +33,8 @@
         <li class="right" >
           <a href="cours-5.html" title="5. Argumentation-based negotiation (Cont.)"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">5.1. Previsously …</a></li> 
       </ul>
     </div>  
 
@@ -51,7 +53,23 @@
 </div>
 <div class="section" id="introduction-to-argumentation-theory">
 <h1>5.2. Introduction to Argumentation Theory<a class="headerlink" href="#introduction-to-argumentation-theory" title="Permalink to this headline">¶</a></h1>
-<p>Reasoning is generally defeasible, i.e. based on  assumptions, exceptions, uncertainty, etc.
+<p>The theory of Argumentation is a rich, interdisciplinary arez of research lying across philosophy, communication studies, linguistics and psychology. Its techniques
+and results have found a wide range of applications in both theoretical and practical branches of AI and computer science.</p>
+<p>In recent years, argumentation theory has been gaining increasing interest in the multi-agent systems (MAS) research community. It can be used:</p>
+<ul class="simple">
+<li><p>to specify autonomous agent reasoning (belief revision, decision making under uncertainty, ..): it provides a systematic means for resolving conflicts among different arguments and arriving at consistent, well-supported standpoints.</p></li>
+<li><p>as a vehicl for facilitating multi-agent interaction. It naturally provides tools for designing, implementing and analyzing sophisticated forms of interaction among rational agents.</p></li>
+</ul>
+<p>Argumentation can be defined as follows:</p>
+<blockquote>
+<div><p>” Argumentation is a verbal and social activity of reason aimed at increasing (or decreasing) the acceptability of a controversial standpoint for the listner or
+reader, by putting forward a constellation of propositions intended to justify (or refute) the standpoint before a rational judge [<a class="reference external" href="https://www.routledge.com/Fundamentals-of-Argumentation-Theory-A-Handbook-of-Historical-Backgrounds/Eemeren-Grootendorst-Johnson-Plantin-Willard/p/book/9780805818628">van Eemeren et al., 1996</a>, page 5]</p>
+</div></blockquote>
+<p>In summary, argumentation can be seen as the principled interaction of different, potentially conflicting arguments, for the sake of arriving at a consistent conclusion.  In other terms,
+we use argumentation only when information, beliefs, actions, … are <strong>contradictory</strong>. It means if eveyrhting is consistent, just merge information from multiple agents.</p>
+<div class="section" id="non-monotonic-reasoning">
+<h2>1. Non-Monotonic reasoning<a class="headerlink" href="#non-monotonic-reasoning" title="Permalink to this headline">¶</a></h2>
+<p>Argumentation logics formalises <strong>defeasible reasoning</strong> as construction and comparison of arguments. Indeed, reasoning is generally defeasible, i.e. based on  assumptions, exceptions, uncertainty, etc.
 AI formalises such reasoning with <a class="reference external" href="https://plato.stanford.edu/entries/logic-nonmonotonic/">**non-monotonic reasoning logics**</a>. The idea is that often available knowledge is incomplete, and to model commonsense reasoning
 it is necessary to be able to jump to plausible conclusions from the given knowledge. Thus, to do that it is necessary to make assumptions. The choice of assumptions is not blind: most of the knowledge on the world is given by means of general rules which specify typical properties of objects.</p>
 <p><em>Non-monotonic reasoning</em> deals with problem of deriving plausible conclusion, but not infallible, from a knowledge base (a set of formulas). Since the conclusion are not certain, it must be possible to <strong>retract</strong> some of them if <strong>new information</strong> shows that they are wrong. Classical logic is inadequate since it is monotonic, which means that if a formula
@@ -70,24 +88,30 @@ it is necessary to be able to jump to plausible conclusions from the given knowl
 <p>A knowledge base is a set of propositions represented in some formal logics (classical or non-monotonic).By adding this information to the KB, we have good reasons to retract the previous inference and
 instead, the new conclusion that Tweety does not fly will hold. However, this is not possible with the classical logic (the three sentences in the premises are true so the derived conclusion is true).</p>
 <p>One way to do this is to say, ‘’Normally, birds fly’’ or ‘’ if <span class="math notranslate nohighlight">\(x\)</span> is a typical bird, then we can assume by default that <span class="math notranslate nohighlight">\(x\)</span> flies ‘’.  This can be read as: “in the absence of information to the contrary, assume that <span class="math notranslate nohighlight">\(x\)</span> flies”</p>
-<p>Argumentation logics formalises such <strong>defeasible reasoning</strong> as construction
-and comparison of arguments. In other terms, Argumentation is the process of attempting to agree about what to believe or <strong>what to do</strong> <a class="footnote-reference brackets" href="#n1" id="id1">1</a>.  We use argumentation only when information, beliefs, actions, … are <strong>contradictory</strong>. It means if eveyrhting is consistent, just merge information from multiple agents. In other terms,
-the process offers sensible rules for deciding what to believe or what to do in the face of inconsistency. argumentation-based approaches are suited for applications in which agents have incomplete or inconsistent information about each other and the
-environment in which they act. For instance, in : consumer websites (Amazon for instance), law (policy making, supreme transcript, case based reasoning,…), <a class="reference external" href="https://bmjopen.bmj.com/content/2/3/e000439">mediacal diagnosis</a>, <a class="reference external" href="http://ftp.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-405/paper4.pdf">social media</a>, etc.</p>
-<div class="figure align-center">
-<a class="reference internal image-reference" href="images/arguing.jpeg"><img alt="images/arguing.jpeg" src="images/arguing.jpeg" style="width: 450px;" /></a>
-</div>
-<p>Several works were interested by using argumentation in different fields, such as  legal reasoning,
-multi-agent systems, decision making, etc. (<a class="reference external" href="https://link.springer.com/chapter/10.1007/3-540-45632-5_14">Prakken and Sartor, 2002</a>; <a class="reference external" href="https://www.aaai.org/Papers/AAAI/2006/AAAI06-035.pdf">Amgoud and Prade,
-2006</a> ; <a class="reference external" href="https://nms.kcl.ac.uk/peter.mcburney/downloads/pubs/2003/pm-2003-04.pdf">Parsons and McBurney, 2003</a>, …). In most of such approaches, arguments
+<p>Thus, in most of approaches, arguments
 are constructed from an <em>inconsistent knowledge base</em>.  In this case,
 argumentation can be viewed as a method for <strong>deducing</strong> justified conclusion from an inconsistent
 knowledge base. Which conclusion are justified depends on the attack and the defeat relations
 among the arguments which can be constructed from the knowledge base (see relations among arguments).</p>
+</div>
+<div class="section" id="some-application">
+<h2>2. Some application…<a class="headerlink" href="#some-application" title="Permalink to this headline">¶</a></h2>
+<p>Argumentation-based approaches are suited for applications in which agents have incomplete or inconsistent information about each other and the
+environment in which they act. For instance, in : consumer websites (Amazon for instance), law (policy making, supreme transcript, case based reasoning,…), <a class="reference external" href="https://bmjopen.bmj.com/content/2/3/e000439">mediacal diagnosis</a>, <a class="reference external" href="http://ftp.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-405/paper4.pdf">social media</a>, etc.</p>
+<div class="figure align-center">
+<a class="reference internal image-reference" href="images/arguing.jpeg"><img alt="images/arguing.jpeg" src="images/arguing.jpeg" style="width: 450px;" /></a>
+</div>
+<p>Indeed, several works were interested by using argumentation in different fields, such as  legal reasoning,
+multi-agent systems, decision making, etc. (<a class="reference external" href="https://link.springer.com/chapter/10.1007/3-540-45632-5_14">Prakken and Sartor, 2002</a>; <a class="reference external" href="https://www.aaai.org/Papers/AAAI/2006/AAAI06-035.pdf">Amgoud and Prade,
+2006</a> ; <a class="reference external" href="https://nms.kcl.ac.uk/peter.mcburney/downloads/pubs/2003/pm-2003-04.pdf">Parsons and McBurney, 2003</a>, …).</p>
+</div>
+</div>
+<div class="section" id="argumenation-process">
+<h1>5.3. Argumenation process<a class="headerlink" href="#argumenation-process" title="Permalink to this headline">¶</a></h1>
 <p>The classical steps in an argumentation process are depticted in the following figure.</p>
-<div class="figure align-center" id="id5">
+<div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="images/arguprocess.jpg"><img alt="images/arguprocess.jpg" src="images/arguprocess.jpg" style="width: 450px;" /></a>
-<p class="caption"><span class="caption-text">Generic Steps of an Argumentation Process</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Generic Steps of an Argumentation Process</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>It includes:</p>
 <p>1- Constructing arguments in favor/against statements (pertaining to beliefs or decisions) (see section <em>Modelling arguments</em>),</p>
@@ -347,8 +371,8 @@ patterns in the counterpart’s behaviour an use these findings in future encoun
 <p>Instead what we are doing here, argument selection may take place in conjunction with argument generation. An agent needs not to generate all possible
 arguments before it makes a selection of the most suitable one.</p>
 </div>
-<div class="section" id="id2">
-<h3>Questions<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id1">
+<h3>Questions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>For our context, to select which argument to use, we choose a simple way which is:  <em>an agent takes the argument with the criterion with the highest position in its own preference
 order</em> (you may choose another stratgy if you want!). For instance, Agent1 (see its perfomance table above) has four positive arguments
 for the item ICED. To make a propsal,  according to our rule, he will choose the argument involving <em>Cost</em> as it is its perefered criterion.</p>
@@ -383,7 +407,7 @@ arguments that can attack and defeat another argument, calling them <strong>rebu
 <p>A rebutting attack concerns arguments that have contradictory conclusions. Let <span class="math notranslate nohighlight">\(\equiv\)</span> represents the
 equivalence relation in classical logic, and <span class="math notranslate nohighlight">\(\neg\)</span> the negation. Then formally,</p>
 <dl class="simple">
-<dt><strong>Defintion 2 (Rebut attack)</strong></dt><dd><p>Given two arguments <a class="footnote-reference brackets" href="#n2" id="id3">2</a> <span class="math notranslate nohighlight">\((\phi_1, \alpha_1)\)</span> and <span class="math notranslate nohighlight">\((\phi_2, \alpha_2)\)</span> ,  <span class="math notranslate nohighlight">\((\phi_1, \alpha_1)\)</span> rebuts <span class="math notranslate nohighlight">\((\phi_2, \alpha_2)\)</span> if and
+<dt><strong>Defintion 2 (Rebut attack)</strong></dt><dd><p>Given two arguments <a class="footnote-reference brackets" href="#n2" id="id2">2</a> <span class="math notranslate nohighlight">\((\phi_1, \alpha_1)\)</span> and <span class="math notranslate nohighlight">\((\phi_2, \alpha_2)\)</span> ,  <span class="math notranslate nohighlight">\((\phi_1, \alpha_1)\)</span> rebuts <span class="math notranslate nohighlight">\((\phi_2, \alpha_2)\)</span> if and
 and only if <span class="math notranslate nohighlight">\(\alpha_1 \equiv \neg \alpha_2\)</span></p>
 </dd>
 </dl>
@@ -427,9 +451,9 @@ Moreover, at the end, given the set of arguments and their attack relations, we 
 <p><strong>Example 6</strong></p>
 <p>The following figure represents a graph where we have 5 arguments (each color represent an argument) and 4 attack relations (represented by the red dashed lines). Note that the black lines inside a
 color represent the logical inference of an argument from the premises to the conclusion.</p>
-<div class="figure align-center" id="id6">
+<div class="figure align-center" id="id5">
 <a class="reference internal image-reference" href="images/attack_prakken.jpeg"><img alt="images/attack_prakken.jpeg" src="images/attack_prakken.jpeg" style="width: 870px;" /></a>
-<p class="caption"><span class="caption-text">Example of an argument graph (Prakken, 2014)</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Example of an argument graph (Prakken, 2014)</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
 </div>
 <p>More generally, the arguments and their relations can be represented by what we call “abstract argumentation system”. For our previsous example we may have the following:</p>
 <p><strong>Example 7</strong></p>
@@ -443,8 +467,8 @@ color represent the logical inference of an argument from the premises to the co
 </div></blockquote>
 <p>Now, the key question to ask about such an argumentation framework is whether a given argument, <span class="math notranslate nohighlight">\(x \in \mathcal{A}\)</span>, should be <em>accepted</em>?  (see the next section)</p>
 <p>Before to go further, let us consider again our deicison problem about engine choice and let’s build a system for generating arguments for our negotiation.</p>
-<div class="section" id="id4">
-<h3>Questions<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Questions<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>1- Write a method that take as input an argument and recovers its premises and its conclusion.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">argument_parsing</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">argument</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot; returns ....</span>
@@ -511,10 +535,10 @@ arguments.</p>
 <div class="section" id="notes">
 <h3><em>Notes</em><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <dl class="footnote brackets">
-<dt class="label" id="n1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="n1"><span class="brackets">1</span></dt>
 <dd><p>In this course we are mainly interessted by decision making. Thus, we will discuss the structure of arguments withing this setting.</p>
 </dd>
-<dt class="label" id="n2"><span class="brackets"><a class="fn-backref" href="#id3">2</a></span></dt>
+<dt class="label" id="n2"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
 <dd><p>In the sens of defintion 2.</p>
 </dd>
 </dl>
@@ -523,6 +547,7 @@ arguments.</p>
 </div>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
@@ -532,6 +557,11 @@ arguments.</p>
   <ul>
 <li><a class="reference internal" href="#">5.1. Previsously …</a></li>
 <li><a class="reference internal" href="#introduction-to-argumentation-theory">5.2. Introduction to Argumentation Theory</a><ul>
+<li><a class="reference internal" href="#non-monotonic-reasoning">1. Non-Monotonic reasoning</a></li>
+<li><a class="reference internal" href="#some-application">2. Some application…</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#argumenation-process">5.3. Argumenation process</a><ul>
 <li><a class="reference internal" href="#modelling-arguments">1. Modelling arguments</a><ul>
 <li><a class="reference internal" href="#let-s-go-back-to-our-engine-choice-generating-arguments">Let’s go back to our Engine choice: Generating arguments.</a></li>
 <li><a class="reference internal" href="#recall-of-the-example">Recall of the example</a></li>
@@ -539,11 +569,11 @@ arguments.</p>
 </ul>
 </li>
 <li><a class="reference internal" href="#selecting-arguments">2. Selecting Arguments</a><ul>
-<li><a class="reference internal" href="#id2">Questions</a></li>
+<li><a class="reference internal" href="#id1">Questions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#relations-among-arguments">3. Relations among arguments.</a><ul>
-<li><a class="reference internal" href="#id4">Questions</a></li>
+<li><a class="reference internal" href="#id3">Questions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#status-of-arguments">4. Status of arguments?</a><ul>
@@ -576,7 +606,7 @@ arguments.</p>
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -593,12 +623,13 @@ arguments.</p>
         <li class="right" >
           <a href="cours-5.html" title="5. Argumentation-based negotiation (Cont.)"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">MultiAgent Systems 2020-2021 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">5.1. Previsously …</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2020, Emmanuel Hermellin, Wassila Ouerdane, Nicolas Sabouret.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.3.1.
     </div>
   </body>
 </html>
