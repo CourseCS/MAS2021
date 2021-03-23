@@ -150,7 +150,7 @@ will be used to help them to decide which item to select. Moreover, the argument
 <h2>1. Some assumptions–only to ease the programming<a class="headerlink" href="#some-assumptions-only-to-ease-the-programming" title="Permalink to this headline">¶</a></h2>
 <p>As we are limited in the time and the idea is not to built at the end a software, but to understand the different concepts described in the course, we will take the following assumptions to ease the programming:</p>
 <ul class="simple">
-<li><p>the example illustrates only three agents for the moment !</p></li>
+<li><p>the example illustrates only two agents for the moment !</p></li>
 <li><p>The agents share the same set of options (items) and the same set of criteria.</p></li>
 <li><p>The negotiation protocol is run only between each pair of agents.</p></li>
 <li><p>We will not update or modify the knowledge base of an agent.</p></li>
@@ -158,7 +158,7 @@ will be used to help them to decide which item to select. Moreover, the argument
 </div>
 <div class="section" id="an-illustrative-example">
 <h2>2. An illustrative example<a class="headerlink" href="#an-illustrative-example" title="Permalink to this headline">¶</a></h2>
-<p>Let consider three agents: Agent1, Agent 2 and Agent3. They have to select only one item between the ICE Diesel (ICED) engine
+<p>Let consider three agents: Agent1 and Agent 2. They have to select only one item between the ICE Diesel (ICED) engine
 and the Electric (E) one: there is only room left for one of them. The agents consider five different
 criteria: <span class="math notranslate nohighlight">\(C_1\)</span> : Cost (of production), <span class="math notranslate nohighlight">\(C_2\)</span>: Consumption, <span class="math notranslate nohighlight">\(C_3\)</span>: durability, <span class="math notranslate nohighlight">\(C_4\)</span>: Environment impact, <span class="math notranslate nohighlight">\(C_5\)</span>:
 Degree of Noise. Moreover, each agent has it own evaluation table for the items. For instance, the following performance table corresponds to Agent1.</p>
@@ -202,7 +202,6 @@ be minimized <span class="math notranslate nohighlight">\(\downarrow\)</span> (t
 different order of preferences among the criteria themselves (total order in our example):</p>
 <p>Agent1 : Cost <span class="math notranslate nohighlight">\(\succ\)</span>  Environment Impact <span class="math notranslate nohighlight">\(\succ\)</span>  Consumption <span class="math notranslate nohighlight">\(\succ\)</span>  durability <span class="math notranslate nohighlight">\(\succ\)</span>  Noise</p>
 <p>Agent2 : Environment Impact <span class="math notranslate nohighlight">\(\succ\)</span>  Noise <span class="math notranslate nohighlight">\(\succ\)</span>  Cost <span class="math notranslate nohighlight">\(\succ\)</span>  Consumption <span class="math notranslate nohighlight">\(\succ\)</span>  durability</p>
-<p>Agent3 : Durability <span class="math notranslate nohighlight">\(\succ\)</span> Environment Impact  <span class="math notranslate nohighlight">\(\succ\)</span>  Noise <span class="math notranslate nohighlight">\(\succ\)</span>  Consumption <span class="math notranslate nohighlight">\(\succ\)</span>  cost</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Will not discuss the rating and how the values are obtained, it can be computed by taking into account different sources, different statical analysis, etc. Moreover, we can use another scale (you may decide to change it).</p>
@@ -351,7 +350,7 @@ equality, select one randomly. If you think that it is hlepful to add another fu
   <span class="c1"># To be completed</span>
 </pre></div>
 </div>
-<p>2-  As it was done at the end of the course 3 (Alice/Bob example), create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
+<p>2-  As it was done at the end of the course 3 (Alice/Bob example), create two communicating agents named Agent1 and Agent2  (you may give them names if you want). These agents have an instance of <span class="math notranslate nohighlight">\(\texttt{Preferences}\)</span>. The list of items is the same for the different agents (the list of criteria may be not, you choose).</p>
 <p>3- Write a method that allows to generate the preferences of the agent (see the example for Agent1 and its corresponding ranking on criteria). You can also try to have a function that read the data from a csv file (not mandatory).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_preferences</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">preferences</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
@@ -361,24 +360,18 @@ equality, select one randomly. If you think that it is hlepful to add another fu
      <span class="c1"># To be completed</span>
 </pre></div>
 </div>
-<p>4- Implement the following situation between the three agents:</p>
-<ul class="simple">
-<li><p>On their turn, Agent1 and Agent2 <strong>ask</strong> Agent3 its most preferred item.</p></li>
-<li><p>If the item is different from their most preferred one, they send a message to Agent3 to remove the item from its list.</p></li>
-<li><p>On its turn, Agent3 reads its mailbox and processes all messages: Messages that request information about the preferred item produce an anwer; and Messages that request a change to the list are applied.</p></li>
-</ul>
-<p>5- Now implement a simple propose/accept interaction between Agent1 and Agent2, such that:</p>
+<p>4- Implement the following situation between the two agents:</p>
 <ul class="simple">
 <li><p>Agent1 to Agent2 : PROPOSE (item) (no matter which one for the moment)</p></li>
 <li><p>Agent2 to Agent1 : ACCEPT (item).</p></li>
 </ul>
 <p>It means that Agent1 sends a message and Agent2 reads it mailbox and replies.</p>
-<p>6- Update the propose/accept interaction between Agent1 and Agent2, with the following:</p>
+<p>5- Update the propose/accept interaction between Agent1 and Agent2, with the following:</p>
 <ul class="simple">
 <li><p>Agent1 to Agent2: PROPOSE (item)</p></li>
-<li><p>Agent2 to Agent1: ACCEPT (item) if the item belongs to <strong>its 10% most preferred item</strong>, otherwise ASK_WHY(item).</p></li>
+<li><p>Agent2 to Agent1: ACCEPT (item) if the item belongs to <strong>its 10% most preferred item</strong>, otherwise <strong>ASK_WHY(item)</strong>.</p></li>
 </ul>
-<p>7-  In case of acceptance, update the protocol to take into account the double-COMMIT
+<p>6-  In case of acceptance, update the protocol to take into account the double-COMMIT
 interaction (see below). Both agents  (Agent1 and Agent2) simply send a COMMIT message to each other as soon as they
 have the three following information:</p>
 <ul>
