@@ -170,13 +170,13 @@ The Modeling and Simulation theory makes it possible to highlight, through the m
 To model dynamic systems, a mathematical approach has long been used. Called Equation Based Model (EBM), it is build on an interrelation of a set of equations that captures the variability of a system over time. EBM represents the whole system and does not support an explicit representation of components (top-down). The whole system is globally represented by equations defined at the macroscopic level which does not make it possible to take into account the individual characteristics of the entities that compose the system. Moreover, this level of representation raises the question of the realism and the complexity of the parameters used to formulate the equations which model the system. So, EBM is most naturally used to model central systems.
 
 .. note::
-  Take the example of the prey / predatory model: it is used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.
+  Take the example of the Prey - Predatory model: it is used to describe the dynamics of biological systems in which two species interact, one as a predator and the other as prey.
 
   .. image:: img/preypredatorebm.png
     :align: center
     :width: 250
 
-  It focus on the global variation of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:
+  It focus on the global variation of the prey and predator populations. Below, you can find the output of a Prey - Predator EBM simulation:
 
   .. image:: img/preypredatorebmout.png
     :align: center
@@ -220,12 +220,12 @@ To create a Multi-Agent Based Simulation, you must follow the principles of the 
 - Agents act and change the state of the environment through their actions.
 
 .. note::
-  Take again the example of the prey / predatory model. Each entity (prey and predator) is represented by an agent and has behaviors:
+  Take again the example of the Prey - Predator model. Each entity (prey and predator) is represented by an agent and has behaviors:
 
   - Prey: move, eat, reproduce, flee and die.
   - Predator: move, eat, reproduce, hunt and die.
   
-  Each agent activate one of its behavior according to its perception of the environment. This simulation focus on the local behaviors of the prey and predator populations. Below, you can find the output of a prey/predator EBM simulation:
+  Each agent activate one of its behavior according to its perception of the environment. This simulation focus on the local behaviors of the prey and predator populations. Below, you can find the output of a Prey - Predator EBM simulation:
 
   .. image:: img/prey_predator.jpg
     :align: center
@@ -611,7 +611,7 @@ The behaviour of an agent is inherently discrete. The two main implementation pr
     :align: center
     :width: 350
 
-  With a synchronous apporach, the activation order of the agents has a direct impact on the evolution of the world. in the Prey-Predator example, if a prey is captured when it is surrounded by four predators following the vicinity of Von Neumann, the simple fact of changing the order of activation of the agents can have a strong impact on the final result.
+  With a synchronous apporach, the activation order of the agents has a direct impact on the evolution of the world. In the Prey - Predator example, if a prey is captured when it is surrounded by four predators following the vicinity of Von Neumann, the simple fact of changing the order of activation of the agents can have a strong impact on the final result. In the figure below, the right activation make the prey died, not the left activation.
 
   .. image:: img/TM_synchrone_issue.png
     :align: center
@@ -631,7 +631,7 @@ The behaviour of an agent is inherently discrete. The two main implementation pr
       :align: center
       :width: 450
 
-- Asynchronous approach: Event simulation principle.
+- Asynchronous approach: event simulation principle.
   It is hard to picture out a reality where a set of entities would be updated simultaneously by a global clock. It is more natural that each autonomous entity evolves at its own pace and generates events whose date of realization is personal to it. So, the agent activation is asynchronous.
   There are two ways to implement asynchronous approach:
   
@@ -643,7 +643,7 @@ The behaviour of an agent is inherently discrete. The two main implementation pr
     :align: center
     :width: 450
 
-  As in synchronous approach, an asynchronous approach could produce some conflicts: two events can occur at the same simulation time step. To resolve these conflits, it is possible to introduce competition between agents or to make a random choice on the action to be prioritized.
+  As in synchronous approach, an asynchronous approach could produce some conflicts: for example, two events can occur at the same simulation time step. To resolve these conflits, it is possible to introduce competition between agents or to make a random choice on the action to be prioritized.
 
 .. warning::
   To conclude this part, it must be noticed that a consistency relationship between the time granularity of the actions and the time step must exist.
@@ -654,10 +654,13 @@ The behaviour of an agent is inherently discrete. The two main implementation pr
 
   If an agent can move on many cells in one time step. Several agents may have paths that intersect without ever colliding (speed not directly related to time). So, the temporal granularity of actions must be taken into account.
 
-2.6. Implementing  a prey / predator simulation with Mesa
+.. note::
+  To go further, you may be interested in the problem of simultaneity of actions in Multi-Agent Based Simulation. 
+
+2.6. Implementing a Prey - Predator simulation with Mesa
 =============================================================
 
-The objective of this practical work is to implement a simulation of a prey - predator model. The prey - predator model is a simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.
+The objective of this practical work is to implement a simulation of a Prey - Predator model. The Prey - Predator model is a simple ecological model, consisting of three agent types: wolves, sheep, and grass. The wolves and the sheep wander around the grid at random. Wolves and sheep both expend energy moving around, and replenish it by eating. Sheep eat grass, and wolves eat sheep if they end up on the same grid cell.
 
 If wolves and sheep have enough energy, they reproduce, creating a new wolf or sheep (in this simplified model, only one parent is needed for reproduction). The grass on each cell regrows at a constant rate. If any wolves and sheep run out of energy, they die.
 
@@ -669,21 +672,21 @@ The implementation of this model will make you use several Mesa concepts and fea
   - Writing a model composed of multiple files.
   - Dynamically adding and removing agents from the schedule.
 
-The goal is to implement a prey - predator model closely based on the NetLogo Wolf-Sheep Predation Model: *Wilensky, U. (1997). NetLogo Wolf Sheep Predation model*. http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation
+The goal is to implement a Prey - Predator model closely based on the NetLogo Wolf-Sheep Predation Model: *Wilensky, U. (1997). NetLogo Wolf Sheep Predation model*. http://ccl.northwestern.edu/netlogo/models/WolfSheepPredation
 
 Practice yourself!
 -----------------------------
 
-Download the following archive which contains the project from which to start and extract it. The extracted folder contains 6 python files:
+Download the following :download:`archive<0_prey_predator_start.zip>` which contains the project from which to start and extract it. The extracted folder contains 6 python files:
 
 - *prey_predator/random_walker.py*: this defines the *RandomWalker* agent, which implements the behavior of moving randomly across a grid, one cell at a time. Both the Wolf and Sheep agents will inherit from it.
 - *prey_predator/agents.py*: defines the Wolf, Sheep, and GrassPatch agent classes.
 - *prey_predator/schedule.py*: defines a custom variant on the RandomActivation scheduler, where all agents of one class are activated (in random order) before the next class goes -- e.g. all the wolves go, then all the sheep, then all the grass.
-- *prey_predator/model.py*: defines the Prey-Predator model itself.
+- *prey_predator/model.py*: defines the Prey - Predator model itself.
 - *prey_predator/server.py*: sets up the interactive visualization server
 - *run.py*: launches a model visualization server.
 
-So, now it's up to you to work and implement the prey - predator model:
+So, now it's up to you to work and implement the Prey - Predator model:
 
 1. Defines the Wolf, Sheep, and GrassPatch agent classes in the *prey_predator/agents.py* file.
 
@@ -691,7 +694,7 @@ So, now it's up to you to work and implement the prey - predator model:
 - A wolf that walks around, reproduces (asexually) and eats sheep.
 - A patch of grass that grows at a fixed rate and it is eaten by sheep.
 
-2. Defines the Prey-Predator model by completing the *prey_predator/model.py* file.
+2. Defines the Prey - Predator model by completing the *prey_predator/model.py* file.
 
 3. Sets up the interactive visualization server by completing *prey_predator/server.py* file.
 
@@ -703,3 +706,9 @@ So, now it's up to you to work and implement the prey - predator model:
 .. image:: img/preypredatorebmout.png
   :align: center
   :width: 450
+
+.. note:: 
+  We expect you to return the source code and one or to two pages describing what you have implemented, the methodological approach that allowed you to choose the initial parameters and the screenshot of the output graph obtained.
+  
+.. warning::
+  send your practice work before **March 25, 2021 at 11:59 pm**

@@ -153,7 +153,7 @@ will be used to help them to decide which item to select. Moreover, the argument
 
 As we are limited in the time and the idea is not to built at the end a software, but to understand the different concepts described in the course, we will take the following assumptions to ease the programming: 
 
-- the example illustrates only three agents for the moment !  
+- the example illustrates only two agents for the moment !  
 
 - The agents share the same set of options (items) and the same set of criteria.
 
@@ -165,7 +165,7 @@ As we are limited in the time and the idea is not to built at the end a software
 2. An illustrative example
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let consider three agents: Agent1, Agent 2 and Agent3. They have to select only one item between the ICE Diesel (ICED) engine
+Let consider three agents: Agent1 and Agent 2. They have to select only one item between the ICE Diesel (ICED) engine
 and the Electric (E) one: there is only room left for one of them. The agents consider five different
 criteria: :math:`C_1` : Cost (of production), :math:`C_2`: Consumption, :math:`C_3`: durability, :math:`C_4`: Environment impact, :math:`C_5`:
 Degree of Noise. Moreover, each agent has it own evaluation table for the items. For instance, the following performance table corresponds to Agent1. 
@@ -188,7 +188,7 @@ Agent1 : Cost :math:`\succ`  Environment Impact :math:`\succ`  Consumption :math
 
 Agent2 : Environment Impact :math:`\succ`  Noise :math:`\succ`  Cost :math:`\succ`  Consumption :math:`\succ`  durability
 
-Agent3 : Durability :math:`\succ` Environment Impact  :math:`\succ`  Noise :math:`\succ`  Consumption :math:`\succ`  cost
+
 
 
 .. note::
@@ -322,7 +322,7 @@ You should check that these performatives are implemented in MessagePerformative
 
 This file  will contain our class of agents and our model for the argumentation simulation (will be completed as we go through our sessions).
 
-Translated with www.DeepL.com/Translator (free version)).
+
 
 .. code:: python
 
@@ -377,7 +377,7 @@ Translated with www.DeepL.com/Translator (free version)).
     # To be completed
 
 
-2-  As it was done at the end of the course 3 (Alice/Bob example), create three communicating agents named Agent1, Agent2 and Agent3 (you may give them names if you want). These agents have an instance of :math:`\texttt{Preferences}`. The list of items is the same for the different agents (the list of criteria may be not, you choose).
+2-  As it was done at the end of the course 3 (Alice/Bob example), create two communicating agents named Agent1 and Agent2  (you may give them names if you want). These agents have an instance of :math:`\texttt{Preferences}`. The list of items is the same for the different agents (the list of criteria may be not, you choose).
  
 3- Write a method that allows to generate the preferences of the agent (see the example for Agent1 and its corresponding ranking on criteria). You can also try to have a function that read the data from a csv file (not mandatory). 
 
@@ -394,13 +394,8 @@ Translated with www.DeepL.com/Translator (free version)).
 
 
 
-4- Implement the following situation between the three agents:  
+4- Implement the following situation between the two agents:  
 
-- On their turn, Agent1 and Agent2 **ask** Agent3 its most preferred item. 
-- If the item is different from their most preferred one, they send a message to Agent3 to remove the item from its list. 
-- On its turn, Agent3 reads its mailbox and processes all messages: Messages that request information about the preferred item produce an anwer; and Messages that request a change to the list are applied.
-
-5- Now implement a simple propose/accept interaction between Agent1 and Agent2, such that:  
 
 - Agent1 to Agent2 : PROPOSE (item) (no matter which one for the moment)
 
@@ -408,13 +403,13 @@ Translated with www.DeepL.com/Translator (free version)).
 
 It means that Agent1 sends a message and Agent2 reads it mailbox and replies.
 
-6- Update the propose/accept interaction between Agent1 and Agent2, with the following: 
+5- Update the propose/accept interaction between Agent1 and Agent2, with the following: 
 
 -  Agent1 to Agent2: PROPOSE (item)
 
-- Agent2 to Agent1: ACCEPT (item) if the item belongs to **its 10% most preferred item**, otherwise ASK_WHY(item). 
+- Agent2 to Agent1: ACCEPT (item) if the item belongs to **its 10% most preferred item**, otherwise **ASK_WHY(item)**. 
 
-7-  In case of acceptance, update the protocol to take into account the double-COMMIT
+6-  In case of acceptance, update the protocol to take into account the double-COMMIT
 interaction (see below). Both agents  (Agent1 and Agent2) simply send a COMMIT message to each other as soon as they
 have the three following information:
 

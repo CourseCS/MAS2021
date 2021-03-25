@@ -12,9 +12,9 @@
 In the previous session, we have seen what is an argumentation system without any reference to interaction. However, arguments can be seen as 
 embedded in a procedural context, in that they are put forward on one side or the other of an issue during a dialogue between human and/or artificial
 agents. In other terms, one way to define argumentation logics is in the dialectical form of dialogue games (or dialogue systems). Such games model interaction between two or more players,
-where arguments in favour and against a proposition are exchanged according to certain rules and conditions [Carlson, 1983]. 
+where arguments in favour and against a proposition are exchanged according to certain rules and conditions [`Carlson, 1983 <https://www.springer.com/gp/book/9789027714558>`_]. 
 
-According to [Gordon et al., 2007]
+According to [`Gordon et al., 2007 <https://dl.acm.org/doi/10.1016/j.artint.2007.04.010>`_]
 
 "The information provided by a dialogue for constructing and evaluating argument is richer that just a set of sentences. Indeed, the context can tell us whether some party has
 questioned or conceded a statements, or whether a decision has been taken to accept or reject a claim."
@@ -22,7 +22,7 @@ questioned or conceded a statements, or whether a decision has been taken to acc
 6.2. Dialogue system
 =============================
 
-Dialogue systems essentially define the principle of coherent dialogue and the condition under
+Dialogue systems essentially define the principle of coherent dialogue and the conditions under
 which a statement made by an individual is appropriate. Different formal dialogues exist, taking
 into account various information, such as: participants, communication language, roles of
 participants, the dialogue goal, etc.
@@ -36,11 +36,13 @@ the situation and the nature of the problem. For more details on dialogue system
 
 - **Commitments rules**. Rules defining the effect of the moves in the “commitment stores”. Indeed, associated with each player is a commitment store, which holds the statements players have made and the challenges they have issued. There are then rules which define how the commitment stores are updated. For example, a question posed by one agent to another may impose a commitment on the second to provide a response; until provided, this commitment remains undischarged.
 
-- **Dialogue rules (protocol)**,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [Prakken, 2001] and negotiation [Parsons et al., 1998; Amgoud et al., 2000b]. For example, the set of rules given in the following table correspond to a persuasion dialogue.
+- **Dialogue rules (protocol)**,  for regulating the moves. It specifies for instance the set of speech acts allowed in a dialogue and their allowed types of replies. Various dialogue protocols can be found in the literature, especially for persuasion [`Prakken, 2001 <https://link.springer.com/article/10.1023/A:1010322504453>`_] and negotiation [`Parsons et al., 1998 <https://academic.oup.com/logcom/article-abstract/8/3/261/1079347>`_]. For example, the set of rules given in the following table correspond to a persuasion dialogue.
 
-.. image:: img/persuasion.png
+.. figure:: img/persuasion.png
    :width: 470
    :align: center
+
+   Examples of speech acts 
 
 - **Rules for proposal validity**, which specify when a proposal is compliant with some conditions (e.g., an agent may not be allowed to make a proposal that has already been rejected);
 
@@ -86,10 +88,10 @@ commitment. Its advantage is that it provids a clear and precise semantics of th
 ================================================================
 
 
-We are at the end of this practical work.  The diffrent questions and functions implemented till now will help you to run (very soon :-) )  a negotiation between at least two agents. 
+We are at the end of this practical work.  The different questions and functions implemented till now will help you to run (very soon :-) )  a negotiation between at least two agents. 
 Before to push the run button, you need to check that you have implemented all the necessary components. 
 
-For this, the following algorithm synthetises the conditions and the rules for the different moves during and interaction.  
+For this, the following algorithm synthesizes the conditions and the rules for the different moves during an interaction.  
 
 
 .. image:: img/algo.png
@@ -118,7 +120,7 @@ Questions
 -------------------------
 
 
-1- Read carefully the algorithm and update your implementation (when it is necessary) that it corresponds to the described functioning. Again this is just an example and you can choose different stratgies/conditions. Feel free to make your own choices.  
+1- Read carefully the algorithm and update your implementation (when it is necessary) that it corresponds to the described functioning. Again this is just an example and you can choose different strategies/conditions. Feel free to make your own choices.  
 
 2- set-up a number of agents and lunch the negotiation processes between each pair of agents. 
 

@@ -22,7 +22,30 @@ In this session we will pursue the discussion and address more precisely what do
 5.2. Introduction to Argumentation Theory
 ==========================================
 
-Reasoning is generally defeasible, i.e. based on  assumptions, exceptions, uncertainty, etc. 
+The theory of Argumentation is a rich, interdisciplinary arez of research lying across philosophy, communication studies, linguistics and psychology. Its techniques 
+and results have found a wide range of applications in both theoretical and practical branches of AI and computer science. 
+
+In recent years, argumentation theory has been gaining increasing interest in the multi-agent systems (MAS) research community. It can be used:
+
+- to specify autonomous agent reasoning (belief revision, decision making under uncertainty, ..): it provides a systematic means for resolving conflicts among different arguments and arriving at consistent, well-supported standpoints. 
+  
+- as a vehicl for facilitating multi-agent interaction. It naturally provides tools for designing, implementing and analyzing sophisticated forms of interaction among rational agents. 
+
+
+Argumentation can be defined as follows: 
+
+  " Argumentation is a verbal and social activity of reason aimed at increasing (or decreasing) the acceptability of a controversial standpoint for the listner or 
+  reader, by putting forward a constellation of propositions intended to justify (or refute) the standpoint before a rational judge [`van Eemeren et al., 1996 <https://www.routledge.com/Fundamentals-of-Argumentation-Theory-A-Handbook-of-Historical-Backgrounds/Eemeren-Grootendorst-Johnson-Plantin-Willard/p/book/9780805818628>`_, page 5]
+
+In summary, argumentation can be seen as the principled interaction of different, potentially conflicting arguments, for the sake of arriving at a consistent conclusion.  In other terms, 
+we use argumentation only when information, beliefs, actions, ... are **contradictory**. It means if eveyrhting is consistent, just merge information from multiple agents. 
+
+
+1. Non-Monotonic reasoning
+----------------------------
+
+
+Argumentation logics formalises **defeasible reasoning** as construction and comparison of arguments. Indeed, reasoning is generally defeasible, i.e. based on  assumptions, exceptions, uncertainty, etc. 
 AI formalises such reasoning with `**non-monotonic reasoning logics** <https://plato.stanford.edu/entries/logic-nonmonotonic/>`_. The idea is that often available knowledge is incomplete, and to model commonsense reasoning
 it is necessary to be able to jump to plausible conclusions from the given knowledge. Thus, to do that it is necessary to make assumptions. The choice of assumptions is not blind: most of the knowledge on the world is given by means of general rules which specify typical properties of objects. 
 
@@ -47,9 +70,17 @@ instead, the new conclusion that Tweety does not fly will hold. However, this is
 
 One way to do this is to say, ''Normally, birds fly'' or '' if :math:`x` is a typical bird, then we can assume by default that :math:`x` flies ''.  This can be read as: "in the absence of information to the contrary, assume that :math:`x` flies"
 
-Argumentation logics formalises such **defeasible reasoning** as construction
-and comparison of arguments. In other terms, Argumentation is the process of attempting to agree about what to believe or **what to do** [#n1]_.  We use argumentation only when information, beliefs, actions, ... are **contradictory**. It means if eveyrhting is consistent, just merge information from multiple agents. In other terms, 
-the process offers sensible rules for deciding what to believe or what to do in the face of inconsistency. argumentation-based approaches are suited for applications in which agents have incomplete or inconsistent information about each other and the
+Thus, in most of approaches, arguments
+are constructed from an *inconsistent knowledge base*.  In this case,
+argumentation can be viewed as a method for **deducing** justified conclusion from an inconsistent
+knowledge base. Which conclusion are justified depends on the attack and the defeat relations
+among the arguments which can be constructed from the knowledge base (see relations among arguments).  
+
+2. Some application...  
+-----------------------------------
+
+
+Argumentation-based approaches are suited for applications in which agents have incomplete or inconsistent information about each other and the
 environment in which they act. For instance, in : consumer websites (Amazon for instance), law (policy making, supreme transcript, case based reasoning,...), `mediacal diagnosis <https://bmjopen.bmj.com/content/2/3/e000439>`_, `social media <http://ftp.informatik.rwth-aachen.de/Publications/CEUR-WS/Vol-405/paper4.pdf>`_, etc. 
 
 .. figure:: img/arguing.jpeg
@@ -57,16 +88,18 @@ environment in which they act. For instance, in : consumer websites (Amazon for 
   :align: center
 
 
-
-Several works were interested by using argumentation in different fields, such as  legal reasoning,
+Indeed, several works were interested by using argumentation in different fields, such as  legal reasoning,
 multi-agent systems, decision making, etc. (`Prakken and Sartor, 2002 <https://link.springer.com/chapter/10.1007/3-540-45632-5_14>`_; `Amgoud and Prade,
-2006 <https://www.aaai.org/Papers/AAAI/2006/AAAI06-035.pdf>`_ ; `Parsons and McBurney, 2003 <https://nms.kcl.ac.uk/peter.mcburney/downloads/pubs/2003/pm-2003-04.pdf>`_, ...). In most of such approaches, arguments
-are constructed from an *inconsistent knowledge base*.  In this case,
-argumentation can be viewed as a method for **deducing** justified conclusion from an inconsistent
-knowledge base. Which conclusion are justified depends on the attack and the defeat relations
-among the arguments which can be constructed from the knowledge base (see relations among arguments).  
+2006 <https://www.aaai.org/Papers/AAAI/2006/AAAI06-035.pdf>`_ ; `Parsons and McBurney, 2003 <https://nms.kcl.ac.uk/peter.mcburney/downloads/pubs/2003/pm-2003-04.pdf>`_, ...). 
 
 
+
+
+
+
+
+5.3. Argumenation process
+==============================
 The classical steps in an argumentation process are depticted in the following figure. 
 
 .. figure:: img/arguprocess.jpg
@@ -92,12 +125,12 @@ In the following, we will detail what do we mean by an argument, an attack relat
 
 1. Modelling arguments
 --------------------------------------
-In this section we are interested by the the first step of an argumentation process, i.e. the construction of arguments in favor or against a statement (we recall that for our purpose the statements correspnds to a decision/option). 
+In this section we are interested by the the first step of an argumentation process, i.e. the construction of arguments in favor or against a statement (we recall that for our purpose the statements correspond to a decision/option). 
 This step corresponds also to the box "agument generation"  of our ABN agent (see Figure above). 
 
 The main challenge in this step is to determine the *form or the structure of the arguments*. Indeed,
 there are many ways to address the form of an argument: *as trees of inferences* (`Karacapilidis
-and Papadias, 1998 <http://www-sop.inria.fr/websites/cermics/aidteam/nikos/papers/rici.ps>`_), as a *sequences of inferences* (deductions) (`Verheij, 1996 <https://cris.maastrichtuniversity.nl/ws/portalfiles/portal/1736888/guid-f8972ab2-c68f-4291-b229-d5207cd83320-ASSET1.0.pdf>`_ ), or as simple
+and Papadias, 1998a <http://www-sop.inria.fr/websites/cermics/aidteam/nikos/papers/rici.ps>`_), as a *sequences of inferences* (deductions) (`Verheij, 1996 <https://cris.maastrichtuniversity.nl/ws/portalfiles/portal/1736888/guid-f8972ab2-c68f-4291-b229-d5207cd83320-ASSET1.0.pdf>`_ ), or as simple
 *premiss-conclusion pairs*. The different forms of arguments depend on the language and on the
 rules for constructing them. The choice between the different options depends on the context and the objective sought through
 the use of argumentation.
@@ -130,7 +163,7 @@ In this course, we will adopt the *premiss-conclusion pair* as a structure of an
  - We are told that the witness is short-sighted, so he is no more reliable.
 
  
-We can encode the previsous statements as the following:
+We can encode the previous statements as the following:
 
  - :math:`s` (the killer is small);
  
@@ -193,7 +226,7 @@ inference is against the item.
 .. warning::
 
     To generate arguments or to make a logical inference, each agent needs to have a knowledge base (KB), which contains different information, facts, domain knowledge... Due to time limitation, we restrict this base to the agent's preferences represented by the performance table (see previous session). 
-    This is clearly not sufficient to build diffrent kinds of arguments.  Moreover, each time an agent receives an argument, he is able to update this knowledge base to enrich his information and to update his behavior and reasoning according to the new information. Again, this is not taken into account in this practical work in order to ease the programming and this is also due to time limitation and . 
+    This is clearly not sufficient to build diffrent kinds of arguments.  Moreover, each time an agent receives an argument, he is able to update this knowledge base to enrich his information and to update his behavior and reasoning according to the new information. Again, this is not taken into account in this practical work in order to ease the programming and this is also due to time limitation. 
 
 Recall of the example
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -369,11 +402,11 @@ Suitable argument selection in a negotiation context must take into account info
 the counterparts' initial information and the payoffs they receive from the different outcomes (i.e. action profiles). This raises the opportunity to use **learning** techniques in order to find
 patterns in the counterpart's behaviour an use these findings in future encounters with the same (or similar) counterpart(s) (see for e.g. `Sandholm and Crites, 1995 <http://mas.cs.umass.edu/Documents/Sandholm/biosystems95.ps>`_). 
 
-This is a particularly challenging task for ABN since agent may not only model the observed "beheviour" of one another, but also the "mental attitudes" motivating that behaviour. 
+This is a particularly challenging task for ABN since agent may not only model the observed "behaviour" of one another, but also the "mental attitudes" motivating that behaviour. 
 
 .. note::
 
-  Instead what we are doing here, argument selection may take place in conjunction with argument generation. An agent need not to generate all possible 
+  Instead what we are doing here, argument selection may take place in conjunction with argument generation. An agent needs not to generate all possible 
   arguments before it makes a selection of the most suitable one. 
 
 
@@ -450,11 +483,11 @@ undercutting when one argument challenges a rule inference of another argument. 
 
 Moreover, let us remark that both types of defeaters, discussed above, represent negative relations
 between arguments. However, recent studies have proposed another kind of relation between
-argument, namely a *positive relation*, called *support* relation [Verheij, 2002; Amgoud et al.,
-2004; Karacapilidis and Papadias, 1998a]. Indeed, an argument can defeat another argument, but
+argument, namely a *positive relation*, called *support* relation [`Amgoud et al.,
+2004 <https://www.irit.fr/~Leila.Amgoud/art-NMR-UF-04.pdf>`_; `Karacapilidis and Papadias, 1998 <https://link.springer.com/chapter/10.1007/3-540-64413-X_36>`_]. Indeed, an argument can defeat another argument, but
 it can also support another one. This new relation is completely independent of the attack relation
 (i.e., the support relation is not defined in terms of the attack relation, and vice-versa). As it was
-pointed by [Cayrol and Schiex, 2005]:
+pointed by [`Cayrol and Schiex, 2005 <https://link.springer.com/chapter/10.1007/11518655_33>`_]:
 
   “This suggests a notion of bipolarity, i.e. the existence of two independent types of information which have a diametrically opposed nature and which represent contrasting forces”
 
@@ -483,7 +516,7 @@ Moreover, at the end, given the set of arguments and their attack relations, we 
 
 **Example 6**
 
-The following figure represents a graph where we have 5 arguments (each color represent an argument) and 4 attack relations (represented bu the red dashed lines). Note that the black lines inside a 
+The following figure represents a graph where we have 5 arguments (each color represent an argument) and 4 attack relations (represented by the red dashed lines). Note that the black lines inside a 
 color represent the logical inference of an argument from the premises to the conclusion. 
 
 .. figure:: img/attack_prakken.jpeg
@@ -492,7 +525,7 @@ color represent the logical inference of an argument from the premises to the co
 
   Example of an argument graph (Prakken, 2014)
 
-More generally, the arguments and their relation can be represented by what we call "abstract argumentation system". For our previsous example we may have the following:
+More generally, the arguments and their relations can be represented by what we call "abstract argumentation system". For our previsous example we may have the following:
 
 **Example 7**
 
@@ -508,7 +541,7 @@ More formally, we define an argumentation framework or system as follows:
  
 Now, the key question to ask about such an argumentation framework is whether a given argument, :math:`x \in \mathcal{A}`, should be *accepted*?  (see the next section) 
 
-Before to go furthere, let us consider again our deicison problem about engine choice and let's build a system for generating arguments for our negotiation. 
+Before to go further, let us consider again our deicison problem about engine choice and let's build a system for generating arguments for our negotiation. 
 
 
 Questions
@@ -536,27 +569,19 @@ Questions
 
   Of course, once it is decided that the agument can be contradicted, you need to construct its counter-arguement (or to select it in your list of counter-arguments--see question 6 in section "Modelling arguments").  
 
-
-.. code:: python
-
-    def TODO(self, argument):
-        
-        # To be completed
-
-
 **Example 8**
 
-Agent1 to Agent2: argue(ICED, Consumption  = good)
+Agent1 to Agent2: argue(ICED, Consumption  = Good)
 
 Agent 2 may reply by:
 
-    - argue (not ICED, environment impact > Consumption )
+    - argue (not ICED, environment impact :math:`\succ` Consumption )
 
-    - argue (item, Consumption= very good)
+    - argue (item, Consumption= Very Good)
 
-    - argue (not ICED, Consumption = bad)
+    - argue (not ICED, Consumption = Bad)
 
-    - argue (note ICED, nvironment impact =Bad and nvironment impact > Consumption)
+    - argue (note ICED, environment impact = Bad and environment impact :math:`\succ` Consumption)
 
 3-  Update the interaction protocol to take into account the attack function and to implement the following situation: 
 
@@ -586,7 +611,7 @@ them) on the basis of all the ways in which they interact. Thus, the best or acc
 must be identified at the end of the argumentation process.
 
 Most of argumentation systems are based on the notion of acceptability as it was identified by
-[Dung, 1995]. Dung has proposed an abstract framework for argumentation in which he focuses
+[`Dung, 1995 <https://www.sciencedirect.com/science/article/pii/000437029400041X>`_]. Dung has proposed an abstract framework for argumentation in which he focuses
 only on the definition of the status of arguments. In such framework, the acceptability of an argument depends on its membership of some sets, called *acceptable sets or extensions*. In other
 terms, the acceptability of arguments is defined without considering the internal structure of the
 arguments.

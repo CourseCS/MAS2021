@@ -17,6 +17,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Argumentation-based negotiation (Cont.)" href="cours-5.html" />
     <link rel="prev" title="4. Argumentation-based negotiation" href="cours-4.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -25,6 +26,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="cours-5.html" title="5. Argumentation-based negotiation (Cont.)"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="cours-4.html" title="4. Argumentation-based negotiation"
              accesskey="P">previous</a> |</li>
@@ -56,21 +60,7 @@ The negotiation process is a complex dynamic process. The core of such a process
 <div><p>“Negotiation is a form of interaction in which a group of agents, with conflicting interests and a desire to cooperate, try to come a mutually acceptable agreement on the division of scarce resources”.</p>
 </div></blockquote>
 <p>The use of the word “ressources” here is to be taken in the broadest possible sens. In short, anything that is needed to achieve something.</p>
-<p>Thus, an essential element in MAS is the ability of individual agents to cooperate, coordinate or collaborate to reach a joint decision.</p>
-<p>Coordination - Definition 1 [Malon,1988]:</p>
-<blockquote>
-<div><p>“The set of supplementary activities which need to be carried out in a multi-agent environment, and which a single agent pursuing the same goals would not accomplish.”</p>
-</div></blockquote>
-<p>Coordintaiton - Definition 2 [Ferber, 1995]</p>
-<blockquote>
-<div><p>“The coordination of action can be defined as the articulation of the individual actions accomplished by each agents in such a way that the whole ends up being a coherent and high performance operation. It is a matter of arranging the behaviors of the agents in time and space in such a way that the group action is improved, either through better performance or through a reduction in conflict. So the coordination of actions is one of the main methods of ensuring
-cooperation between autonomous agents.”</p>
-</div></blockquote>
-<div class="figure align-center" id="id2">
-<a class="reference internal image-reference" href="images/coordination.jpeg"><img alt="images/coordination.jpeg" src="images/coordination.jpeg" style="width: 650px;" /></a>
-<p class="caption"><span class="caption-text">Source: Borrowed from Aurélie Beynier’s course</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
-<p>Let us focus on negotiation in what follows. Before discussing different frameworks for studying automated negotiation, we discuss in what follows some fundamental concepts in the automated negotiation literature [Rahwan, 2004].</p>
+<p>Before discussing different frameworks for studying automated negotiation, we discuss in what follows some fundamental concepts in the automated negotiation literature [Rahwan, 2004].</p>
 <p>1- <strong>The negotiation agreement space</strong>. Negotiation aims at reaching some allocation of resources that is acceptable to all parties.
 Since there are usually many different possible allocations (or possible agreements, or deals, or outcomes), negotiation can be seen as a “distributed search through a space of potential agreements” (<a class="reference external" href="https://link.springer.com/article/10.1023/A:1008746126376">Jennings et al., 2001</a>).
 Hence, we first require some way of characterising such a space. Abstractly, the space can be seen as a set of deals <span class="math notranslate nohighlight">\(\psi = \{\Omega_1, \dots, \Omega_n \}\)</span>  where <span class="math notranslate nohighlight">\(n\)</span> is the size of the search space.</p>
@@ -122,9 +112,9 @@ stating why an agent made such a proposal or why the counterpart should accept i
 </ul>
 <p>2-  Internal elements of an ABN frameworks. If we take a look to a basic, non-ABN negotiating agent (see figure-left), a first component is <em>a locution interpretation</em>, which parses incoming messages. These locutions (see Course 3) usually contain a proposal, or an acceptance or rejection message of a previous proposal. Other information can be added such as
 the identity of the sender. The proposal is then stored in a <em>proposal database</em> for future reference. Then, proposals feed into a <em>proposal evaluation and generation</em> component, which makes a decision about whether to accept, reject or generate a counter-proposal. This finally feeds into the <em>locution generation</em> component which sends the response.</p>
-<div class="figure align-center" id="id3">
+<div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="images/ABN.png"><img alt="images/ABN.png" src="images/ABN.png" style="width: 850px;" /></a>
-<p class="caption"><span class="caption-text">Classical negotiating agents vs Argument-based negotiating agent [Rahwan et al., 2004]</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Classical negotiating agents vs Argument-based negotiating agent [Rahwan et al., 2004]</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </div>
 <p>In contrast with this classical negotiating agent, more sophisticated meta-level information can be exchanged between ABN agents (see Figure-right). Indeed, in addition to evaluating and generating proposals, an agent capable of particiapting in ABN must be equipped with mechanisms for <em>evaluating</em> arguments and for <em>generating</em> and <em>selecting</em> arguments.
 The argument <em>generation</em> is responsible for deciding what response to actually send to the counterpart and what (if any) arguments should accompagny the response. Deciding on which argument to actually send is the responsability of the <em>selection</em> mechanism.</p>
@@ -434,6 +424,9 @@ have the three following information:</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="cours-4.html"
                         title="previous chapter">4. Argumentation-based negotiation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cours-5.html"
+                        title="next chapter">5. Argumentation-based negotiation (Cont.)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -461,6 +454,9 @@ have the three following information:</p>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="cours-5.html" title="5. Argumentation-based negotiation (Cont.)"
+             >next</a> |</li>
         <li class="right" >
           <a href="cours-4.html" title="4. Argumentation-based negotiation"
              >previous</a> |</li>

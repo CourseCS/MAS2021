@@ -2,7 +2,6 @@ General presentation of the course
 ================================================================
 
 
-
 The team 
 -----------------
 
@@ -56,6 +55,11 @@ The most popular multiagent platforms are `Jade <https://jade.tilab.com/>`_ (esp
   - in a notebook: ``!pip install mesa``
 
   - test in a python environment: ``import mesa`` (it should not rise an error)
+
+ 
+.. warning:: 
+
+   The content of this website has been converted to pdf and the document can be downloaded :download:`here <MultiAgentSystems.pdf>`. 
 
 
 

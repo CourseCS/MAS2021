@@ -15,7 +15,7 @@ Agenda -- Recall
 Session 6. 
 --------------
 
-This session is devoted to discuss the notion of dialogue system in general and nigotiation protocol in particular. 
+This session is devoted to discuss the notion of dialogue system in general and negotiation protocol in particular. 
 We will focus on negotiation procotol that relies in the exchanged messages on arguments to support the proposal. 
 More precisely, in this session will tackle the last part of the the practical work, i.e. the  implementation of the interaction algorithm between our agents (which corresponds of course to an argumentation-based negotiation dialogue). 
 
