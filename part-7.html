@@ -60,12 +60,26 @@ The negotiation process is a complex dynamic process. The core of such a process
 <div><p>“Negotiation is a form of interaction in which a group of agents, with conflicting interests and a desire to cooperate, try to come a mutually acceptable agreement on the division of scarce resources”.</p>
 </div></blockquote>
 <p>The use of the word “ressources” here is to be taken in the broadest possible sens. In short, anything that is needed to achieve something.</p>
-<p>Before discussing different frameworks for studying automated negotiation, we discuss in what follows some fundamental concepts in the automated negotiation literature [Rahwan, 2004].</p>
+<p>Thus, an essential element in MAS is the ability of individual agents to cooperate, coordinate or collaborate to reach a joint decision.</p>
+<p>Coordination - Definition 1 [Malon,1988]:</p>
+<blockquote>
+<div><p>“The set of supplementary activities which need to be carried out in a multi-agent environment, and which a single agent pursuing the same goals would not accomplish.”</p>
+</div></blockquote>
+<p>Coordintaiton - Definition 2 [Ferber, 1995]</p>
+<blockquote>
+<div><p>“The coordination of action can be defined as the articulation of the individual actions accomplished by each agents in such a way that the whole ends up being a coherent and high performance operation. It is a matter of arranging the behaviors of the agents in time and space in such a way that the group action is improved, either through better performance or through a reduction in conflict. So the coordination of actions is one of the main methods of ensuring
+cooperation between autonomous agents.”</p>
+</div></blockquote>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="images/coordination.jpeg"><img alt="images/coordination.jpeg" src="images/coordination.jpeg" style="width: 650px;" /></a>
+<p class="caption"><span class="caption-text">Source: Borrowed from Aurélie Beynier’s course</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Let us focus on negotiation in what follows. Before discussing different frameworks for studying automated negotiation, we discuss in what follows some fundamental concepts in the automated negotiation literature [Rahwan, 2004].</p>
 <p>1- <strong>The negotiation agreement space</strong>. Negotiation aims at reaching some allocation of resources that is acceptable to all parties.
 Since there are usually many different possible allocations (or possible agreements, or deals, or outcomes), negotiation can be seen as a “distributed search through a space of potential agreements” (<a class="reference external" href="https://link.springer.com/article/10.1023/A:1008746126376">Jennings et al., 2001</a>).
 Hence, we first require some way of characterising such a space. Abstractly, the space can be seen as a set of deals <span class="math notranslate nohighlight">\(\psi = \{\Omega_1, \dots, \Omega_n \}\)</span>  where <span class="math notranslate nohighlight">\(n\)</span> is the size of the search space.</p>
 <p>Another way of characterising the search space is in terms of vectors in a multidimensional Euclidean space. In this characterisation, a deal is defined in terms of a set of attributes <span class="math notranslate nohighlight">\(A_1, \dots, A_n\)</span> (dimensions in an <span class="math notranslate nohighlight">\(n\)</span> dimensional vector space),
-where each attribute <span class="math notranslate nohighlight">\(A_i\)</span> can take a set of values <span class="math notranslate nohighlight">\(a^i_1, \dots, a^i_m\)</span>.  In this course we will adopt this representation</p>
+where each attribute <span class="math notranslate nohighlight">\(A_i\)</span> can take a set of values <span class="math notranslate nohighlight">\(a^i_1, \dots, a^i_m\)</span>.</p>
 <p>2- <strong>Evaluating deals</strong>.  To evaluate a deal (outcome) at the agent level, we need to capture agent preference over <span class="math notranslate nohighlight">\(\psi\)</span>. As you have seen in the course ‘Systèmes de Décision’, preferences of agent <span class="math notranslate nohighlight">\(i\)</span> can be captured using a
 <em>preference relation</em> <span class="math notranslate nohighlight">\(\succsim_i\)</span> over <span class="math notranslate nohighlight">\(\psi\)</span>, and we denote by <span class="math notranslate nohighlight">\(\Omega_1 \succsim_i \Omega_2\)</span> that for agent <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(\Omega_1\)</span> is at least as good as <span class="math notranslate nohighlight">\(\Omega_2\)</span>. Moreover, the preference relation of agent <span class="math notranslate nohighlight">\(i\)</span>
 is often described in termes of a <em>utility function</em> that captures the level of satisfaction of an agent with a particular outcome (for a recall see course ‘Systèmes de Décision’). Thus, a <em>rational</em> agent seeks to reach a deal that maximises the utility it receives.
@@ -74,6 +88,18 @@ Another evaluation concerns the <em>global evaluation</em> of the deals (outcome
 In order to achieve this goal, agents need some mechanism. Abstractly, a mechanism specifies a set of
 rules, such as: what agents are allowed to say and when, how allocations are calculated,
 whether calculations are done using a centralised algorithm or in a distributed fashion, and so on. Different mechanisms may have different properties.</p>
+<p>4- <strong>A collection of strategies</strong>, one for each agent, which determine what proposals the agent will make. Usually, the strategy that an agent plays is <em>private</em>.</p>
+<p>Consider for instance the following example of a space of negotiation agreements (Figure 1 borrowed from <a class="reference external" href="https://www.researchgate.net/profile/Simon-Parsons-3/publication/226120112_Automated_Negotiation_Prospects_Methods_and_Challenges/links/53e108f50cf2235f35272267/Automated-Negotiation-Prospects-Methods-and-Challenges.pdf?origin=publication_detail">(Jennings et al., 2000)</a>). The dimensionality and topology of this space is determined by the structure of the negotiation object.
+Indeed, one could consider each attribute of the negotiation object to have a separate dimension associated with it; clearly, in this view, the space of figure 1 concerns two attributes. Thus, when new issues are added (or old ones removed) during the course of a negotiation, then extra dimensions are added (or removed) and the number of points of agreement may increase (or decrease).
+Similarly, if an agent changes one of the values of one of the attributes within an offer, it is moving from one point in the agreement space to another.
+For a given negotiation, the participants are the active components that determine the direction of the search. At the start of this process, each agent has a portion of the space in which it is willing to make agreements.
+Typically, it also has some means of rating the points (evaluatinn deals) in its space and some means of using this rating to determine the actual agreements it makes.
+Negotiation proceeds by the participants suggesting specific points (or regions) in the agreement space as potentially acceptable. During the negotiation process, the participants’ agreement spaces (as well as their rating functions) may change: they may expand, contract, or shift, for example because their environment changes or because they are persuaded to change their views. The search terminates when the required number of participants find a mutually acceptable point in the agreement space or when the protocol dictates that the search should be terminated (for whatever reason) without making an agreement.</p>
+<p>Given this metaphor, figure 1 can be seen to represent agent A1 negotiating with two other agents (A2 and A3). The agreement structure is the same in both cases. The current offer in the A1-A3 negotiation (these interactions are the lightly coloured exchanges) is in the area of overlap  between the two agents meaning that it could represent a potential agreement between them. However the current offer in the A1-A2 negotiation (these interactions are the darkly coloured exchanges) will not lead to an agreement since it is outside the agreement space of A2 (indeed in this case, A1 and A2 currently have non-intersecting areas of agreement meaning that no deal is possible).</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="images/agreement.png"><img alt="images/agreement.png" src="images/agreement.png" style="width: 550px;" /></a>
+<p class="caption"><span class="caption-text">Figure 1: A space of negotiation agreement (Jennings et al. 2000).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
 <p>For designing an “efficient” negotiation mechanisms, following is a list of desirable features adapted from (<a class="reference external" href="https://mitpress.mit.edu/books/rules-encounter">Rosenschein and Zlotkin, 1994</a>):</p>
 <ul class="simple">
 <li><p><em>Simplicity</em>: A mechanism that requires less computational processing and communication overhead is preferable to one that does not.</p></li>
@@ -112,9 +138,9 @@ stating why an agent made such a proposal or why the counterpart should accept i
 </ul>
 <p>2-  Internal elements of an ABN frameworks. If we take a look to a basic, non-ABN negotiating agent (see figure-left), a first component is <em>a locution interpretation</em>, which parses incoming messages. These locutions (see Course 3) usually contain a proposal, or an acceptance or rejection message of a previous proposal. Other information can be added such as
 the identity of the sender. The proposal is then stored in a <em>proposal database</em> for future reference. Then, proposals feed into a <em>proposal evaluation and generation</em> component, which makes a decision about whether to accept, reject or generate a counter-proposal. This finally feeds into the <em>locution generation</em> component which sends the response.</p>
-<div class="figure align-center" id="id2">
+<div class="figure align-center" id="id4">
 <a class="reference internal image-reference" href="images/ABN.png"><img alt="images/ABN.png" src="images/ABN.png" style="width: 850px;" /></a>
-<p class="caption"><span class="caption-text">Classical negotiating agents vs Argument-based negotiating agent [Rahwan et al., 2004]</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Classical negotiating agents vs Argument-based negotiating agent [Rahwan et al., 2004]</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
 </div>
 <p>In contrast with this classical negotiating agent, more sophisticated meta-level information can be exchanged between ABN agents (see Figure-right). Indeed, in addition to evaluating and generating proposals, an agent capable of particiapting in ABN must be equipped with mechanisms for <em>evaluating</em> arguments and for <em>generating</em> and <em>selecting</em> arguments.
 The argument <em>generation</em> is responsible for deciding what response to actually send to the counterpart and what (if any) arguments should accompagny the response. Deciding on which argument to actually send is the responsability of the <em>selection</em> mechanism.</p>
