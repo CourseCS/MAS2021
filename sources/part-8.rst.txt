@@ -22,7 +22,7 @@ In this session we will pursue the discussion and address more precisely what do
 5.2. Introduction to Argumentation Theory
 ==========================================
 
-The theory of Argumentation is a rich, interdisciplinary arez of research lying across philosophy, communication studies, linguistics and psychology. Its techniques 
+The theory of Argumentation is a rich, interdisciplinary area of research lying across philosophy, communication studies, linguistics and psychology. Its techniques 
 and results have found a wide range of applications in both theoretical and practical branches of AI and computer science. 
 
 In recent years, argumentation theory has been gaining increasing interest in the multi-agent systems (MAS) research community. It can be used:
@@ -34,8 +34,13 @@ In recent years, argumentation theory has been gaining increasing interest in th
 
 Argumentation can be defined as follows: 
 
-  " Argumentation is a verbal and social activity of reason aimed at increasing (or decreasing) the acceptability of a controversial standpoint for the listner or 
-  reader, by putting forward a constellation of propositions intended to justify (or refute) the standpoint before a rational judge [`van Eemeren et al., 1996 <https://www.routledge.com/Fundamentals-of-Argumentation-Theory-A-Handbook-of-Historical-Backgrounds/Eemeren-Grootendorst-Johnson-Plantin-Willard/p/book/9780805818628>`_, page 5]
+  " Argumentation is a verbal and social *activity of reason* aimed at increasing (or decreasing) the acceptability of a *controversial* standpoint for the listner or 
+  reader, by putting forward a constellation of propositions intended to justify (or refute) the standpoint before a rational judge [`van Eemeren et al., 1996 <https://www.routledge.com/Fundamentals-of-Argumentation-Theory-A-Handbook-of-Historical-Backgrounds/Eemeren-Grootendorst-Johnson-Plantin-Willard/p/book/9780805818628>`_, page 5]. 
+
+  - controversial standpoint:  in the sense that its subject to both "justification" or "refutation" depending on the information available. This distinguish argumentation from the classical deductive reasoning viewpoint, in which proofs for propositions cannot be contested. 
+  
+  - activity of reason: a particular process is to be followed in order to influence the acceptability of the controversial standpoint. This activity and the propositions put forward are to be evaluated by a "rational judge": a system that defines the reasonableness of these propositions according to some criteria. An important objective of argumentation theory is to identify such system of criteria. 
+
 
 In summary, argumentation can be seen as the principled interaction of different, potentially conflicting arguments, for the sake of arriving at a consistent conclusion.  In other terms, 
 we use argumentation only when information, beliefs, actions, ... are **contradictory**. It means if eveyrhting is consistent, just merge information from multiple agents. 
