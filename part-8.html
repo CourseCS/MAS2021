@@ -69,7 +69,7 @@ reader, by putting forward a constellation of propositions intended to justify (
 </ul>
 </div></blockquote>
 <p>In summary, argumentation can be seen as the principled interaction of different, potentially conflicting arguments, for the sake of arriving at a consistent conclusion.  In other terms,
-we use argumentation only when information, beliefs, actions, … are <strong>contradictory</strong>. It means if everything is consistent, just merge information from multiple agents.</p>
+we use argumentation only when information, beliefs, actions, … are <strong>contradictory</strong>. It means if eveyrhting is consistent, just merge information from multiple agents.</p>
 <div class="section" id="non-monotonic-reasoning">
 <h2>1. Non-Monotonic reasoning<a class="headerlink" href="#non-monotonic-reasoning" title="Permalink to this headline">¶</a></h2>
 <p>Argumentation logics formalises <strong>defeasible reasoning</strong> as construction and comparison of arguments. Indeed, reasoning is generally defeasible, i.e. based on  assumptions, exceptions, uncertainty, etc.
@@ -204,7 +204,7 @@ the use of argumentation.</p>
 <p><span class="math notranslate nohighlight">\(\rightarrow\)</span> <em>Who is the killer?</em> …Wait, the answer is soon :-)</p>
 <div class="section" id="let-s-go-back-to-our-engine-choice-generating-arguments">
 <h3>Let’s go back to our Engine choice: Generating arguments.<a class="headerlink" href="#let-s-go-back-to-our-engine-choice-generating-arguments" title="Permalink to this headline">¶</a></h3>
-<p>At the core of the dialogue between our two agents, the performative <strong>ARGUE</strong> (you need to check that this performative is present in our MessagePerformative.py).  It is used to explain to the other party in the dialogue
+<p>At the core of the dialogue between our three agents, the performative <strong>ARGUE</strong> (you need to check that this performative is present in our MessagePerformative.py).  It is used to explain to the other party in the dialogue
 the reasons in favor or against a given item. As it was mentionned in the course the idea is to communicate a logical inference that defends the agent’s
 position. As a consequence, the content of such a message is of the form: <span class="math notranslate nohighlight">\(B \leftarrow A\)</span>, such that the terms of <span class="math notranslate nohighlight">\(A\)</span> are the <strong>premises</strong> and <span class="math notranslate nohighlight">\(B\)</span> a positive or negative literal, which is the conclusion.</p>
 <p><strong>Example 3</strong></p>
@@ -282,7 +282,7 @@ different order of preferences among the criteria themselves (total order in our
 </div>
 <div class="section" id="questions">
 <h3>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">¶</a></h3>
-<p>1- In your folder you should have the package <em>arguments</em> as it is depicted in the following picture (you can download it <a class="reference download internal" download="" href="downloads/4828e7b350a58b7e0f0bf6548137da77/arguments.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> or download all the package of mesa <a class="reference download internal" download="" href="downloads/d506c06f06c5c0912004935b6f024c83/mesa_argumentation.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>). This package contains three classes.</p>
+<p>1- In your folder you should have the package <em>arguments</em> as it is depicted in the following picture (you can download it <a class="reference download internal" download="" href="download/4828e7b350a58b7e0f0bf6548137da77/arguments.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a> or download all the package of mesa <a class="reference download internal" download="" href="download/d506c06f06c5c0912004935b6f024c83/mesa_argumentation.zip"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>). This package contains three classes.</p>
 <a class="reference internal image-reference" href="images/arguments_package.jpg"><img alt="images/arguments_package.jpg" class="align-center" src="images/arguments_package.jpg" style="width: 170px;" /></a>
 <p>2-  In the class  <span class="math notranslate nohighlight">\(\texttt{Comparison}\)</span>  implement the  comparison object used in an argument object (<span class="math notranslate nohighlight">\(C_i \succ C_j\)</span> ).</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/usr/bin/env python3</span>
@@ -361,23 +361,23 @@ different order of preferences among the criteria themselves (total order in our
       <span class="c1"># To be completed</span>
 </pre></div>
 </div>
-<p>5- Write a method that constructs the list of positive arguments for a proposal (an item).
-In our context, positive arguments will correspond to the ones for which
+<p>5- Write a method that constructs the list of positive reasons for a proposal (an item).
+In our context, positive reasons will correspond to the ones for which
 criteria have either GOOD or VERY GOOD values for the item (see Value class in preferences implemented during the previsous session).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">List_supporting_proposal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate a list of arguments which can be used to support an item</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">List_supporting_proposal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">preferences</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate a list of premisses which can be used to support an item</span>
 <span class="sd">    :param item: Item - name of the item</span>
-<span class="sd">    :return: list of all arguments PRO an item (sorted by order of importance based on agent&#39;s preferences)</span>
+<span class="sd">    :return: list of all premisses PRO an item (sorted by order of importance based on agent&#39;s preferences)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># To be completed</span>
 </pre></div>
 </div>
-<p>6- Write a method that constructs the list of negative arguments against an item. They will correspond to the ones
+<p>6- Write a method that constructs the list of negative reasons against an item. They will correspond to the ones
 for which criteria’a values are either Bad or Very Bad.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">List_attacking_proposal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Generate a list of arguments which can be used to attack an item</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">List_attacking_proposal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">preferences</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generate a list of premisses which can be used to attack an item</span>
 <span class="sd">    :param item: Item - name of the item</span>
-<span class="sd">    :return: list of all arguments CON an item (sorted by order of importance based on preferences)</span>
+<span class="sd">    :return: list of all premisses CON an item (sorted by order of importance based on preferences)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># To be completed</span>
 </pre></div>
@@ -395,10 +395,7 @@ given a number of candidate arguments that an agent may utter to its counterpart
 <p>Different stategies are possible. Just for illustration, in the work of (<a class="reference external" href="https://www.emse.fr/~boissier/enseignement/sma05/exposes/kraus98reaching.pdf">Kraus et al., 1998</a>), arguments are selected according to the following argument strength order, with threats being the strongest argument.
 (1)  Appeal to prevailing practice, (2)  A counter example, (3) An appeal to past promise, (4) A promise to self-interested, (5) A promise of future reward,
 and (6) A threat.</p>
-
-<p>However, there is very little existing work on stategies in multi-agent dialoges. For instance, Rahwan et al., 2003 provide an informal attempt at characterising strategic factors in negotiation dialogues. In this work, strategies depend on various fators, such as the agents' goals, the interaction protocol, the agents' capabilities, thje resources available to participants, and so on.
-   </p>
-<p>Suitable argument selection in a negotiation context must take into account information about the negotiation counterpart. To this end, for instance in Bayesian game theory a counterpart is modelled by a probability distribution representing the uncertainty of the first party regarding
+<p>Suitable argument selection in a negotiation context must take into account information about the negotiation counterpart. To this end, for instance is Bayesian game theory a counterpart is modelled by a probability distribution representing the uncertainty of the first party regarding
 the counterparts’ initial information and the payoffs they receive from the different outcomes (i.e. action profiles). This raises the opportunity to use <strong>learning</strong> techniques in order to find
 patterns in the counterpart’s behaviour an use these findings in future encounters with the same (or similar) counterpart(s) (see for e.g. <a class="reference external" href="http://mas.cs.umass.edu/Documents/Sandholm/biosystems95.ps">Sandholm and Crites, 1995</a>).</p>
 <p>This is a particularly challenging task for ABN since agent may not only model the observed “behaviour” of one another, but also the “mental attitudes” motivating that behaviour.</p>
@@ -563,7 +560,7 @@ arguments.</p>
 <li><p><em>Preferred extension</em>: it represents maximal coherent positions, able to defend themselves against all attackers;</p></li>
 <li><p><em>Grounded extension</em>: accept only the argument that one cannot avoid to accept.</p></li>
 </ul>
-<p>Fore more formal defintions of the different extensions, and examples, you can have a look at this <a class="reference download internal" download="" href="downloads/f94ece55ab509b4f10919c97af7736ea/MAS_DungFramework.pdf"><code class="xref download docutils literal notranslate"><span class="pre">summary</span></code></a>.</p>
+<p>Fore more formal defintions of the different extensions, and examples, you can have a look at this <a class="reference download internal" download="" href="download/f94ece55ab509b4f10919c97af7736ea/MAS_DungFramework.pdf"><code class="xref download docutils literal notranslate"><span class="pre">summary</span></code></a>.</p>
 <div class="section" id="notes">
 <h3><em>Notes</em><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h3>
 <dl class="footnote brackets">
